@@ -13,7 +13,7 @@ export function ApplicationPage( {
             setUser( data );
             setLoading(false);
         }).catch( (err) => {
-            history.push('/');
+            window.location.href = 'http://localhost:5000/api/auth/discord'
             setLoading(false);
         })
     }, [])

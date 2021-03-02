@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+.discord-container-team h1 {
+  font-size: 50px;
+}
+
+.discord-container-team p {
+  font-size: 24px;
+}
+
+.discord-container-team {
+  padding: 0;
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.discord-team {
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: var(--text-color);
+  background: #222329;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+.discord-team p {
+  max-width: 500px;
+}
+
+.top-half {
+    display: flex;
+}
+
+.top-half1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.desc-team {
+    max-width: 300px;
+}
+
+
