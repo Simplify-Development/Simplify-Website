@@ -1,7 +1,9 @@
+// Imports and Node Packages
 const passport = require('passport')
 const DiscordStrategy = require('passport-discord');
 const userSchema = require('../database/schemas/User-Schema')
 
+// Serializing/Desirialzing of users
 passport.serializeUser( (user, done) => {
     done(null, user.discordId)
 });
@@ -15,6 +17,8 @@ passport.deserializeUser(async (discordId, done) => {
         done(err, null)
     }
 });
+
+// Createing the Stategy for passport to run
 passport.use(new DiscordStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
@@ -22,6 +26,7 @@ passport.use(new DiscordStrategy({
     scope: ["identify", "guilds"]
 }, async (accessToken, refreshToken, profile, done) => {
     console.log(profile.username)
+    // Error Handling
     try {
         const findUser = await userSchema.findOneAndUpdate({ discordId: profile.id}, {
             discordTag: `${profile.username}#${profile.discriminator}`

@@ -1,6 +1,8 @@
+// Config
 require("dotenv").config();
 require('./strategies/discord');
 
+// Inports and Node Packages
 const express = require("express");
 const app = express();
 const port = process.env.port || 5001;
@@ -11,17 +13,21 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo').default;
 const cors = require('cors')
 
+
+// Connecting to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
 })
 
+// Connection to the frontend
 app.use(cors({
     origin: [ 'http://localhost:3000' ],
     credentials: true
 }))
 
+// Creating the coockie for the discord login
 app.use(session({
     secret: 'secret',
     cookie: {
@@ -34,11 +40,14 @@ app.use(session({
     })
 }))
 
+// Starting passport
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Routes
 app.use('/api', routes);
 
+// Starting Express
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })

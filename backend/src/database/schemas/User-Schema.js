@@ -1,5 +1,7 @@
+// Imports / Node Packages
 const mongoose = require('mongoose');
 
+// User Schema / The template MongoDB uses to save user info with
 const userSchema = new mongoose.Schema({
     discordId: {
         type: String,
@@ -16,4 +18,5 @@ const userSchema = new mongoose.Schema({
     }
 })
 
+// Exporting the file
 module.exports = mongoose.model('Users', userSchema)
