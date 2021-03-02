@@ -11,10 +11,10 @@ export function MainPage(props) {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                        <li><a className="aa" href="#discord-page">Discord</a></li>
-                        <li><a className="ab" href="#">Faq</a></li>
-                        <li><a className="ac" href="#">Basic Rules</a></li>
-                        <li><a className="ad" href="#">Team</a></li>
+                        <li><a className="aa" >Discord</a></li>
+                        <li><a className="ab" >Faq</a></li>
+                        <li><a className="ac" >Basic Rules</a></li>
+                        <li><a className="ad" >Team</a></li>
                     </ul>
                 </div>
 
@@ -26,7 +26,7 @@ export function MainPage(props) {
 
             <div className="discord-container">
                 <div className="discord" id="discord-page">
-                    <Typist avgTypingDelay={60}  cursor={{
+                    <Typist avgTypingDelay={55}  cursor={{
                         show: false,
                     }}>
                         <h2>Learn code, Chat with friends, Have fun.</h2>
