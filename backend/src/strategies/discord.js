@@ -33,7 +33,8 @@ passport.use(new DiscordStrategy({
         } else {
             const newUser = await userSchema.create({
                 discordId: profile.id,
-                discordTag: `${profile.username}#${profile.discriminator}`
+                username: `${profile.username}`,
+                tag: `${profile.discriminator}`
             });
             return done( null, newUser )
         }

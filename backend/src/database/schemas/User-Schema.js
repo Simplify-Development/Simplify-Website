@@ -1,14 +1,18 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema( {
+const userSchema = new mongoose.Schema({
     discordId: {
         type: String,
         required: true,
         unique: true,
     },
-    discordTag: {
+    username: {
         type: String,
         required: true,
+    },
+    tag: {
+        type: String,
+        required: true
     }
 })
 
