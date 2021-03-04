@@ -1,0 +1,226 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text-color: #eef1f5;
+  --backgroud-color: #1d1e22;
+}
+
+.card-holder-team{
+  background: #222329;
+}
+
+.discord-container-team h1 {
+  font-size: 50px;
+}
+
+.discord-container-team p {
+  font-size: 24px;
+}
+
+.discord-container-team {
+  padding: 0;
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.discord-team {
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: var(--text-color);
+  background: #222329;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  max-width: 80%;
+  margin-bottom: 290px;
+}
+
+.discord-team p {
+  max-width: 500px;
+}
+
+.top-half {
+    display: flex;
+}
+
+.top-half1 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+}
+
+.card-holder-team {
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 180px;
+  color: var(--text-color);
+}
+
+.card-team {
+  background: #1d1e22;
+  padding: 10px;
+  border-radius: 5px;
+  width: auto;
+  min-height: 320px;
+}
+
+.desc-team {
+  max-width: 300px;
+}
+
+.desc-team span{
+  filter: brightness(50%);
+  font-weight: bold;
+}
+
+.card-container img {
+  max-height: 128px;
+  border-radius: 5px;
+} 
+
+
+.bottom-half {
+  position: relative;
+  top: -80px;
+}
+
+.bottom-half-zofux {
+  position: relative;
+  top: -62px;
+}
+
+/* Roles */
+
+.role-team span:hover {
+  cursor: pointer;
+}
+
+.owner-team {
+  border-radius: 15px;
+  border: 1px solid #00a3a3;
+  padding: 1px;
+  color: #00a3a3;
+  margin: 2.5px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.management-team {
+  border-radius: 15px;
+  border: 1px solid #fa80bd;
+  padding: 1px;
+  color: #fa80bd;
+  margin: 2.5px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.dev-team {
+  border-radius: 15px;
+  border: 1px solid #ffa461;
+  padding: 1px;
+  color: #ffa461;
+  margin: 2.5px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+@media screen and (max-width: 1006px) {
+
+  .card-holder-team {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .card-container {
+    padding-left: 20px;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+
+  .card-team {
+    max-width: 95%;
+    padding-left: 10px;
+    padding-bottom: 0;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .card-holder-team {
+    flex-direction: column;
+  }
+
+  .card-container {
+    padding-left: 20px;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .card-team {
+    max-width: 95%;
+    width: 100%;
+    padding-left: 10px;
+    padding-bottom: 0;
+  }
+
+  .discord-team{
+    margin-bottom: 70px;
+  }
+
+  .discord-container-team{
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 448px) {
+  .role-team {
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    padding-bottom: 3px;
+  }
+
+  .discord-container-team h1 {
+    font-size: 1.5rem;
+  }
+
+  .discord-container-team p {
+    font-size: 1.2rem;
+  }
+
+  .bottom-half {
+    top: -160px;
+  }
+}
