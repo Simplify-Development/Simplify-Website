@@ -1,6 +1,7 @@
 // Imports and Node Packages
 const passport = require('passport')
 const DiscordStrategy = require('passport-discord');
+const bot = require('../../bot');
 const userSchema = require('../database/schemas/User-Schema')
 
 // Serializing/Desirialzing of users
@@ -41,7 +42,9 @@ passport.use(new DiscordStrategy({
                 username: `${profile.username}`,
                 tag: `${profile.discriminator}`
             });
-            return done( null, newUser )
+            return done( null, newUser ).then(() => {
+                bot()
+            })
         }
     } catch (err) {
         console.log(err)

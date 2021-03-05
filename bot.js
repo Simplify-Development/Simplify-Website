@@ -4,14 +4,27 @@ const client = new Discord.Client();
 const prefix = '-'
 const token = process.env.token;
 
-client.on('ready', () => {
-    console.log('Bot is ready')
-})
+function bot() {
+    const guild = client.guilds.cache.get("756195742741430352")
+    const category = guild.channels.cache.get("815570778833289217")
 
-client.on('message', async message => {
-    if (message.content.toLowerCase() === `${prefix}dev`) {
-        message.reply('Testing Complete')
-    }
-})
+    guild.channels.create(`${new Date()}`, {
+        type: "text",
+        parent: category.id,
+        topic: `A currently open application!`,
+        permissionOverwrites: [
+            {
+                id: '756195742741430352', // Everyone role
+                deny: ["VIEW_CHANNEL"]
+            },
+            {
+                id: '810473298135482388', // Management Role
+                allow: ["VIEW_CHANNEL", "SEND_MESSAGES", "MANAGE_MESSAGES"]
+            }
+        ]
+    })
 
-client.login(token);
+    client.login(token);
+}
+
+module.exports = bot();
