@@ -5,12 +5,11 @@ const prefix = '-'
 const token = process.env.token;
 
 function bot() {
-    const guild = client.guilds.cache.get("756195742741430352")
-    const category = guild.channels.cache.get("815570778833289217")
+    const guild = client.guilds.cache.find(guild => guild.id === '756195742741430352')
 
     guild.channels.create(`${new Date()}`, {
         type: "text",
-        parent: category.id,
+        parent: '815570778833289217',
         topic: `A currently open application!`,
         permissionOverwrites: [
             {
