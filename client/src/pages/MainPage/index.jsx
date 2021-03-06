@@ -40,11 +40,11 @@ export function MainPage(props) {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                        <li><a className="aa" onClick={() => {
+                    <Link><li><a className="aa" onClick={() => {
                             window.open("https://discord.com/invite/96MAcmwA", "_blank")
-                        }}>Discord</a></li>
-                        <li><a className="ab" >Faq</a></li>
-                        <li><a className="ac" >Rules</a></li>
+                        }}>Discord</a></li></Link>
+                        <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
+                        <Link to="/rules"><li><a className="ac" >Rules</a></li></Link>
                         <Link to="/team"><li><a className="ad" >Team</a></li></Link>
                     </ul>
 
@@ -61,7 +61,6 @@ export function MainPage(props) {
                         <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
                 </button>
                 </Link>
-
             </div>
 
 

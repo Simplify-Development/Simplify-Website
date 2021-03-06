@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text-color: #eef1f5;
+  --backgroud-color: #1d1e22;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.faqs  {
+    width: 100%;
+    max-width: 868px;
+    margin: 0 auto;
+    padding: 15px;
+    padding-top: 70px;
+    padding-bottom: 25px;
+}
+
+.faqs .faq {
+    margin: 15px;
+    padding: 15px;
+    background: #222329;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+.faqs .faq .faq-question {
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 80px;
+    transition: all 0.2s ease;
+} 
+
+.faqs .faq .faq-question::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    background-image: url('./chevron-left-solid.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-out;
+}
+
+.faqs .faq .faq-answer {
+    opacity: 0;
+    max-height: 0px;
+    overflow-y: hidden;
+    transition: all 0.2s ease;
+}
+
+.faqs .faq.open .faq-question {
+    margin-bottom: 15px;
+}
+
+.faqs .faq.open .faq-question::after {
+    transform: translateY(-50%) rotate(-90deg);
+}
+
+.faqs .faq.open .faq-answer {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.bottom-faq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e4e1e183;
+    padding-bottom: 70px;
+}
+
+.bottom-faq p {
+    max-width: 80%;
+}
+
+@media screen and (max-width: 522px) {
+    .faqs .faq .faq-question {
+        font-size: 13px;
+    }
+
+    .faqs .faq .faq-answer {
+        font-size: 12px;
+    }
+}
+
+.faq-bottom {
+    color: #0075d5;
+}

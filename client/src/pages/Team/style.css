@@ -101,12 +101,12 @@
 
 .bottom-half {
   position: relative;
-  top: -80px;
+  bottom: 80px;
 }
 
 .bottom-half-zofux {
   position: relative;
-  top: -62px;
+  bottom: 63px;
 }
 
 /* Roles */
@@ -220,7 +220,7 @@
     font-size: 1.2rem;
   }
 
-  .bottom-half {
+ /* .bottom-half {
     top: -160px;
-  }
+  }*/
 }

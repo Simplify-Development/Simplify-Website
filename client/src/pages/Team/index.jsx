@@ -35,9 +35,11 @@ export function TeamPage(props) {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                        <li><a className="aa" >Discord</a></li>
-                        <li><a className="ab" >Faq</a></li>
-                        <li><a className="ac" >Rules</a></li>
+                    <Link><li><a className="aa" onClick={() => {
+                            window.open("https://discord.com/invite/96MAcmwA", "_blank")
+                        }}>Discord</a></li></Link>
+                        <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
+                        <Link to="/rules"><li><a className="ac" >Rules</a></li></Link>
                         <Link to="/"><li><a className="ad" >Home</a></li></Link>
                     </ul>
 
