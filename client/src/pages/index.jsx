@@ -5,3 +5,4 @@ export { PageNotFound } from './404Page';
 export { TeamPage } from './Team';
 export { rulesPage } from './rulesPage';
 export { FaqPage } from './faqPage';
+export { PrivacyPage } from './privacyPage';

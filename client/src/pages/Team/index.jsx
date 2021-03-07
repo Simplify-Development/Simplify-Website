@@ -93,8 +93,12 @@ export function TeamPage(props) {
 
                         <div className="bottom-half-zofux">
                             <h2 className="social-team">Socials</h2>
-                            <li><a onClick={() => window.open("https://www.youtube.com/channel/UC8kYYf-rv1hEw-Rph257AQg", "_blank")}><i class="fab fa-youtube"></i></a></li>
-                            <li><a onClick={() => window.open("https://github.com/Zofux", "_blank")}><i class="fab fa-github"></i></a></li>
+                            <p className="social-p-team">
+                                <a className="social-a-team" onClick={() => window.open("https://www.youtube.com/channel/UC8kYYf-rv1hEw-Rph257AQg", "_blank")}><i class="fab fa-youtube"></i> Zofux</a>
+                                </p>
+                                <p className="social-p-team">
+                                <a className="social-a-team" onClick={() => window.open("https://github.com/Zofux", "_blank")}><i class="fab fa-github"></i> Zofux</a>
+                            </p>
                         </div>
                     </div>
                     </div>
@@ -126,10 +130,11 @@ export function TeamPage(props) {
 
                         <div className="bottom-half">
                             <h2 className="social-team">Socials</h2>
-                            <p>
-                                <a onClick={() => window.open("https://www.youtube.com/channel/UCxGV1nNFR2Hs1JeU710-MLQ", "_blank")}><i class="fab fa-youtube"></i></a>
-                                <br/>
-                                <a onClick={() => window.open("https://github.com/famOyan", "_blank")}><i class="fab fa-github"></i></a>
+                            <p className="social-p-team">
+                                <a className="social-a-team" onClick={() => window.open("https://www.youtube.com/channel/UCxGV1nNFR2Hs1JeU710-MLQ", "_blank")}><i class="fab fa-youtube"></i> famOyan</a>
+                            </p>
+                            <p className="social-p-team">
+                                <a className="social-a-team" onClick={() => window.open("https://github.com/famOyan", "_blank")}><i class="fab fa-github"></i> famOyan</a>
                             </p>
                         </div>
                     </div>
@@ -143,7 +148,7 @@ export function TeamPage(props) {
                     <div className="container">
                         <div className="about">
                             <h2>About</h2>
-                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join.</p>
+                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join?</p>
                             <br />
                             <p>© Simplify Development 2020-2021</p>
                         </div>
@@ -157,8 +162,9 @@ export function TeamPage(props) {
                         <div className="product">
                             <h2>Product</h2>
                             <ul>
-                                <li><a >Rules</a></li>
-                                <li><a >Privacy Policy</a></li>
+                            <Link to="/rules"><li><a >Rules</a></li></Link>
+                                <Link to="/faq"><li><a >FAQ</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

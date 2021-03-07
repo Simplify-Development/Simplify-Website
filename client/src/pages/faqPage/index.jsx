@@ -30,7 +30,12 @@ export function FaqPage(props) {
     const [faqs, setfaqs] = useState([
         {
             question: 'How do I become staff ?',
-            answer: 'To become staff in our server you can apply on this website, we also announce when staff applications open.',
+            answer: 'If you would like to become a part of our staff team then feel free to submit a application over on the dashboard page, we also announce when staff applications open.',
+            open: false
+        },
+        {
+            question: 'How do I become a part of the Development Team',
+            answer: 'Well, becoming a part of our development team is a bit more conplicated then becoming staff, If you feel you should be a part of our development team then feel free to submit a application wich can be found in the dashboard page.',
             open: false
         },
         {
@@ -55,7 +60,7 @@ export function FaqPage(props) {
         },
         {
             question: 'How can I add Simplify Utilities to my server ?',
-            answer: "We are sorry but Simplify Utilities is a private bot developed by Simplify Development and will never be given to the public, tho there are many other great bots out there.",
+            answer: `We are sorry but Simplify Utilities is a private bot developed by Simplify Development and will never be given to the public, tho there are many other great bots out there.`,
             open: false
         },
         {
@@ -71,6 +76,11 @@ export function FaqPage(props) {
         {
             question: 'When is the next giveaway & how do I host one ?',
             answer: 'We don\'t plan our giveaways months before but we will be sure to give you a notification when we do. When it comes to hosting one all you need to do is to dm our bot and a staff member will lead you from there.',
+            open: false
+        },
+        {
+            question: 'Why do I need to log into discord to apply for stuff ?',
+            answer: 'The reason for this is because we need to be able to send you a message when we accept/decline you application, therefore we need to save your user ID to our database',
             open: false
         }
     ]);
@@ -95,7 +105,7 @@ export function FaqPage(props) {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                        <Link><li><a className="aa" onClick={() => {
+                    <Link><li><a className="aa" onClick={() => {
                             window.open("https://discord.com/invite/96MAcmwA", "_blank")
                         }}>Discord</a></li></Link>
                         <Link to="/rules"><li><a className="ab" >Rules</a></li></Link>
@@ -132,7 +142,7 @@ export function FaqPage(props) {
                     <div className="container">
                         <div className="about">
                             <h2>About</h2>
-                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join.</p>
+                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join?</p>
                             <br />
                             <p>© Simplify Development 2020-2021</p>
                         </div>
@@ -146,8 +156,9 @@ export function FaqPage(props) {
                         <div className="product">
                             <h2>Product</h2>
                             <ul>
-                                <li><a >Rules</a></li>
-                                <li><a >Privacy Policy</a></li>
+                                <Link to="/rules"><li><a >Rules</a></li></Link>
+                                <Link to="/faq"><li><a >FAQ</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

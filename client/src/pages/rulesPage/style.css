@@ -75,3 +75,9 @@ body {
 .bottom-rules p {
     max-width: 80%;
 }
+
+@media screen and (max-width: 1000px) {
+    .rules-box, .rule p{
+        max-width: 80%;
+    }
+}

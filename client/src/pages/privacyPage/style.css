@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+.privacy-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.privacy-box {
+    color: var(--text-color);
+    background: #222329;
+    padding: 10px;
+    max-width: 50%;
+    border-radius: 5px;
+}
+
+.privacy-box p {
+    max-width: 100%;
+}
+
+.discord-a-privacy {
+    color: #0075d5;
+}
+
+.privacy-container{
+    padding-top: 80px;
+}
+
+.privacy {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.privacy p {
+    max-width: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+    .privacy-box, .privacy p{
+        max-width: 80%;
+    }
+}

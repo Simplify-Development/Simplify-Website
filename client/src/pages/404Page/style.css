@@ -1,0 +1,78 @@
+.code {
+  color: #eef1f5;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  padding: 10px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 2rem;
+  margin-top: 15%;
+}
+
+.code p{
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.color-pink{
+  color: #C586C0;
+}
+
+.color-blue{
+  color: #68D0FE;
+}
+
+.color-dark-blue{
+  color: #569CD6;
+}
+
+.color-yellow{
+  color: #DCDCAA;
+}
+
+.color-comment{
+  color: #608B4B;
+}
+
+.tab-in-code {
+  padding-left: 60px;
+}
+
+@media screen and (max-width: 500px) {
+  .code{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 364px) {
+  .code {
+    font-size: 1rem;
+  }
+
+  .tab-in-code {
+    padding-left: 35px;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .code{
+    font-size: 0.7rem;
+  }
+
+  .tab-in-code {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (max-width: 192px) {
+  .code{
+    font-size: 0.5rem;
+  }
+
+  .tab-in-code {
+    padding-left: 15px;
+  }
+}

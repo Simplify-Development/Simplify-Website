@@ -47,6 +47,17 @@ app.use(passport.session());
 // Routes
 app.use('/api', routes);
 
+const total = require('./src/database/schemas/total-schema')
+/*const creatTotal = () => {
+    const newData = new total({
+        total: 3,
+        id: 756195742741430352
+    })
+    newData.save()
+    
+}
+creatTotal()*/
+
 // Starting Express
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)

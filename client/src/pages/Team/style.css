@@ -106,7 +106,28 @@
 
 .bottom-half-zofux {
   position: relative;
-  bottom: 63px;
+  bottom: 59px;
+}
+
+/* Socials */
+
+.social-a-team{
+  color: #1d1e22;
+  background: var(--text-color);
+  border-radius: 20px;
+  margin: 3px;
+  padding-right: 7px;
+  padding-left: 6px;
+  padding-bottom: 2px;
+}
+
+/* For the spaceing of the social media */
+.social-p-team:nth-child(2){
+  padding-top: 5px;
+}
+
+.social-p-team:nth-child(3){
+  padding-top: 10px;
 }
 
 /* Roles */
@@ -141,9 +162,9 @@
 
 .dev-team {
   border-radius: 15px;
-  border: 1px solid #ffa461;
+  border: 1px solid #3d7eb1;
   padding: 1px;
-  color: #ffa461;
+  color: #3d7eb1;
   margin: 2.5px;
   padding-bottom: 2px;
   padding-top: 0px;
@@ -220,7 +241,12 @@
     font-size: 1.2rem;
   }
 
- /* .bottom-half {
-    top: -160px;
-  }*/
+  .bottom-half {
+    position: relative;
+    top: -180px;
+  }
+
+  .bottom-half-zofux {
+    top: -159px;
+  }
 }

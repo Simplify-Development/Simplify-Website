@@ -1,0 +1,125 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+.info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-box {
+  margin-top: 100px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 50px;
+  background: #222329;
+  color: var(--text-color);
+  padding: 20px;
+  width: 450px;
+  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  transition: all ease-in-out 0.5s;
+}
+
+.info-box h1 {
+  font-size: 65px;
+}
+
+.info-box h2 {
+  font-size: 30px;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-box {
+  margin-top: 20px;
+  margin-bottom: 200px;
+  background: #222329;
+  color: var(--text-color);
+  padding: 20px;
+  width: 980px;
+  max-width: 92%;
+  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+}
+
+.app-box h1 {
+  font-size: 40px;
+  padding-bottom: 5px;
+}
+
+.app-box p {
+  font-size: 21px;
+}
+
+.app-box a {
+  color: #0075d5;
+}
+
+.info-box:hover {
+  transform: scale(1.015);
+  transition: all ease-in-out 0.5s;
+}
+
+.application-btn:hover {
+  cursor: pointer;
+  background: #4965c9;
+}
+
+.fa-pencil-alt {
+  padding-left: 7px;
+  transition: all 0.2s ease;
+  position: relative;
+  top: 1px;
+  font-size: 27px;
+}
+
+.application-btn:hover > .fa-pencil-alt {
+  transform: rotate(-45deg);
+  transition: all 0.2s ease;
+}
+
+.application-btn:focus {
+  outline: none;
+}
+
+.application-btn {
+  color: var(--text-color);
+  background: #7289da;
+  border-radius: 4px;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transform: scale(0.8);
+  transition: ease-out 0.5s;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 576px) {
+  .info-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-box {
+      max-width: 92%;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  }
+}

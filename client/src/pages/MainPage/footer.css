@@ -75,26 +75,24 @@ li {
 }
 
 .icons .fa-discord{
-  transition: all ease-out 1s;
+  transition: all ease-in-out 1s;
 }
 
 .icons .fa-github{
-  transition: all ease-out 1s;
+  transition: all ease-in-out 1s;
 }
 
-.icons .fa-discord:hover{
-  color: #4965c9;
-}
-
-.icons .fa-github:hover{
-  color: #4965c9;
+.icons .fa-discord:hover, .fa-github:hover{
+  filter: brightness(70%);
+  transition: all ease-in-out 1s;
 }
 
 footer a:hover{
   filter: brightness(70%);
+  transition: all ease-in-out 1s;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1150px) {
   .links{
     padding-right: 30px;
   }

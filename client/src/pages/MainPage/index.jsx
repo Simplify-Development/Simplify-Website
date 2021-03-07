@@ -40,7 +40,7 @@ export function MainPage(props) {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                    <Link><li><a className="aa" onClick={() => {
+                        <Link><li><a className="aa" onClick={() => {
                             window.open("https://discord.com/invite/96MAcmwA", "_blank")
                         }}>Discord</a></li></Link>
                         <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
@@ -57,9 +57,9 @@ export function MainPage(props) {
 
                 <Link to="/dashboard">
                     <button className="login-btn">
-                    Dashboard
+                        Dashboard
                         <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
-                </button>
+                    </button>
                 </Link>
             </div>
 
@@ -75,7 +75,7 @@ export function MainPage(props) {
                         <h3>Learn code, Chat with friends, Have fun.</h3>
                         <Typist.Delay ms={200} />
                         <p>
-                            Simplify code is a great coding community for everyone to join from a beginner to a software
+                            Simplify code is a great coding community for everyone, from a beginner to a software
                             developer, we have everything you would need to get started. So join now!
                         </p>
                     </Typist>
@@ -115,7 +115,7 @@ export function MainPage(props) {
                     <div className="container">
                         <div className="about">
                             <h2>About</h2>
-                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join.</p>
+                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join?</p>
                             <br />
                             <p>© Simplify Development 2020-2021</p>
                         </div>
@@ -129,8 +129,9 @@ export function MainPage(props) {
                         <div className="product">
                             <h2>Product</h2>
                             <ul>
-                                <li><a >Rules</a></li>
-                                <li><a >Privacy Policy</a></li>
+                                <Link to="/rules"><li><a >Rules</a></li></Link>
+                                <Link to="/faq"><li><a >FAQ</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

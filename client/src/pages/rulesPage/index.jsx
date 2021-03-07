@@ -108,7 +108,7 @@ export function rulesPage(props) {
                 </div>
                 <div className="rule">
                     <p>
-                        4. The category channels are there for a reason, meaning if you need help with JavaScript do not type in the 
+                        4. The category channels are there for a reason, meaning if you need help with JavaScript do not type in the
                             <span className="discord-color-span"> #python</span> channel or any other channel than JavaScript, we also see many users that need help with
                             discord.js so if you do need help with discord.js then make sure to use the <span className="discord-color-span">#discord-js</span> channel, this rule
                             does also go for other channels for example should bot commands only be used in the <span className="discord-color-span">#bot-commands</span> channel.
@@ -147,8 +147,8 @@ export function rulesPage(props) {
                 </div>
                 <div className="rule">
                     <p>
-                        10. No interfering with moderator's duties, this could mean that you are calling them for no reason in chat or wasting their time with fake/forged evidence or 
-                        simply trolling. You should also not try to mini mod, this means that you are acting like a staff member, this is something we do not want anyone to do and 
+                        10. No interfering with moderator's duties, this could mean that you are calling them for no reason in chat or wasting their time with fake/forged evidence or
+                        simply trolling. You should also not try to mini mod, this means that you are acting like a staff member, this is something we do not want anyone to do and
                         will cause a harsh punishment.
                     </p>
                 </div>
@@ -162,13 +162,13 @@ export function rulesPage(props) {
                     <p>If you have any questions about our rules or would like to report someone, then please contact us on discord.</p>
                 </div>
             </div>
-            
+
             <div className="footer-container">
                 <footer>
                     <div className="container">
                         <div className="about">
                             <h2>About</h2>
-                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join.</p>
+                            <p>Simplify Code is a coding community for everyone to join, we are growing more every day so why not join?</p>
                             <br />
                             <p>© Simplify Development 2020-2021</p>
                         </div>
@@ -182,8 +182,9 @@ export function rulesPage(props) {
                         <div className="product">
                             <h2>Product</h2>
                             <ul>
-                                <li><a >Rules</a></li>
-                                <li><a >Privacy Policy</a></li>
+                                <Link to="/rules"><li><a >Rules</a></li></Link>
+                                <Link to="/faq"><li><a >FAQ</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">
