@@ -31,6 +31,7 @@
     "passport-oauth2-refresh": "^2.0.1",
     "randomstring": "^1.1.5",
     "session": "^0.1.0",
-    "mongoose": "^5.11.18"
+    "mongoose": "^5.11.18",
+    "discord.js": "^12.5.1"
   }
 }
