@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     if (req.user) {
         res.send(req.user);
     } else {
-        res.status(401).send({ msg: 'Unauthorized' })
+        res.send(401).send({ msg: 'Unauthorized' })
     }
 })
 
