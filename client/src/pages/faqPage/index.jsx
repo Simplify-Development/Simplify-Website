@@ -30,22 +30,22 @@ export function FaqPage(props) {
     const [faqs, setfaqs] = useState([
         {
             question: 'How do I become staff ?',
-            answer: 'If you would like to become a part of our staff team then feel free to submit a application over on the dashboard page, we also announce when staff applications open.',
+            answer: 'If you would like to become a part of our staff team then feel free to submit an application over on the dashboard page, we also announce when staff applications open.',
             open: false
         },
         {
             question: 'How do I become a part of the Development Team',
-            answer: 'Well, becoming a part of our development team is a bit more conplicated then becoming staff, If you feel you should be a part of our development team then feel free to submit a application wich can be found in the dashboard page.',
+            answer: 'Well, becoming a part of our development team is a bit more complicated than becoming staff, If you feel you should be a part of our development team then feel free to submit an application which can be found on the dashboard page.',
             open: false
         },
         {
             question: 'How do I get in contact with the staff team ?',
-            answer: 'We have a very simple system for you to contact staff or support, all you need to do is to dm our botn "Simplify Utilities#8736", then a staff member will contact you from there.',
+            answer: 'We have a very simple system for you to contact staff or support, all you need to do is to dm our bot "Simplify Utilities#8736", then a staff member will contact you from there.',
             open: false
         },
         {
             question: 'Why did my username get moderated ?',
-            answer: 'The reason for this is because your username is against our rules and therefore your name was changed, if you change your username you can contact staff and get it changed again.',
+            answer: 'The reason for this is because your username is against our rules and therefore your name was changed if you change your username you can contact staff and get it changed again.',
             open: false
         },
         {
@@ -54,8 +54,8 @@ export function FaqPage(props) {
             open: false
         },
         {
-            question: 'Why are some links filterd ?',
-            answer: 'We have filterd all links that could be bad for our users and could include malware or stuff like Ip loggers.',
+            question: 'Why are some links filtered ?',
+            answer: 'We have filtered all links that could be bad for our users and could include malware or stuff like Ip loggers.',
             open: false
         },
         {
@@ -64,13 +64,13 @@ export function FaqPage(props) {
             open: false
         },
         {
-            question: 'Why is slowmode on in some chats ?',
-            answer: 'Slowmode is on in some chats to ensure that our moderators can do their job better, tho slowmode does not get used as often and we try to use it only when we need to.',
+            question: 'Why is slow-mode on in some chats ?',
+            answer: 'Slow-mode is on in some chats to ensure that our moderators can do their job better, tho slow-mode does not get used as often and we try to use it only when we need to.',
             open: false
         },
         {
             question: 'Why is swearing against the rules ?',
-            answer: 'The reason we do not like that people swear in our server is simply because it\'s a bad thing to do, we have a lot of young members and we just feel that swearing is not something we want in our server.',
+            answer: 'The reason we do not like that people swear in our server is simply that it\'s a bad thing to do, we have a lot of young members and we just feel that swearing is not something we want in our server.',
             open: false
         },
         {
@@ -80,7 +80,7 @@ export function FaqPage(props) {
         },
         {
             question: 'Why do I need to log into discord to apply for stuff ?',
-            answer: 'The reason for this is because we need to be able to send you a message when we accept/decline you application, therefore we need to save your user ID to our database',
+            answer: 'The reason for this is because we need to be able to send you a message when we accept/decline your application, therefore we need to save your user ID to our database',
             open: false
         }
     ]);

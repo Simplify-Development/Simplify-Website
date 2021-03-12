@@ -89,13 +89,13 @@ export function rulesPage(props) {
                     <p>
                         1. Do not swear in Chats or VCs, meaning you should never use bad language. You  should also never try to bypass our swear filter,
                         this means that you should not try to change up your words to avoid the filter as this would allow you to use bad language.
-                        You should also not try to get someone to use a bad word or joke around as you are still breaking rules. If you quote, influence or copy those that break
-                        the rules you may resive the same punishment.
+                        You should also not try to get someone to use a bad word or joke around as you are still breaking rules. If you quote, influence, or copy those that break
+                        the rules you may receive the same punishment.
                     </p>
                 </div>
                 <div className="rule">
                     <p>
-                        2. All advertising is not allowed in the server and will cause a harsh punishment, this also goes for the dm's of our users.
+                        2. All advertising is not allowed on the server and will cause a harsh punishment, this also goes for the dm's of our users.
                         If you are found breaking this rule in dm's or in the server we will take quick action, we do have filters for this so there is no reason you should
                         attempt to break it.
                     </p>

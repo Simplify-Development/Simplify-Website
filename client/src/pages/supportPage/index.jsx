@@ -156,7 +156,7 @@ export function SupportPage(props) {
                         <p>How old are you? (minimum 14) :</p><br/>
                         <p>Why do you want to be a part of our support team? (60-word minimum):</p><br/>
                         <p>What do you believe the goal of a support team is? (60-word minimum):</p><br/>
-                        <p>Do you have any porgramming experience, if so please explain? (40-word minimum):</p><br/>
+                        <p>Do you have any programming experience, if so please explain? (40-word minimum):</p><br/>
                         <p>Why should we choose you over other applications? (80-word minimum): <br/><br/> </p>`}
 
                         editor={ClassicEditor}

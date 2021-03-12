@@ -146,6 +146,7 @@ client.on("message", async message => {
                 }).then(() => {
                     message.reply(`You ${wListOrBlist} <@${user.id}>`)
                     message.delete()
+                    return
                 })
             }
         })

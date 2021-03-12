@@ -115,7 +115,7 @@ export function DashboardPage( {
                 </div>
 
                 <div className="info-box">
-                    <h2>Applications</h2>
+                    <h2>Total Applications</h2>
                     <h1>
                         <CountUp end={apps} />
                     </h1>
