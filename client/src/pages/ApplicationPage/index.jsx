@@ -18,16 +18,12 @@ export function ApplicationPage( {
             setLoading(false);
         }).catch( (err) => {
             console.error(err)
-            history.push('/api/auth/discord')
+            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
             setLoading(false);
         })
     }, [])
-
-    return !loading && (
-        <h1>Test</h1>
-    )
  
-    /*const navSlide = () => {
+    const navSlide = () => {
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links')
         const navLinks = document.querySelectorAll('.nav-links a')
@@ -167,7 +163,7 @@ export function ApplicationPage( {
             </footer>
         </div>
     </body>
-    )*/
+    )
 }
 
 

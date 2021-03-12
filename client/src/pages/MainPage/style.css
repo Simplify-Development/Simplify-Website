@@ -467,7 +467,22 @@ transition: all ease-in-out 1s;
     }
 }
 
-.scrollable-element {
-  scrollbar-color: var(--backgroud-color) #222329;
-}
+::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+ }
+ ::-webkit-scrollbar-thumb {
+  background: radial-gradient(circle, #44454F 14%,#44454f 100%);
+  border-radius: 10px;
+ }
+ ::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(13deg, #44454F 14%,#44454f 64%);
+ }
+ ::-webkit-scrollbar-track{
+  background: #1d1e22;
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #1d1e22;
+ }
+ 
+ 
 
