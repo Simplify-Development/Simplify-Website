@@ -13,21 +13,21 @@ export function ApplicationPage( {
     React.useEffect( () => {
         getUserDetails()
         .then( ( { data } ) => {
-            if (data.discordId) {
-                setUser( data );
-                console.log(data + 'Test')
-                setLoading(false);
-            } else {
-                window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
-            }
+            setUser( data );
+            console.log(data)
+            setLoading(false);
         }).catch( (err) => {
             console.error(err)
-            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
+            history.push('/api/auth/discord')
             setLoading(false);
         })
     }, [])
 
-    const navSlide = () => {
+    return !loading && (
+        <h1>Test</h1>
+    )
+ 
+    /*const navSlide = () => {
         const burger = document.querySelector('.burger');
         const nav = document.querySelector('.nav-links')
         const navLinks = document.querySelectorAll('.nav-links a')
@@ -167,7 +167,8 @@ export function ApplicationPage( {
             </footer>
         </div>
     </body>
-    )
+    )*/
 }
+
 
 
