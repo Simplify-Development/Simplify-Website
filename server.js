@@ -156,6 +156,26 @@ client.on("message", async message => {
 client.login(process.env.token);
 
 
+// Keeping application online in heroku
+const http = require('http')
+function startKeepAlive() {
+    setInterval(function() {
+        let options = {
+            host: 'https://simplify-website.herokuapp.com/',
+            port: process.env.PORT,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                // Logging goes here
+            }).on('error', function(err) {
+                console.log("Error: " + err.message);
+            });
+        }, 20 * 60 * 1000) // Load every 20 minutes
+    })
+}
+startKeepAlive()
+
 // Running the frontend
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
