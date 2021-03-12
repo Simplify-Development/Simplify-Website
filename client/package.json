@@ -1,6 +1,6 @@
 {
   "name": "simplify-website",
-  "version": "6.11.3",
+  "version": "1.0.0",
   "private": true,
   "proxy": "https://simplify-website.herokuapp.com/",
   "dependencies": {

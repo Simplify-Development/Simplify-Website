@@ -1,8 +1,12 @@
 {
   "name": "backend",
-  "version": "6.11.3",
+  "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engine": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd client && npm run build",
