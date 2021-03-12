@@ -3,7 +3,8 @@ import { getUserDetails } from "../../utils/api";
 import './style.css';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import CountUp from 'react-countup'
+import CountUp from 'react-countup';
+import { toast } from 'react-toastify'
 
 /*export function DashboardPage( {
     history,
@@ -162,7 +163,7 @@ export function DashboardPage(props) {
                             <ul>
                                 <Link to="/rules"><li><a >Rules</a></li></Link>
                                 <Link to="/faq"><li><a >FAQ</a></li></Link>
-                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

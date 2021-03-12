@@ -1,0 +1,89 @@
+body {
+    background: var(--backgroud-color);
+}
+
+.editor-container {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-bottom: 200px;
+}
+
+
+
+.app-background {
+    background: #222329;
+    max-width: 75%;
+    margin-left: 15%;
+    padding-top: 30px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    border-radius: 7px;
+}
+
+.app-title {
+    color: var(--text-color);
+    font-size: 20px;
+    padding-bottom: 15px;
+    font-weight: inherit;
+}
+
+.app-recs-list {
+    font-style: italic;
+    font-weight: bolder;
+    color: #6c757d;
+    font-family:  'Oswald', sans-serif;
+}
+
+.apply-btn {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #202c44;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    font-size: 20.7px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+
+.cancel-btn {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background: #f5365c;
+    color: var(--text-color);
+    outline: none;
+    border: none;
+    font-size: 20.7px;
+    border-radius: 3px;
+    margin-left: 20px;
+}
+
+.app-buttons {
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+
+.app-buttons button:hover {
+    cursor: pointer;
+}
+
+.app-type {
+    color: var(--text-color);
+}
+
+.recs-check {
+    color: var(--text-color);
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.recs-check p {
+    position: relative;
+    top: -5px;
+    left: 10px;
+}

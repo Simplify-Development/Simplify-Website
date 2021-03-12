@@ -1,8 +1,10 @@
 // Imports and Node Packages
 const passport = require('passport')
 const DiscordStrategy = require('passport-discord');
-const bot = require('../../bot');
 const userSchema = require('../database/schemas/User-Schema')
+const OAuth2Credentials = require('../database/schemas/OAuth2Credentials');
+const router = require('express').Router()
+const { encrypt, decrypt } = require('../utils/api')
 
 // Serializing/Desirialzing of users
 passport.serializeUser( (user, done) => {
@@ -26,26 +28,47 @@ passport.use(new DiscordStrategy({
     callbackURL: process.env.CLIENT_REDIRECT,
     scope: ["identify", "guilds"]
 }, async (accessToken, refreshToken, profile, done) => {
-    console.log(profile.username)
+    const encryptedAccessToken = encrypt(accessToken).toString();
+    const encryptedRefreshToken = encrypt(refreshToken).toString()
+
+    const { id, username, discriminator } = profile;
     // Error Handling
     try {
         const findUser = await userSchema.findOneAndUpdate({ discordId: profile.id}, {
             discordTag: `${profile.username}#${profile.discriminator}`
-        }, { new: true } );
-    
+        }, { new: true } 
+        );
+        
+        const findCredentials = await OAuth2Credentials.findOneAndUpdate({ discordId: id }, {
+            accessToken: encryptedAccessToken,
+            refreshToken: encryptedRefreshToken
+        })
         if (findUser) {
+            if (!findCredentials) {
+                const newCredentials = await OAuth2Credentials.create({
+                    accessToken: encryptedAccessToken,
+                    refreshToken: encryptedRefreshToken,
+                    discordId: id
+                });
+            }
             console.log('User was found');
             return done( null, findUser );
         } else {
             const newUser = await userSchema.create({
                 discordId: profile.id,
                 username: `${profile.username}`,
-                tag: `${profile.discriminator}`
+                tag: `${profile.discriminator}`,
+                whitelisted: false
             });
-            return done( null, newUser ).then(() => {
-                bot()
-            })
+            const newCredentials = await OAuth2Credentials.create({
+                accessToken: encryptedAccessToken,
+                refreshToken: encryptedRefreshToken,
+                discordId: id
+            }) ;
+
+            return done( null, newUser )
         }
+
     } catch (err) {
         console.log(err)
         return done(err, null)

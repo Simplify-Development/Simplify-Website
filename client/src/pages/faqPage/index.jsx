@@ -158,7 +158,7 @@ export function FaqPage(props) {
                             <ul>
                                 <Link to="/rules"><li><a >Rules</a></li></Link>
                                 <Link to="/faq"><li><a >FAQ</a></li></Link>
-                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

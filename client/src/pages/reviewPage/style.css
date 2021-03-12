@@ -1,0 +1,9 @@
+.review-info-container {
+    padding-top: 20px;
+    color: var(--text-color);
+}
+
+.review-title {
+    color: var(--text-color);
+    padding-bottom: 20px;
+}

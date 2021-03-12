@@ -3,7 +3,7 @@
 // Imports
 import React from "react";
 import { Switch, Route } from 'react-router-dom'
-import { MainPage, ApplicationPage, DashboardPage, PageNotFound, TeamPage, rulesPage, FaqPage, PrivacyPage } from './pages'
+import { MainPage, ApplicationPage, DashboardPage, PageNotFound, TeamPage, rulesPage, FaqPage, PrivacyPage, StaffPage, ReviewPage, AppListPage, SupportPage } from './pages'
 
 
 // Rendering of components
@@ -17,6 +17,10 @@ function App() {
       <Route path="/privacy" exact={ true }  component={PrivacyPage} />
       <Route path="/dashboard" exact={ true }  component={DashboardPage} />
       <Route path="/applications" exact={ true }  component={ApplicationPage} />
+      <Route path="/staff" exact={ true }  component={StaffPage} />
+      <Route path="/support" exact={ true }  component={SupportPage} />
+      <Route path="/applications/review" exact={ true }  component={AppListPage } />
+      <Route path="/applications/review/:id" component={ReviewPage} />
       <Route component={PageNotFound} />
     </Switch>
   );

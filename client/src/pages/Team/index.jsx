@@ -120,7 +120,6 @@ export function TeamPage(props) {
                                 <br/>
                             </p>
                             <p className="role-team">
-                                <br/>
                                 <span className="owner-team">Owner</span>
                                 <span className="management-team">Management</span>
                                 <span className="dev-team">Developer</span>
@@ -128,7 +127,7 @@ export function TeamPage(props) {
                             </div>
                         </div>
 
-                        <div className="bottom-half">
+                        <div className="bottom-half-zofux">
                             <h2 className="social-team">Socials</h2>
                             <p className="social-p-team">
                                 <a className="social-a-team" onClick={() => window.open("https://www.youtube.com/channel/UCxGV1nNFR2Hs1JeU710-MLQ", "_blank")}><i class="fab fa-youtube"></i> famOyan</a>
@@ -164,7 +163,7 @@ export function TeamPage(props) {
                             <ul>
                             <Link to="/rules"><li><a >Rules</a></li></Link>
                                 <Link to="/faq"><li><a >FAQ</a></li></Link>
-                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

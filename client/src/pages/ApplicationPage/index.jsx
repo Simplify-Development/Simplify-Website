@@ -2,6 +2,7 @@ import React from "react";
 import { getUserDetails } from "../../utils/api";
 import './style.css';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify'
 
 /*export function ApplicationPage( {
     history,
@@ -47,6 +48,10 @@ export function ApplicationPage(props) {
 
         //Burger Animation
         burger.classList.toggle('toggle')
+    }
+
+    const closed = () => {
+        toast.error('Sorry but this application is closed')
     }
 
     return (
@@ -95,7 +100,11 @@ export function ApplicationPage(props) {
                     <p className="app-desc">
                         Your job as this role will be to keep our server as clean as possible, you will be managing the community and making sure that everyone follows the rules.
                     </p>
-                    <p className="role-spacing"><span className="staff-team">Staff Team</span></p>
+                    <div className="app-bottom">
+                        <div className="role-spacing">
+                            <Link to="/staff"><button className="open-btn">Open</button></Link>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="app-list">
@@ -103,7 +112,11 @@ export function ApplicationPage(props) {
                     <p className="app-desc">
                         Your job as this role will be to help our members with what every they need from some help with code to changing their discord username. 
                     </p>
-                    <p className="role-spacing"><span className="support-team">Support</span></p>
+                    <div className="app-bottom">
+                        <div className="role-spacing">
+                            <Link to="/support"><button className="open-btn">Open</button></Link>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="app-list">
@@ -111,7 +124,11 @@ export function ApplicationPage(props) {
                     <p className="app-desc">
                         Your job as this role is to develop stuff for the server, this can be everything from a website to a discord bot. Take note this role is a bit harder to get.
                     </p>
-                    <p className="role-spacing"><span className="development-team">Developer</span></p>
+                    <div className="app-bottom">
+                        <div className="role-spacing">
+                            <button className="closed-btn" onClick={closed}>Closed</button>
+                        </div> 
+                    </div>
                 </div>
             </div>
 
@@ -137,7 +154,7 @@ export function ApplicationPage(props) {
                             <ul>
                             <Link to="/rules"><li><a >Rules</a></li></Link>
                                 <Link to="/faq"><li><a >FAQ</a></li></Link>
-                                <Link to="/privacy"><li><a >Privacy Policy</a></li></Link>
+                                <Link to="/privacy"><li><a >Privacy</a></li></Link>
                             </ul>
                         </div>
                         <div className="reacources">

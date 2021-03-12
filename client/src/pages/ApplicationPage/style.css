@@ -6,23 +6,24 @@
   color: var(--text-color);
   background: #222329;
   padding: 20px;
-  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  /*box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);*/
   margin-left: 25px;
   margin-right: 25px;
+  border-radius: 5px;
 }
 
 .app-desc-box-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 200px;
   margin-bottom: 50px;
 }
 
 .app-desc-box p {
-  font-size: 15px;
+  font-size: 20px;
   max-width: 1000px;
 }
 
@@ -30,7 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 200px;
 }
 
 .app-list {
@@ -40,53 +41,16 @@
   margin-right: 25px;
   padding: 10px;
   min-height: 100%;
-  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  /*box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);*/
   margin-bottom: 50px;
+  border-radius: 5px;
 }
 
 .app-list p {
   max-width: 293px;
 }
-
-.staff-team {
-    border-radius: 15px;
-    border: 1px solid #88f1ee;
-    padding: 1px;
-    color: #88f1ee;
-    margin: 2.5px;
-    padding-bottom: 2px;
-    padding-top: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  
-  .support-team {
-    border-radius: 15px;
-    border: 1px solid #ff58b2;
-    padding: 1px;
-    color: #ff58b2;
-    margin: 2.5px;
-    padding-bottom: 2px;
-    padding-top: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-    
-  }
-  
-  .development-team {
-    border-radius: 15px;
-    border: 1px solid #3d7eb1;
-    padding: 1px;
-    color: #3d7eb1;
-    margin: 2.5px;
-    padding-bottom: 2px;
-    padding-top: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-    
-  }
 
 .role-spacing{
     padding-top: 20px;
@@ -103,4 +67,75 @@
     .app-list p {
         max-width: 95%;
     }
+}
+
+.app-open{
+  border-radius: 15px;
+  border: 1px solid #27f550;
+  color: #27f550;
+  background: none;
+  margin: 2.5px;
+  padding-bottom: 2px;
+  padding-top: 0px;
+  padding-left: 6px;
+  padding-right: 6px;
+  font-size: 17px;
+  position: relative;
+}
+
+.app-closed {
+    border-radius: 15px;
+    border: 1px solid #ff2d26;
+    color: #ff2d26;
+    background: none;
+    margin: 2.5px;
+    padding-bottom: 2px;
+    padding-top: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-size: 17px;
+}
+
+.app-open:hover {
+    cursor: pointer;
+}
+
+.app-closed:hover{
+  cursor: not-allowed;
+}
+
+.app-bottom{
+  display: flex;
+}
+
+.open-btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background: #1cef5b;
+  color: #1d1e22;
+  outline: none;
+  border: none;
+  font-size: 20.7px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.closed-btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background: #f5365c;
+  color: #1d1e22;
+  outline: none;
+  border: none;
+  font-size: 20.7px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.app-bottom :is(.closed-btn, .open-btn):hover {
+  cursor: pointer;
 }
