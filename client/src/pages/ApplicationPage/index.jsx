@@ -16,8 +16,8 @@ export function ApplicationPage( {
             setUser( data );
             setLoading(false);
         }).catch( (err) => {
-            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
             console.error(err)
+            history.push('/api/auth/discord')
             setLoading(false);
         })
     }, [])
