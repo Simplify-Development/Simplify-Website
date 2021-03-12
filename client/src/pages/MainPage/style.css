@@ -467,3 +467,7 @@ transition: all ease-in-out 1s;
     }
 }
 
+.scrollable-element {
+  scrollbar-color: var(--backgroud-color) #222329;
+}
+
