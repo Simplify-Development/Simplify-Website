@@ -472,11 +472,11 @@ transition: all ease-in-out 1s;
   height: 13px;
  }
  ::-webkit-scrollbar-thumb {
-  background: radial-gradient(circle, #44454F 14%,#44454f 100%);
+  background: radial-gradient(circle, #222329 14%,#222329 100%);
   border-radius: 10px;
  }
  ::-webkit-scrollbar-thumb:hover{
-  background: linear-gradient(13deg, #44454F 14%,#44454f 64%);
+  background: linear-gradient(13deg, #222329 14%,#222329 64%);
  }
  ::-webkit-scrollbar-track{
   background: #1d1e22;
