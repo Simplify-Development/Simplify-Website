@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Connection to the frontend
 app.use(cors({
-    origin: [ 'https://simplify-website.herokuapp.com/' ],
+    origin: ['https://simplify-website.herokuapp.com/'],
     credentials: true
 }))
 app.use(express.json())
@@ -94,8 +94,7 @@ client.on("message", async message => {
                 return message.reply("That is not a application")
             }
         })
-    }
-    if (command === 'deny') {
+    } else if (command === 'deny') {
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
@@ -111,8 +110,7 @@ client.on("message", async message => {
                 return message.reply("That is not a application")
             }
         })
-    }
-    if (command === 'whitelist') {
+    } else if (command === 'whitelist') {
         const user = message.mentions.members.first()
         if (!user) {
             return message.reply('Sorry but I can\'t find that user')
@@ -155,15 +153,14 @@ client.on("message", async message => {
 
 client.login(process.env.token);
 
-
-
-// Running the frontend
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
+// Serve Static assests if in production
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build")); // change this if your dir structure is different
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+  }
+
 
 // Starting Express
 app.listen(port, () => {
