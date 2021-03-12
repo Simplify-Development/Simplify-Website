@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 const session = require('express-session');
 const MongoStore = require('connect-mongo').default;
 const cors = require('cors');
+const path = require('path')
 
 
 
