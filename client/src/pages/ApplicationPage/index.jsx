@@ -13,9 +13,13 @@ export function ApplicationPage( {
     React.useEffect( () => {
         getUserDetails()
         .then( ( { data } ) => {
-            setUser( data );
-            console.log(data)
-            setLoading(false);
+            if (data.discordId) {
+                setUser( data );
+                console.log(data)
+                setLoading(false);
+            } else {
+                history.push('/api/auth/discord')
+            }
         }).catch( (err) => {
             console.error(err)
             history.push('/api/auth/discord')
