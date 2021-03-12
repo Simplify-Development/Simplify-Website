@@ -34,7 +34,7 @@ export function DashboardPage(props) {
     const [apps, setApps] = React.useState(0)
 
     const getNumberOfUsers = () => {
-        axios.get('http://localhost:5001/api/users')
+        axios.get('https://simplify-website.herokuapp.com/api/users')
         .then((res) => {
             const data = res.data;
             setCount(data)
@@ -46,7 +46,7 @@ export function DashboardPage(props) {
     getNumberOfUsers()
 
     const getNumberOfApps = () => {
-        axios.get('http://localhost:5001/api/apps')
+        axios.get('https://simplify-website.herokuapp.com/api/apps')
         .then((res) => {
             const data = res.data;
             setApps(data)
