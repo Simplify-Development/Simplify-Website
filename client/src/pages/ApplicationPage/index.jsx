@@ -15,14 +15,14 @@ export function ApplicationPage( {
         .then( ( { data } ) => {
             if (data.discordId) {
                 setUser( data );
-                console.log(data)
+                console.log(data + 'Test')
                 setLoading(false);
             } else {
-                history.push('/api/auth/discord')
+                window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
             }
         }).catch( (err) => {
             console.error(err)
-            history.push('/api/auth/discord')
+            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
             setLoading(false);
         })
     }, [])

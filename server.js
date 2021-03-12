@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Connection to the frontend
 app.use(cors({
-    origin: [ 'https://simplify-website.herokuapp.com' ],
+    origin: [ 'https://simplify-website.herokuapp.com/' ],
     credentials: true
 }))
 app.use(express.json())
@@ -155,7 +155,7 @@ client.on("message", async message => {
 client.login(process.env.token);
 
 
-// Running the frontend on 
+// Running the frontend
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'))
     app.get("*", (req, res) => {
