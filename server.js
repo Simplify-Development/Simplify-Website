@@ -25,7 +25,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Connection to the frontend
 app.use(cors({
-    origin: [ 'http://localhost:3000' ],
+    origin: [ 'https://simplify-website.herokuapp.com' ],
     credentials: true
 }))
 app.use(express.json())
