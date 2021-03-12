@@ -70,7 +70,7 @@ export function DashboardPage( {
             setLoading(false);
         }).catch( (err) => {
             console.error(err)
-            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
+            window.location.href = `https://simplify-code.com/api/auth/discord`
             setLoading(false);
         })
     }, [])
