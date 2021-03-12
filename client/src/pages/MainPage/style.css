@@ -481,7 +481,7 @@ transition: all ease-in-out 1s;
  ::-webkit-scrollbar-track{
   background: #1d1e22;
   border-radius: 10px;
-  box-shadow: inset 7px 10px 12px #1d1e22;
+  /*box-shadow: inset 7px 10px 12px #1d1e22;*/
  }
  
  

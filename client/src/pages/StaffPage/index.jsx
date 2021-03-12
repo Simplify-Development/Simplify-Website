@@ -12,6 +12,21 @@ toast.configure()
 export function StaffPage(props) {
     const [text, setText] = useState('')
     const [checked, setCheck] = useState(false)
+    const [user, setUser] = React.useState( null );
+    const [loading, setLoading ] = React.useState( true )
+
+    React.useEffect( () => {
+        getUserDetails()
+        .then( ( { data } ) => {
+            setUser( data );
+            console.log(data)
+            setLoading(false);
+        }).catch( (err) => {
+            console.error(err)
+            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
+            setLoading(false);
+        })
+    }, [])
 
     const navSlide = () => {
         const burger = document.querySelector('.burger');
@@ -83,7 +98,7 @@ export function StaffPage(props) {
         //console.log(content)
     }
 
-    return (
+    return !loading && (
         <body>
             <div className="nav">
 

@@ -6,30 +6,12 @@ import axios from 'axios';
 import CountUp from 'react-countup';
 import { toast } from 'react-toastify'
 
-/*export function DashboardPage( {
+export function DashboardPage( {
     history,
 }) {
 
     const [user, setUser] = React.useState( null );
     const [loading, setLoading ] = React.useState( true )
-
-    React.useEffect( () => {
-        getUserDetails()
-        .then( ( { data } ) => {
-            setUser( data );
-            setLoading(false);
-        }).catch( (err) => {
-            window.location.href = `http://localhost:${process.env.PORT || 5001}/api/auth/discord`
-            setLoading(false);
-        })
-    }, [])
-
-    return !loading && (
-        <h1>Dashboard Page</h1>
-    )
-}*/
-
-export function DashboardPage(props) {
     const [count, setCount] = React.useState(0);
     const [apps, setApps] = React.useState(0)
 
@@ -79,7 +61,21 @@ export function DashboardPage(props) {
         burger.classList.toggle('toggle')
     }
 
-    return (
+
+    React.useEffect( () => {
+        getUserDetails()
+        .then( ( { data } ) => {
+            setUser( data );
+            console.log(data)
+            setLoading(false);
+        }).catch( (err) => {
+            console.error(err)
+            window.location.href = `https://simplify-website.herokuapp.com/api/auth/discord`
+            setLoading(false);
+        })
+    }, [])
+
+    return !loading && (
         <body>
 
             <div className="nav">
