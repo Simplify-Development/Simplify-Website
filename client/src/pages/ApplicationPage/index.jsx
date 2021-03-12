@@ -14,7 +14,7 @@ export function ApplicationPage( {
         getUserDetails()
         .then( ( { data } ) => {
             setUser( data );
-            console.log(user)
+            console.log(data)
             setLoading(false);
         }).catch( (err) => {
             console.error(err)
