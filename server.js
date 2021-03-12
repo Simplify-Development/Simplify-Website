@@ -161,13 +161,17 @@ const http = require('http')
 function startKeepAlive() {
     setInterval(function() {
         let options = {
-            host: 'https://simplify-website.herokuapp.com/',
+            host: 'https://simplify-website.herokuapp.com',
             port: process.env.PORT,
             path: '/'
         };
         http.get(options, function(res) {
             res.on('data', function(chunk) {
-                // Logging goes here
+               try {
+                   console.log(chunk)
+               } catch (err) {
+                   console.log(err)
+               }
             }).on('error', function(err) {
                 console.log("Error: " + err.message);
             });
