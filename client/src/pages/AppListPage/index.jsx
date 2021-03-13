@@ -21,7 +21,7 @@ export function AppListPage({
     }, [])
 
     function getApplications() {
-        return axios.get('https://simplify-website.herokuapp.com/api/applist')/*.then(data => {
+        return axios.get('http://simplify-code.com/api/applist')/*.then(data => {
            for (let i in data.data) {
             console.log(data.data[i].appType)
            }

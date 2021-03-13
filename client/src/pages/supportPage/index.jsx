@@ -23,7 +23,7 @@ export function SupportPage(props) {
             setLoading(false);
         }).catch( (err) => {
             console.error(err)
-            window.location.href = `https://simplify-code.com/api/auth/discord`
+            window.location.href = `http://simplify-code.com/api/auth/discord`
             setLoading(false);
         })
     }, [])
