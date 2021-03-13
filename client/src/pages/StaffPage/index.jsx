@@ -73,7 +73,7 @@ export function StaffPage(props) {
                 }
 
                 function getApplications() {
-                    return axios.get(`https://simplify-website.herokuapp.com/api/apps/check/${result.data.discordId}`)
+                    return axios.get(`https://simplify-code.com/api/apps/check/${result.data.discordId}`)
 
                 }
 
@@ -82,7 +82,7 @@ export function StaffPage(props) {
                         return toast.error('Sorry, but you currently have a pending application, talk to our management team to get it removed.')
                     } if (data.data.msg) {
 
-                        await axios.post('https://simplify-website.herokuapp.com/api/newapp', content).then(res => {
+                        await axios.post('https://simplify-code.com/api/newapp', content).then(res => {
                             setText('')
                             return toast.success('Application was submited, you are now awaiting a response from our management team.')
                         }).catch(async () => {
