@@ -4,7 +4,7 @@ const passport = require('passport');
 router.get('/discord', passport.authenticate('discord'));
 
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
-    res.redirect('https://simplify-website.herokuapp.com/dashboard')
+    res.redirect('http://simplify-code.com/dashboard')
 });
 
 router.get('/', (req, res) => {
