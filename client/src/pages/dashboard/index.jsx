@@ -16,7 +16,7 @@ export function DashboardPage( {
     const [apps, setApps] = React.useState(0)
 
     const getNumberOfUsers = () => {
-        axios.get('http://simplify-code.com/api/users')
+        axios.get('https://simplify-code.com/api/users')
         .then((res) => {
             const data = res.data;
             setCount(data)
@@ -28,7 +28,7 @@ export function DashboardPage( {
     getNumberOfUsers()
 
     const getNumberOfApps = () => {
-        axios.get('http://simplify-code.com/api/apps')
+        axios.get('https://simplify-code.com/api/apps')
         .then((res) => {
             const data = res.data;
             setApps(data)
@@ -70,7 +70,7 @@ export function DashboardPage( {
             setLoading(false);
         }).catch( (err) => {
             console.error(err)
-            window.location.href = `http://simplify-code.com/api/auth/discord`
+            window.location.href = `https://simplify-code.com/api/auth/discord`
             setLoading(false);
         })
     }, [])

@@ -14,7 +14,7 @@ export function ReviewPage({
     const [requirements, setRequirements] = React.useState('')
 
     function getApplication() {
-        return axios.get(`http://simplify-code.com/api/apps/${match.params.id}`)
+        return axios.get(`https://simplify-code.com/api/apps/${match.params.id}`)
     }
 
     const navSlide = () => {
