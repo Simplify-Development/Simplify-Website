@@ -16,7 +16,7 @@ export function DashboardPage( {
     const [apps, setApps] = React.useState(0)
 
     const getNumberOfUsers = () => {
-        axios.get('https://simplify-code.com/api/users')
+        axios.get('http://simplify-code.com/api/users')
         .then((res) => {
             const data = res.data;
             setCount(data)
