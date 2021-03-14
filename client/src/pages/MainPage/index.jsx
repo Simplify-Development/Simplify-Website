@@ -58,7 +58,6 @@ export function MainPage(props) {
                 <Link to="/dashboard">
                     <button className="login-btn">
                         Dashboard
-                        <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
                     </button>
                 </Link>
             </div>

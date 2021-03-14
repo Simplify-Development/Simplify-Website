@@ -12,6 +12,7 @@ export function ReviewPage({
 }) {
     const [content, setContent] = React.useState([])
     const [requirements, setRequirements] = React.useState('')
+    const [loading, setLoading] = React.useState(true)
 
     function getApplication() {
         return axios.get(`https://simplify-code.com/api/apps/${match.params.id}`)
@@ -43,8 +44,10 @@ export function ReviewPage({
         getUserDetails()
             .then(({ data }) => {
                 if (data.whitelisted === false) {
-                    window.location.href = "/"
+                    return window.location.href = "/"
                 }
+
+                setLoading(false)
 
                 getApplication().then(({ data }) => {
                     setContent(data)
@@ -59,7 +62,7 @@ export function ReviewPage({
             })
     }, [])
 
-    return (
+    return !loading && (
         <body>
             <div className="nav">
 
@@ -83,14 +86,13 @@ export function ReviewPage({
                 <Link to="/dashboard">
                     <button className="login-btn">
                         Dashboard
-                        <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
                     </button>
                 </Link>
             </div>
 
             <div className="app-background">
                 <div className="editor-container">
-                    <h1 className="review-title">{content.user}'s {content.appType}</h1>
+                    <h1 className="review-title">{content.user}'s {content.appType} application</h1>
                     <CKEditor
                         data={`${content.content}`}
                         editor={ClassicEditor}

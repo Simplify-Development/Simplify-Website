@@ -28,28 +28,29 @@
 }
 
 .app-list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 200px;
+  grid-gap: 20px;
+  justify-items: center;
+  max-width: 95%;
+  padding-left: 25px;
 }
 
 .app-list {
   background: #222329;
   color: var(--text-color);
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-top: 25px;
   padding: 10px;
-  min-height: 100%;
+  max-width: 400px;
   /*box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);*/
-  margin-bottom: 50px;
   border-radius: 5px;
 }
 
 .app-list p {
-  max-width: 293px;
+  max-width: 393px;
 }
 
 .role-spacing{
@@ -61,12 +62,18 @@
 
 @media screen and (max-width: 1034px) {
     .app-list-container {
-        flex-direction: column;
+        grid-template-columns: 1fr 1fr;
     }
 
     .app-list p {
         max-width: 95%;
     }
+}
+
+@media screen and (max-width: 508px) {
+  .app-list-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .app-open{

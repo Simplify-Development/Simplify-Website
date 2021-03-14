@@ -8,13 +8,16 @@ export function AppListPage({
     history,
 }) {
     const [apps, setApps] = React.useState([])
+    const [loading, setLoading] = React.useState(true)
 
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
                 if (data.whitelisted === false) {
-                    window.location.href = "/"
+                    return window.location.href = "/"
                 }
+
+                setLoading(false)
             }).catch((err) => {
                 window.location.href = "/"
             })
@@ -62,7 +65,7 @@ export function AppListPage({
             })
     }, [])
 
-    return (
+    return !loading && (
         <body>
             <div className="nav">
 
@@ -86,7 +89,6 @@ export function AppListPage({
                 <Link to="/dashboard">
                     <button className="login-btn">
                         Dashboard
-                        <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
                     </button>
                 </Link>
             </div>

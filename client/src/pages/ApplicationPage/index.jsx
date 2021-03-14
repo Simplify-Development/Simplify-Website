@@ -19,7 +19,6 @@ export function ApplicationPage( {
         }).catch( (err) => {
             console.error(err)
             window.location.href = `https://simplify-code.com/api/auth/discord`
-            setLoading(false);
         })
     }, [])
  
@@ -74,7 +73,6 @@ export function ApplicationPage( {
             <Link to="/">
                 <button className="login-btn">
                     Home
-                    <a class="login-btn-logo"><i class="fas fa-home"></i></a>
                 </button>
             </Link>
         </div>
@@ -115,6 +113,30 @@ export function ApplicationPage( {
             </div>
 
             <div className="app-list">
+                <h2 className="app-title">Content Creator</h2>
+                <p className="app-desc">
+                    As this role you will not be doing to much, this is more to grow your platform.
+                </p>
+                <div className="app-bottom">
+                    <div className="role-spacing">
+                        <Link to="/creator"><button className="open-btn">Open</button></Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="app-list">
+                <h2 className="app-title">Art Poster</h2>
+                <p className="app-desc">
+                   As this role your job is to post peoples art, you will be reviewing their art before posting it.
+                </p>
+                <div className="app-bottom">
+                    <div className="role-spacing">
+                        <Link to="/art"><button className="open-btn">Open</button></Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className="app-list">
                 <h2 className="app-title">Development</h2>
                 <p className="app-desc">
                     Your job as this role is to develop stuff for the server, this can be everything from a website to a discord bot. Take note this role is a bit harder to get.
@@ -123,6 +145,18 @@ export function ApplicationPage( {
                     <div className="role-spacing">
                         <button className="closed-btn" onClick={closed}>Closed</button>
                     </div> 
+                </div>
+            </div>
+
+            <div className="app-list">
+                <h2 className="app-title">Ban Appeal</h2>
+                <p className="app-desc">
+                   This is for users that has been banned from our server and feel like they deserve another chance.
+                </p>
+                <div className="app-bottom">
+                    <div className="role-spacing">
+                        <Link to="/appeal"><button className="open-btn">Open</button></Link>
+                    </div>
                 </div>
             </div>
         </div>

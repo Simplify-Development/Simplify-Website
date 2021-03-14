@@ -71,7 +71,6 @@ export function DashboardPage( {
         }).catch( (err) => {
             console.error(err)
             window.location.href = `https://simplify-code.com/api/auth/discord`
-            setLoading(false);
         })
     }, [])
 
@@ -99,8 +98,7 @@ export function DashboardPage( {
 
                 <Link to="/">
                     <button className="login-btn">
-                        Home
-                        <a class="login-btn-logo"><i class="fas fa-home"></i></a>
+                        Home               
                     </button>
                 </Link>
             </div>

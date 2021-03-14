@@ -24,7 +24,6 @@ export function SupportPage(props) {
         }).catch( (err) => {
             console.error(err)
             window.location.href = `https://simplify-code.com/api/auth/discord`
-            setLoading(false);
         })
     }, [])
 
@@ -61,7 +60,7 @@ export function SupportPage(props) {
 
     function submitHandler(event) {
 
-        if (text.length > 398) {
+        if (text.length > 1) {
 
             getUserDetails().then(async result => {
                 const content = {
@@ -70,7 +69,7 @@ export function SupportPage(props) {
                     id: result.data.discordId,
                     user: result.data.username,
                     tag: result.data.tag,
-                    appType: 'Staff Application'
+                    appType: 'Support Team'
                 }
 
                 function getApplications() {
@@ -123,7 +122,6 @@ export function SupportPage(props) {
                 <Link to="/dashboard">
                     <button className="login-btn">
                         Dashboard
-        <a class="login-btn-logo"><i class="fas fa-address-book"></i></a>
                     </button>
                 </Link>
             </div>
@@ -144,7 +142,7 @@ export function SupportPage(props) {
                         <input type="checkbox" onClick={
                             checkHandler
                         } />
-                        <p className="check-tag">I meet and agree to all the requirements</p>
+                        <p className="check-tag">I have read the requirements and confirm that I meet them.</p>
                     </div>
                     <h2 className="app-title" >APPLICATION</h2>
                     <CKEditor
