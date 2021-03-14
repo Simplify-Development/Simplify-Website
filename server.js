@@ -101,7 +101,7 @@ client.on("message", async message => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been accepted by <@${message.author.id}>\n\n> If you want to talk to staff about this then contact our modmail`)
+                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been accepted by <@${message.author.id}>\n\n> If you want to talk to staff about this then contact our modmail`)
                 await applicationSchema.findOneAndDelete({ applicationId: applicationId })
                 message.delete()
             } else if (!data) {
@@ -118,7 +118,7 @@ client.on("message", async message => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been denied by <@${message.author.id}>\n\n> If you want to talk to staff about this then contact our modmail`)
+                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been denied by <@${message.author.id}>\n\n> If you want to talk to staff about this then contact our modmail`)
                 await applicationSchema.findOneAndDelete({ applicationId: applicationId })
                 message.delete()
             } else if (!data) {
