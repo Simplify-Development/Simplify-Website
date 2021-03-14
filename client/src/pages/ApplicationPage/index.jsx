@@ -137,18 +137,6 @@ export function ApplicationPage( {
             </div>
 
             <div className="app-list">
-                <h2 className="app-title">Development</h2>
-                <p className="app-desc">
-                    Your job as this role is to develop stuff for the server, this can be everything from a website to a discord bot. Take note this role is a bit harder to get.
-                </p>
-                <div className="app-bottom">
-                    <div className="role-spacing">
-                        <button className="closed-btn" onClick={closed}>Closed</button>
-                    </div> 
-                </div>
-            </div>
-
-            <div className="app-list">
                 <h2 className="app-title">Ban Appeal</h2>
                 <p className="app-desc">
                    This is for users that has been banned from our server and feel like they deserve another chance.
@@ -160,6 +148,18 @@ export function ApplicationPage( {
                 </div>
             </div>
         </div>
+
+        <div className="app-list">
+                <h2 className="app-title">Development</h2>
+                <p className="app-desc">
+                    Your job as this role is to develop stuff for the server, this can be everything from a website to a discord bot. Take note this role is a bit harder to get.
+                </p>
+                <div className="app-bottom">
+                    <div className="role-spacing">
+                        <button className="closed-btn" onClick={closed}>Closed</button>
+                    </div> 
+                </div>
+            </div>
 
 
         <div className="footer-container">
