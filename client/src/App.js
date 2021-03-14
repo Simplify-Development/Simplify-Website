@@ -20,11 +20,11 @@ function App() {
       <Route path="/privacy" exact={ true }  component={PrivacyPage} />
       <Route path="/dashboard" exact={ true }  component={DashboardPage} />
       <Route path="/applications" exact={ true }  component={ApplicationPage} />
-      <Route path="/staff" exact={ true }  component={StaffPage} />
-      <Route path="/support" exact={ true }  component={SupportPage} />
-      <Route path="/creator" exact={ true }  component={ContentCreatorPage} />
-      <Route path="/appeal" exact={ true }  component={BanAppealPage} />
-      <Route path="/art" exact={ true }  component={ArtPosterPage} />
+      <Route path="/applications/staff" exact={ true }  component={StaffPage} />
+      <Route path="/applications/support" exact={ true }  component={SupportPage} />
+      <Route path="/applications/creator" exact={ true }  component={ContentCreatorPage} />
+      <Route path="/applications/appeal" exact={ true }  component={BanAppealPage} />
+      <Route path="/applications/art" exact={ true }  component={ArtPosterPage} />
       <Route path="/applications/review" exact={ true }  component={AppListPage } />
       <Route path="/applications/review/:id" component={ReviewPage} />
       <Route component={PageNotFound} />

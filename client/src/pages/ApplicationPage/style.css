@@ -1,106 +1,88 @@
-.app-desc-box a {
-  color: #0075d5;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.app-desc-box {
-  color: var(--text-color);
-  background: #222329;
-  padding: 20px;
-  /*box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);*/
-  margin-left: 25px;
-  margin-right: 25px;
-  border-radius: 5px;
-}
-
-.app-desc-box-container {
+.applications-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 200px;
-  margin-bottom: 50px;
+  max-width: 100%;
 }
 
-.app-desc-box p {
-  font-size: 20px;
-  max-width: 1000px;
-}
-
-.app-list-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 200px;
-  grid-gap: 20px;
-  justify-items: center;
-  max-width: 95%;
-  padding-left: 25px;
-}
-
-.app-list {
-  background: #222329;
-  color: var(--text-color);
-  margin-top: 25px;
-  padding: 10px;
-  max-width: 400px;
-  /*box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);*/
-  border-radius: 5px;
-}
-
-.app-list p {
-  max-width: 393px;
-}
-
-.role-spacing{
-    padding-top: 20px;
-    display: flex;
-    justify-content: baseline;
-
-}
-
-@media screen and (max-width: 1034px) {
-    .app-list-container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .app-list p {
-        max-width: 95%;
-    }
-}
-
-@media screen and (max-width: 508px) {
-  .app-list-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.app-open{
-  border-radius: 15px;
-  border: 1px solid #27f550;
-  color: #27f550;
-  background: none;
-  margin: 2.5px;
-  padding-bottom: 2px;
-  padding-top: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
-  font-size: 17px;
+.applications{
+  display: flex;
+  flex-direction: column;
   position: relative;
+  width: 1500px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 100px auto 0;
+  margin-bottom: 230px;
+  max-width: 85%;
 }
 
-.app-closed {
-    border-radius: 15px;
-    border: 1px solid #ff2d26;
-    color: #ff2d26;
-    background: none;
-    margin: 2.5px;
-    padding-bottom: 2px;
-    padding-top: 0px;
-    padding-left: 6px;
-    padding-right: 6px;
-    font-size: 17px;
+.app-top {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 1500px;
+  bottom: -120px;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 100px auto 0;
+  max-width: 85%;
+}
+
+.app-top li {
+  display: flex;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgba(47, 53, 65, 0.479);
+  padding: 15px 20px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.349);
+}
+
+.applications li {
+  display: flex;
+  background: rgba(55, 65, 83, 0.171);
+  padding: 10px 20px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.applications li:hover {
+  cursor: pointer;
+}
+
+.applications button:hover {
+  cursor: pointer;
+}
+
+.applications li span:nth-child(1) {
+  width: 200px;
+  text-align: left;
+}
+
+.app-top li span:nth-child(1) {
+  position: relative;
+  left: -20px;
+}
+.app-top li span:nth-child(2) {
+  position: relative;
+  left: 25px;
+}
+
+
+.app-name {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .app-open:hover {
@@ -116,30 +98,32 @@
 }
 
 .open-btn {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 20px;
-  padding-left: 20px;
-  background: #1cef5b;
-  color: #1d1e22;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #b0eed3;
+  color: #1aae6f;
+  text-transform: uppercase;
   outline: none;
   border: none;
-  font-size: 20.7px;
-  border-radius: 3px;
+  font-size: 12.7px;
+  border-radius: 7px;
   margin-left: 10px;
 }
 
 .closed-btn {
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-right: 20px;
-  padding-left: 20px;
-  background: #f5365c;
-  color: #1d1e22;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #ee6c6c;
+  color: #971a15;
+  text-transform: uppercase;
   outline: none;
   border: none;
-  font-size: 20.7px;
-  border-radius: 3px;
+  font-size: 12.7px;
+  border-radius: 7px;
   margin-left: 10px;
 }
 
