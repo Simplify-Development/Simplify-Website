@@ -122,11 +122,11 @@ export function DashboardPage( {
 
             <div className="app-container">
                 <div className="app-box">
-                    <h1>How to apply</h1>
+                    <h1>Applications</h1>
                     <p>
-                        If you want to become staff, support or any other role, then apply here.
-                        Fill out the given questions and await a response from our bot <span className="discord-color-span">@Simplify Utilities#8736</span>.
-                        If you wonder why we ask you specific questions read <Link to="/faq"><a>FAQ</a></Link> or message our <a onClick={() => {window.open("https://discord.com/invite/96MAcmwA", "_blank")}}>ModMail</a>. <br/>
+                        Want to help the server? If you would like do something in our server like moderate, give support or help with development then you can apply here.
+                        Click bellow find the application you want, fill it out and await a response from our bot
+                        <span className="discord-color-span"> @Simplify Utilities#8736</span>.<br/>
                         <Link to="/applications">
                             <button className="application-btn">
                             New<i class="fas fa-pencil-alt"></i>
