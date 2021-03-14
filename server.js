@@ -14,6 +14,7 @@ const MongoStore = require('connect-mongo').default;
 const cors = require('cors');
 const path = require('path')
 
+// Ensures that the client is on the https server
 app.use((req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
         if (req.headers.host === 'simplify-websote.herokuapp.com')
