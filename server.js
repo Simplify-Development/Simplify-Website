@@ -14,6 +14,18 @@ const MongoStore = require('connect-mongo').default;
 const cors = require('cors');
 const path = require('path')
 
+app.use((req, res, next) => {
+    if (process.env.NODE_ENV === 'production') {
+        if (req.headers.host === 'simplify-websote.herokuapp.com')
+            return res.redirect(301, 'https://simplify-code.com');
+        if (req.headers['x-forwarded-proto'] !== 'https')
+            return res.redirect('https://' + req.headers.host + req.url);
+        else
+            return next();
+    } else
+        return next();
+});
+
 
 
 // Connecting to MongoDB
