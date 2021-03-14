@@ -109,7 +109,7 @@ client.on("message", async message => {
             }
         })
     } else if (command === 'deny') {
-        if (!message.author.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
+        if (!message.member.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
