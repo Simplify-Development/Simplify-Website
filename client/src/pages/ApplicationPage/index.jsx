@@ -147,9 +147,8 @@ export function ApplicationPage( {
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div className="app-list">
+            
+            <div className="app-list">
                 <h2 className="app-title">Development</h2>
                 <p className="app-desc">
                     Your job as this role is to develop stuff for the server, this can be everything from a website to a discord bot. Take note this role is a bit harder to get.
@@ -160,6 +159,7 @@ export function ApplicationPage( {
                     </div> 
                 </div>
             </div>
+        </div>
 
 
         <div className="footer-container">
