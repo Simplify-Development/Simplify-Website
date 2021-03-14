@@ -79,6 +79,7 @@ client.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     if (command === 'accept') {
+        if (!message.author.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
@@ -95,6 +96,7 @@ client.on("message", async message => {
             }
         })
     } else if (command === 'deny') {
+        if (!message.author.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
@@ -115,7 +117,7 @@ client.on("message", async message => {
         if (!user) {
             return message.reply('Sorry but I can\'t find that user')
         }
-        if (!user.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
+        if (!message.member.roles.cache.has('756195815197769840')) return message.reply('Sorry but you can\'t use this command')
 
         const users = require('./src/database/schemas/User-Schema')
         users.findOne({ discordId: user.id }, async (err, data) => {
