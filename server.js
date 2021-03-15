@@ -113,12 +113,17 @@ client.on("message", async message => {
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
+
+        if (!args[1]) return message.reply("Please state a reason for why you are declining this application")
+
+        let reason = args.join(" ").slice(args[0].length)
+
         const applicationId = args[0]
         applicationSchema.findOne({ applicationId: applicationId }, async (err, data) => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been denied by <@${message.author.id}>\n\n> If you want to talk to staff about this then contact our modmail`)
+                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been denied by <@${message.author.id}>\n\n> Stated reason : ${reason}\n\n> If you want to talk to staff about this then contact our modmail`)
                 await applicationSchema.findOneAndDelete({ applicationId: applicationId })
                 message.delete()
             } else if (!data) {
