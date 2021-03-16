@@ -10,8 +10,9 @@ li {
 .application-bar {
     padding-top: 10px;
     padding-left: 10px;
-    background:  rgba(37, 40, 48, 0.486);
-    border-bottom: 2px solid rgb(38, 41, 53);
+    background: rgba(55, 65, 83, 0.171);
+    margin-bottom: 10px;
+    border-radius: 3px;
 }
 
 .application-bar:hover {
@@ -34,9 +35,11 @@ li {
 }
 
 .app-tags {
-    background: #222329;
+    background-color: rgba(47, 53, 65, 0.479);
+    border-radius: 3px;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     padding: 10px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.349);
 }
