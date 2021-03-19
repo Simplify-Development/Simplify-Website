@@ -14,7 +14,7 @@ export function AppListPage({
         getUserDetails()
             .then(({ data }) => {
                 if (data.whitelisted === false) {
-                    //return window.location.href = "/"
+                    return window.location.href = "/"
                 }
 
                 setLoading(false)
