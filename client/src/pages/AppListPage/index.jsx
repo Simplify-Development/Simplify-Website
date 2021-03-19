@@ -19,8 +19,7 @@ export function AppListPage({
 
                 setLoading(false)
             }).catch((err) => {
-                //window.location.href = "/"
-                setLoading(false)
+                window.location.href = "/"
             })
     }, [])
 
