@@ -106,7 +106,7 @@ export function FaqPage(props) {
                 <div className="page-cont">
                     <ul className="nav-links">
                     <Link><li><a className="aa" onClick={() => {
-                            window.open("https://discord.com/invite/96MAcmwA", "_blank")
+                            window.open("https://discord.gg/XveJX7Z", "_blank")
                         }}>Discord</a></li></Link>
                         <Link to="/rules"><li><a className="ab" >Rules</a></li></Link>
                         <Link to="/team"><li><a className="ac" >Team</a></li></Link>
@@ -133,7 +133,7 @@ export function FaqPage(props) {
                 ))}
             </div>
             <div className="bottom-faq">
-                <p>If you did not find a answer to your question then please let us know in <a className="faq-bottom" onClick={() => window.open("https://discord.com/invite/96MAcmwA", "_blank")}>discord</a>.</p>
+                <p>If you did not find a answer to your question then please let us know in <a className="faq-bottom" onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}>discord</a>.</p>
             </div>
 
             <div className="footer-container">
@@ -146,7 +146,7 @@ export function FaqPage(props) {
                             <p>© Simplify Development 2020-2021</p>
                         </div>
                         <ul className="icons">
-                            <li><a onClick={() => window.open("https://discord.com/invite/96MAcmwA", "_blank")}><i class="fab fa-discord"></i></a></li>
+                            <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}><i class="fab fa-discord"></i></a></li>
                             <li><a onClick={() => window.open("https://github.com/Simplify-Development", "_blank")}><i class="fab fa-github"></i></a></li>
                         </ul>
                     </div>
@@ -163,8 +163,8 @@ export function FaqPage(props) {
                         <div className="reacources">
                             <h2>Resources</h2>
                             <ul>
-                                <li><a onClick={() => window.open("https://discord.com/invite/96MAcmwA", "_blank")}>Support</a></li>
-                                <li><a onClick={() => window.open("https://discord.com/invite/96MAcmwA", "_blank")}>Contact</a></li>
+                                <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}>Support</a></li>
+                                <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}>Contact</a></li>
                             </ul>
                         </div>
                     </div>
