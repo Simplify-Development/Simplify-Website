@@ -17,6 +17,7 @@ const path = require('path')
 // Ensures that the client is on the https server
 app.use((req, res, next) => {
     if (process.env.NODE_ENV === 'production') {
+        // Redirects if the client is on the heorku server
         if (req.headers.host === 'simplify-website.herokuapp.com')
             return res.redirect(301, 'https://simplify-code.com');
         if (req.headers['x-forwarded-proto'] !== 'https')
@@ -36,11 +37,12 @@ mongoose.connect(process.env.MONGO_URL, {
     useFindAndModify: false
 })
 
-// Connection to the frontend
+// Connection to the frontend with cors
 app.use(cors({
     origin: ['https://simplify-code.com'],
     credentials: true
 }))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
@@ -175,7 +177,7 @@ client.login(process.env.token);
 
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build")); // change this if your dir structure is different
+    app.use(express.static("client/build"));
     app.get("*", (req, res) => {
       res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });

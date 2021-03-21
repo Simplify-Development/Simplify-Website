@@ -1,3 +1,4 @@
+// Encrypting and decrypting OAuth2 data from and to MongoDB
 const Crypto = require('crypto-js')
 
 function encrypt(token) {
