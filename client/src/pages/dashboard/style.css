@@ -18,24 +18,25 @@
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 50px;
-  background: #222329;
+  background: rgba(57, 71, 99, 0.171);
   color: var(--text-color);
   padding: 20px;
   width: 450px;
-  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
   transition: all ease-in-out 0.5s;
+  -webkit-box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.6); 
+box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.25);
 }
 
 .info-box h1 {
-  font-size: 65px;
+  font-size: 45px;
   font-weight:inherit;
   text-align: right;
+  margin-right: 15px;
 }
 
 .info-box h2 {
-  font-size: 30px;
+  font-size: 27px;
+  font-weight: inherit;
 }
 
 .app-container {
@@ -47,19 +48,19 @@
 .app-box {
   margin-top: 20px;
   margin-bottom: 200px;
-  background: #222329;
+  background: rgba(57, 71, 99, 0.171);
   color: var(--text-color);
   padding: 20px;
   width: 980px;
   max-width: 92%;
-  box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 11px 43px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.6); 
+  box-shadow: 5px 5px 17px 5px rgba(0,0,0,0.2);
 }
 
 .app-box h1 {
-  font-size: 40px;
-  padding-bottom: 5px;
+  font-size: 33px;
+  padding-bottom: 10px;
+  font-weight: inherit;
 }
 
 .app-box p {

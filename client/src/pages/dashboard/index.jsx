@@ -6,36 +6,36 @@ import axios from 'axios';
 import CountUp from 'react-countup';
 import { toast } from 'react-toastify'
 
-export function DashboardPage( {
+export function DashboardPage({
     history,
 }) {
 
-    const [user, setUser] = React.useState( null );
-    const [loading, setLoading ] = React.useState( true )
+    const [user, setUser] = React.useState(null);
+    const [loading, setLoading] = React.useState(true)
     const [count, setCount] = React.useState(0);
     const [apps, setApps] = React.useState(0)
 
     const getNumberOfUsers = () => {
         axios.get('https://simplify-code.com/api/users')
-        .then((res) => {
-            const data = res.data;
-            setCount(data)
-        })
-        .catch(() => {
-            console.log('There was an error getting the number of users.')
-        })
+            .then((res) => {
+                const data = res.data;
+                setCount(data)
+            })
+            .catch(() => {
+                console.log('There was an error getting the number of users.')
+            })
     }
     getNumberOfUsers()
 
     const getNumberOfApps = () => {
         axios.get('https://simplify-code.com/api/apps')
-        .then((res) => {
-            const data = res.data;
-            setApps(data)
-        })
-        .catch(() => {
-            console.log('There was an error getting the number of applications.')
-        })
+            .then((res) => {
+                const data = res.data;
+                setApps(data)
+            })
+            .catch(() => {
+                console.log('There was an error getting the number of applications.')
+            })
     }
     getNumberOfApps()
 
@@ -62,16 +62,16 @@ export function DashboardPage( {
     }
 
 
-    React.useEffect( () => {
+    React.useEffect(() => {
         getUserDetails()
-        .then( ( { data } ) => {
-            setUser( data );
-            console.log(data)
-            setLoading(false);
-        }).catch( (err) => {
-            console.error(err)
-            window.location.href = `https://simplify-code.com/api/auth/discord`
-        })
+            .then(({ data }) => {
+                setUser(data);
+                console.log(data)
+                setLoading(false);
+            }).catch((err) => {
+                console.error(err)
+                window.location.href = `https://simplify-code.com/api/auth/discord`
+            })
     }, [])
 
     return !loading && (
@@ -81,7 +81,7 @@ export function DashboardPage( {
 
                 <div className="page-cont">
                     <ul className="nav-links">
-                    <Link><li><a className="aa" onClick={() => {
+                        <Link><li><a className="aa" onClick={() => {
                             window.open("https://discord.gg/XveJX7Z", "_blank")
                         }}>Discord</a></li></Link>
                         <Link to="/rules"><li><a className="ab" >Rules</a></li></Link>
@@ -98,7 +98,7 @@ export function DashboardPage( {
 
                 <Link to="/">
                     <button className="login-btn">
-                        Home               
+                        Home
                     </button>
                 </Link>
             </div>
@@ -124,15 +124,14 @@ export function DashboardPage( {
                 <div className="app-box">
                     <h1>Applications</h1>
                     <p>
-                        Want to help the server? If you would like do something in our server like moderate, give support or help with development then you can apply here.
-                        Click bellow find the application you want, fill it out and await a response from our bot
-                        <span className="discord-color-span"> @Simplify Utilities#8736</span>.<br/>
-                        <Link to="/applications">
-                            <button className="application-btn">
-                            New<i class="fas fa-pencil-alt"></i>
-                            </button>
-                        </Link>
+                        If you are going to apply then please make sure to take your time, it should take at least 5-10 minutes to fill out a application, 
+                        depending on the application of course
                     </p>
+                    <Link to="/applications">
+                        <button className="application-btn">
+                            New<i class="fas fa-pencil-alt"></i>
+                        </button>
+                    </Link>
                 </div>
             </div>
 
