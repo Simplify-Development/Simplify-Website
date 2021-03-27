@@ -58,7 +58,6 @@ passport.use(new DiscordStrategy({
                 discordId: profile.id,
                 username: `${profile.username}`,
                 tag: `${profile.discriminator}`,
-                whitelisted: false
             });
             const newCredentials = await OAuth2Credentials.create({
                 accessToken: encryptedAccessToken,

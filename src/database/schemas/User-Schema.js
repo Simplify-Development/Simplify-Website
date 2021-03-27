@@ -15,11 +15,7 @@ const userSchema = new mongoose.Schema({
     tag: {
         type: String,
         required: true
-    },
-    whitelisted: {
-        type: Boolean,
-        required: true
-    } 
+    }
 })
 
 // Exporting the file
