@@ -44,9 +44,7 @@ export function ReviewPage({
         getUserDetails()
             .then(({ data }) => {
                 getWhitelistStatus(data.discordId).then(({ data }) => {
-                    if (data.message === "No") {
-                        window.location.href = "/"
-                    } else {
+                    if (data.message === "Yes") {
                         setLoading(false)
 
                         getApplication().then(({ data }) => {
@@ -57,6 +55,8 @@ export function ReviewPage({
                             console.log(err)
                             history.push("/404")
                         })
+                    } else {
+                        window.location.href = "/"     
                     }
                 }).catch(() => {
                     window.location.href = "/"

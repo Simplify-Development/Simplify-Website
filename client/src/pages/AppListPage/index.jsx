@@ -14,10 +14,10 @@ export function AppListPage({
         getUserDetails()
             .then(({ data }) => {
                 getWhitelistStatus(data.discordId).then(({ data }) => {
-                    if (data.message === "No") {
-                        window.location.href = "/"
-                    } else {
+                    if (data.message === "Yes") {
                         setLoading(false)
+                    } else {
+                        window.location.href = "/"
                     }
                 }).catch(() => {
                     window.location.href = "/"
