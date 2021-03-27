@@ -6,3 +6,9 @@ export function getUserDetails()  {
         withCredentials: true
     })
 }
+
+export function getWhitelistStatus(userId) {
+    return axios.get(`https://simplify-code.com/api/checkperms/${userId}`, {
+        withCredentials: true
+    })
+}

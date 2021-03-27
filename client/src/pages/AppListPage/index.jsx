@@ -2,7 +2,7 @@ import React from "react";
 import './style.css';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-import { getUserDetails } from '../../utils/api'
+import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 
 export function AppListPage({
     history,
@@ -13,11 +13,15 @@ export function AppListPage({
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
-                if (data.whitelisted === false) {
-                    return window.location.href = "/"
-                }
-
-                setLoading(false)
+                getWhitelistStatus(data.discordId).then(({ data }) => {
+                    if (data.message === "No") {
+                        window.location.href = "/"
+                    } else {
+                        setLoading(false)
+                    }
+                }).catch(() => {
+                    window.location.href = "/"
+                })
             }).catch((err) => {
                 window.location.href = "/"
             })

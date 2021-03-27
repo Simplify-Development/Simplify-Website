@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { getUserDetails } from '../../utils/api'
+import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 
 export function ReviewPage({
     history,
@@ -43,19 +43,23 @@ export function ReviewPage({
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
-                if (data.whitelisted === false) {
-                    return window.location.href = "/"
-                }
+                getWhitelistStatus(data.discordId).then(({ data }) => {
+                    if (data.message === "No") {
+                        window.location.href = "/"
+                    } else {
+                        setLoading(false)
 
-                setLoading(false)
-
-                getApplication().then(({ data }) => {
-                    setContent(data)
-                    if (data.reqs === false) setRequirements('No')
-                    if (data.reqs === true) setRequirements('Yes')
-                }).catch(err => {
-                    console.log(err)
-                    history.push("/404")
+                        getApplication().then(({ data }) => {
+                            setContent(data)
+                            if (data.reqs === false) setRequirements('No')
+                            if (data.reqs === true) setRequirements('Yes')
+                        }).catch(err => {
+                            console.log(err)
+                            history.push("/404")
+                        })
+                    }
+                }).catch(() => {
+                    window.location.href = "/"
                 })
             }).catch(() => {
                 window.location.href = "/"
