@@ -4,11 +4,13 @@ const users = require('./users')
 const apps = require('./apps')
 const app = require('./newapp')
 const appList = require('./appList')
+const checkPerms = require('./checkPerms')
 
 router.use("/auth", auth)
 router.use("/users", users)
 router.use("/apps", apps)
 router.use("/newapp", app)
 router.use("/applist", appList)
+router.use("/checkperms", checkPerms)
 
 module.exports = router;
