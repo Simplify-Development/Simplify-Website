@@ -81,7 +81,7 @@ export function DashboardPage({
                 window.location.href = `https://simplify-code.com/api/auth/discord`
             })
     }, [])
-    
+
     return !loading && (
         <body>
 
@@ -140,7 +140,7 @@ export function DashboardPage({
 
                 <li className="dashboard-tags" key="tags">
                     <span>Application</span>
-                    <span>Status</span>
+                    <span className="status">Status</span>
                     <span>Applied on</span>
                 </li>
 
@@ -148,7 +148,7 @@ export function DashboardPage({
                     return (
                         <li key={app.applicationId} className="dashboard-bar">
                             <span>{app.appType} </span>
-                            <span>Pending </span>
+                            <span className={app.status}>{app.status} </span>
                             <span>{app.date}</span>
                         </li>
                     )

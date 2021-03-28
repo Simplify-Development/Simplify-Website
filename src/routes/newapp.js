@@ -24,7 +24,8 @@ router.route("/").post(async (req, res) => {
         discordId,
         applicationId,
         tag,
-        date: dateFormat(now, "mm/dd/yyyy")
+        date: dateFormat(now, "mm/dd/yyyy"),
+        status: 'Pending'
     })
     newData.save()
 

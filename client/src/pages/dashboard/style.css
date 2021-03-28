@@ -148,6 +148,23 @@
   font-weight: inherit;
 }
 
+.status {
+  position: relative;
+  left: 20px;
+}
+
+.Pending {
+  color: rgb(214, 195, 18);
+}
+
+.Accepted {
+  color: #17ca7d;
+}
+
+.Declined {
+  color: #e0150e;
+}
+
 @media screen and (max-width: 576px) {
   .info-container {
     display: flex;

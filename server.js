@@ -104,7 +104,13 @@ client.on("message", async message => {
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
                 channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been accepted by <@${message.author.id}>\n\n> You should expect instructions soon`)
-                await applicationSchema.findOneAndDelete({ applicationId: applicationId })
+                await applicationSchema.findOneAndUpdate({
+                    applicationId: applicationId
+                }, {
+                    status: 'Accepted'
+                }, {
+                    upsert: true
+                })
                 message.delete()
             } else if (!data) {
                 return message.reply("That is not a application")
@@ -126,7 +132,13 @@ client.on("message", async message => {
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
                 channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been denied by <@${message.author.id}>\n\n> Stated reason : ${reason}\n\n> If you want to talk to staff about this then contact our modmail`)
-                await applicationSchema.findOneAndDelete({ applicationId: applicationId })
+                await applicationSchema.findOneAndUpdate({
+                    applicationId: applicationId
+                }, {
+                    status: 'Declined'
+                }, {
+                    upsert: true
+                })
                 message.delete()
             } else if (!data) {
                 return message.reply("That is not a application")
