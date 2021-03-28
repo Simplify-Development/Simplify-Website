@@ -185,7 +185,7 @@ client.on("message", async message => {
     }
 })
 
-module.exports = { client }
+module.exports = client;
 
 client.login(process.env.token);
 

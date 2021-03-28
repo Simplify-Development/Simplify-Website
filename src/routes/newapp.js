@@ -4,7 +4,7 @@ const totalSchema = require('../database/schemas/total-schema')
 const random = require('randomstring')
 const dateFormat = require("dateformat")
 const now = new Date();
-const { client } = require('../../server')
+const { users } = require('../../server')
 
 
 router.route("/").post(async (req, res) => {
@@ -29,7 +29,7 @@ router.route("/").post(async (req, res) => {
         status: 'Pending'
     })
     newData.save().then(() => {
-        client.users.cache.get(discordId).send(`Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.`)
+        users.cache.get(discordId).send(`Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.`)
     })
 
     await totalSchema.findOneAndUpdate({
