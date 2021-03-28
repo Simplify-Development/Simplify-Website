@@ -62,8 +62,8 @@ export function DashboardPage({
         burger.classList.toggle('toggle')
     }
 
-    async function getUsersApplications() {
-        await axios.get(`https://simplify-code.com/api/applist`)
+    function getUsersApplications() {
+        return axios.get(`https://simplify-code.com/api/applist`)
     }
 
 
