@@ -1,10 +1,9 @@
-const router = require('express').Router();
+/*const router = require('express').Router();
 const schema = require('../database/schemas/App-Schema')
 const totalSchema = require('../database/schemas/total-schema')
 const random = require('randomstring')
 const dateFormat = require("dateformat")
 const now = new Date();
-const { users } = require('../../server')
 
 
 router.route("/").post(async (req, res) => {
@@ -29,7 +28,7 @@ router.route("/").post(async (req, res) => {
         status: 'Pending'
     })
     newData.save().then(() => {
-        users.cache.get(discordId).send(`Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.`)
+        client.users.cache.get(discordId).send(`Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.`)
     })
 
     await totalSchema.findOneAndUpdate({
@@ -45,4 +44,4 @@ router.route("/").post(async (req, res) => {
 })
 
 
-module.exports = router;
+module.exports = router;*/
