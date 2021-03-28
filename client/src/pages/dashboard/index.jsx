@@ -63,7 +63,7 @@ export function DashboardPage({
     }
 
     async function getUsersApplications() {
-        axios.get(`https://simplify-code.com/api/applist`)
+        await axios.get(`https://simplify-code.com/api/applist`)
     }
 
 
@@ -71,8 +71,9 @@ export function DashboardPage({
         getUserDetails()
             .then(({ data }) => {
                 getUsersApplications().then(res => {
-                    const result = res.data.filter(id => id.discordId === `${data.discordId}`)
-                    setApplications(result)
+                    //const result = data .filter(id => id.discordId === `${data.discordId}`)
+                    //setApplications(result)
+                    console.log(res)
                 })
                 setUser(data);
                 console.log(data)
