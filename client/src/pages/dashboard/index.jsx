@@ -62,10 +62,6 @@ export function DashboardPage({
         burger.classList.toggle('toggle')
     }
 
-    function getUsersApplications() {
-        return axios.get(`https://simplify-code.com/api/applist`)
-    }
-
 
     React.useEffect(() => {
         getUserDetails()
@@ -79,14 +75,13 @@ export function DashboardPage({
             })
     }, [])
 
+    function getUsersApplications() {
+        return axios.get(`https://simplify-code.com/api/userapps/${user.discordId}`)
+    }
+
     React.useEffect(() => {
-        getUsersApplications().then((data) => {
-            let userApps = []
-            for (let i = 0; i < data.length; i++) {
-                if (data[i].discordId === user.discordId)
-                userApps.push(data[i])
-            }
-            setApplications(userApps).then(() => console.log(applications));
+        getUsersApplications().then(({ data }) => {
+            setApplications(data)
         })
     }, [])
 
