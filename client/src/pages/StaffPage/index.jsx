@@ -68,7 +68,7 @@ export function StaffPage(props) {
                     id: result.data.discordId,
                     user: result.data.username,
                     tag: result.data.tag,
-                    appType: 'Staff Team'
+                    appType: 'Staff Application'
                 }
 
                 function getApplications() {

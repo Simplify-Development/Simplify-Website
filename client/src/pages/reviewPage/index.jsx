@@ -96,7 +96,7 @@ export function ReviewPage({
 
             <div className="app-background">
                 <div className="editor-container">
-                    <h1 className="review-title">{content.user}'s {content.appType} application</h1>
+                    <h1 className="review-title">{content.user}'s {content.appType}</h1>
                     <CKEditor
                         data={`${content.content}`}
                         editor={ClassicEditor}
@@ -106,7 +106,7 @@ export function ReviewPage({
                         <p>Discord user info : {content.user}#{content.tag} ({content.discordId})</p> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
                         <p>
-                            To accpets this application use "-accept {content.applicationId}"<br /><br />
+                        To accpets this application use "-accept {content.applicationId}"<br /><br />
                         To decline this application use "-deny {content.applicationId}"
                     </p>
                     </div>

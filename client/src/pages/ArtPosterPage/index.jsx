@@ -69,7 +69,7 @@ export function ArtPosterPage(props) {
                     id: result.data.discordId,
                     user: result.data.username,
                     tag: result.data.tag,
-                    appType: 'Art Poster'
+                    appType: 'Art Poster Application'
                 }
 
                 function getApplications() {

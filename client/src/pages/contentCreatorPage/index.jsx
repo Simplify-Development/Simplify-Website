@@ -69,7 +69,7 @@ export function ContentCreatorPage(props) {
                     id: result.data.discordId,
                     user: result.data.username,
                     tag: result.data.tag,
-                    appType: 'Content Creator'
+                    appType: 'Content Creator Application'
                 }
 
                 function getApplications() {

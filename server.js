@@ -99,11 +99,11 @@ client.on("message", async message => {
             return message.reply("Please include the application ID")
         }
         const applicationId = args[0]
-        applicationSchema.findOne({ applicationId: applicationId }, async (err, data) => {
+        applicationSchema.findOne({ applicationId: applicationId, status: 'Pending' }, async (err, data) => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been accepted by <@${message.author.id}>\n\n> You should expect instructions soon`)
+                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been accepted by <@${message.author.id}>\n\n> You should expect instructions soon`)
                 await applicationSchema.findOneAndUpdate({
                     applicationId: applicationId
                 }, {
@@ -127,11 +127,11 @@ client.on("message", async message => {
         let reason = args.join(" ").slice(args[0].length)
 
         const applicationId = args[0]
-        applicationSchema.findOne({ applicationId: applicationId }, async (err, data) => {
+        applicationSchema.findOne({ applicationId: applicationId, status: 'Pending' }, async (err, data) => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType} application\`\` has been denied by <@${message.author.id}>\n\n> Stated reason : ${reason}\n\n> If you want to talk to staff about this then contact our modmail`)
+                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been denied by <@${message.author.id}>\n\n> Stated reason : ${reason}\n\n> If you want to talk to staff about this then contact our modmail`)
                 await applicationSchema.findOneAndUpdate({
                     applicationId: applicationId
                 }, {

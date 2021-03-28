@@ -69,7 +69,7 @@ export function SupportPage(props) {
                     id: result.data.discordId,
                     user: result.data.username,
                     tag: result.data.tag,
-                    appType: 'Support Team'
+                    appType: 'Support Application'
                 }
 
                 function getApplications() {
