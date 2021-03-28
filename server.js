@@ -185,8 +185,8 @@ client.on("message", async message => {
     }
 })
 
-const schema = require('../database/schemas/App-Schema')
-const totalSchema = require('../database/schemas/total-schema')
+const schema = require('./database/schemas/App-Schema')
+const totalSchema = require('./database/schemas/total-schema')
 const random = require('randomstring')
 const dateFormat = require("dateformat")
 const now = new Date();
