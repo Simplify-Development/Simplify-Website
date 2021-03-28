@@ -111,7 +111,7 @@ client.on("message", async message => {
                 }, {
                     upsert: true
                 })
-                message.delete()
+                return message.delete()
             } else if (!data) {
                 return message.reply("That is not a application")
             }
@@ -139,7 +139,7 @@ client.on("message", async message => {
                 }, {
                     upsert: true
                 })
-                message.delete()
+                return message.delete()
             } else if (!data) {
                 return message.reply("That is not a application")
             }
