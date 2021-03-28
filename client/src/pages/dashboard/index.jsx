@@ -63,9 +63,16 @@ export function DashboardPage({
     }
 
 
+    function getUsersApplications(discordId) {
+        return axios.get(`https://simplify-code.com/api/userapps/${discordId}`)
+    }
+
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
+                getUsersApplications(data.discordId).then((res) => {
+                    setApplications(res.data)
+                })
                 setUser(data);
                 console.log(data)
                 setLoading(false);
@@ -74,17 +81,7 @@ export function DashboardPage({
                 window.location.href = `https://simplify-code.com/api/auth/discord`
             })
     }, [])
-
-    function getUsersApplications() {
-        return axios.get(`https://simplify-code.com/api/userapps/${user.discordId}`)
-    }
-
-    React.useEffect(() => {
-        getUsersApplications().then(({ data }) => {
-            setApplications(data)
-        })
-    }, [])
-
+    
     return !loading && (
         <body>
 
