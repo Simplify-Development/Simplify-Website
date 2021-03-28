@@ -84,7 +84,7 @@ export function SupportPage(props) {
 
                         await axios.post('https://simplify-code.com/api/newapp', content).then(res => {
                             setText('')
-                            return toast.success('Application was submited, you are now awaiting a response from our management team.')
+                            window.location.href = "/dashboard"
                         }).catch(async () => {
                             return toast.error('Could not send the application to the database.')
                         })
