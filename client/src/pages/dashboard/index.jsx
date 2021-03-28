@@ -14,6 +14,7 @@ export function DashboardPage({
     const [loading, setLoading] = React.useState(true)
     const [count, setCount] = React.useState(0);
     const [apps, setApps] = React.useState(0)
+    const [applications, setApplications] = React.useState([])
 
     const getNumberOfUsers = () => {
         axios.get('https://simplify-code.com/api/users')
@@ -61,16 +62,25 @@ export function DashboardPage({
         burger.classList.toggle('toggle')
     }
 
+    async function getUsersApplications() {
+        axios.get(`https://simplify-code.com/api/applist`)
+    }
+
 
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
+                getUsersApplications().then(({ res }) => {
+                    const result = res.filter(id => id.discordId === `${data.discordId}`)
+                    setApplications(result)
+                })
                 setUser(data);
                 console.log(data)
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                //window.location.href = `https://simplify-code.com/api/auth/discord`
+                setLoading(false)
             })
     }, [])
 
@@ -122,18 +132,32 @@ export function DashboardPage({
 
             <div className="app-container">
                 <div className="app-box">
-                    <h1>Applications</h1>
-                    <p>
-                        If you are going to apply then please make sure to take your time, it should take at least 5-10 minutes to fill out a application, 
-                        depending on the application of course
-                    </p>
+                    <h1>Your Applications</h1>
                     <Link to="/applications">
                         <button className="application-btn">
-                            New<i class="fas fa-pencil-alt"></i>
+                            <i class="fas fa-pencil-alt"></i>New
                         </button>
                     </Link>
                 </div>
+
+                <li className="dashboard-tags" key="tags">
+                    <span>Application</span>
+                    <span>Status</span>
+                    <span>Applied on</span>
+                </li>
+
+                {applications.map(app => {
+                    return (
+                        <li key={app.applicationId} className="dashboard-bar">
+                            <span>{app.appType} </span>
+                            <span>Pending </span>
+                            <span>{app.date}</span>
+                        </li>
+                    )
+                })}
             </div>
+
+            <div className="dummy"></div>
 
             <div className="footer-container">
                 <footer>
