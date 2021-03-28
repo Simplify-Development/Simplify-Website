@@ -70,11 +70,6 @@ export function DashboardPage({
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
-                getUsersApplications().then(res => {
-                    //const result = data .filter(id => id.discordId === `${data.discordId}`)
-                    //setApplications(result)
-                    console.log(res)
-                })
                 setUser(data);
                 console.log(data)
                 setLoading(false);
@@ -82,6 +77,12 @@ export function DashboardPage({
                 console.error(err)
                 window.location.href = `https://simplify-code.com/api/auth/discord`
             })
+    }, [])
+
+    React.useEffect(() => {
+        getUsersApplications().then(({ data }) => {
+            console.log(data)
+        })
     }, [])
 
     return !loading && (
