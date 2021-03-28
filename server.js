@@ -185,6 +185,8 @@ client.on("message", async message => {
     }
 })
 
+module.exports = { client }
+
 client.login(process.env.token);
 
 // Serve Static assests if in production
