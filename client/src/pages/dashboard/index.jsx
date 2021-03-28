@@ -81,7 +81,7 @@ export function DashboardPage({
 
     React.useEffect(() => {
         getUsersApplications().then(({ data }) => {
-            const result = data.filter(id => data.discordId === `${user.discordId}`);
+            const result = data.filter(id => id.discordId === `${user.discordId}`);
             setApplications(result);
         })
     }, [])
