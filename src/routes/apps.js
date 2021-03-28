@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 
 router.get('/:appId', async (req, res) => {
     const { appId } = req.params;
-    await appDB.findOne({ applicationId: appId }, (err, data) => {
+    await appDB.findOne({ applicationId: appId, status: 'Pending' }, (err, data) => {
         if (err) res.status(400).send({ msg: 'Application not found' })
         
         if (data) {
@@ -27,7 +27,7 @@ router.get('/:appId', async (req, res) => {
 
 router.get('/check/:userId', async (req, res) => {
     const { userId } = req.params;
-    await appDB.findOne({ discordId: userId }, (err, data) => {
+    await appDB.findOne({ discordId: userId, status: 'Pending' }, (err, data) => {
         if (data) {
             res.send(data)
         } else if (!data) res.send({ msg: 'Already a application!' })
