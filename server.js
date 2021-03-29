@@ -214,7 +214,10 @@ app.post("/api/newapp", async (req, res) => {
         status: 'Pending'
     })
     newData.save().then(() => {
-        client.users.cache.get(discordId).send(`Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.`)
+        client.users.cache.get(discordId).send(`
+        Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted. 
+        You are now awaiting a response from our management team, you can keep track of your application on https://simplify-code.com/dashboard`
+        )
     })
 
     await totalSchema.findOneAndUpdate({
