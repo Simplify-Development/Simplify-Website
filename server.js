@@ -144,45 +144,7 @@ client.on("message", async message => {
                 return message.reply("That is not a application")
             }
         })
-    } else if (command === 'whitelist') {
-        const user = message.mentions.members.first()
-        if (!user) {
-            return message.reply('Sorry but I can\'t find that user')
-        }
-        if (!message.member.roles.cache.has('756195815197769840')) return message.reply('Sorry but you can\'t use this command')
-
-        const users = require('./src/database/schemas/User-Schema')
-        users.findOne({ discordId: user.id }, async (err, data) => {
-            if (err) return message.reply('Could not find that user')
-            if (!data) return message.reply('Could not find that user')
-            if (data) {
-                let wListOrBlist;
-                let trueOrFalse;
-
-                if (data.whitelisted === false) {
-                    trueOrFalse = true;
-                    wListOrBlist = 'Whitelisted'
-                }
-                if (data.whitelisted === true) {
-                    trueOrFalse = false;
-                    wListOrBlist = 'Blacklisted'
-                }
-
-                await users.findOneAndUpdate({
-                    discordId: user.id
-                }, {
-                    whitelisted: trueOrFalse
-                }, {
-                    upsert: true,
-                    new: true
-                }).then(() => {
-                    message.reply(`You ${wListOrBlist} <@${user.id}>`)
-                    message.delete()
-                    return
-                })
-            }
-        })
-    }
+     }
 })
 
 const schema = require('./src/database/schemas/App-Schema')
