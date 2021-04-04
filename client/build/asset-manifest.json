@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.33ebf56b.chunk.css",
-    "main.js": "/static/js/main.bf4bcc6c.chunk.js",
-    "main.js.map": "/static/js/main.bf4bcc6c.chunk.js.map",
+    "main.js": "/static/js/main.d6563aea.chunk.js",
+    "main.js.map": "/static/js/main.d6563aea.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.138fb43d.js",
     "runtime-main.js.map": "/static/js/runtime-main.138fb43d.js.map",
     "static/css/2.ffda3d49.chunk.css": "/static/css/2.ffda3d49.chunk.css",
@@ -15,7 +15,7 @@
     "static/media/Zofux.1177bbe4.png": "/static/media/Zofux.1177bbe4.png",
     "static/media/style.css": "/static/media/chevron-left-solid.01596fba.svg",
     "static/media/famOyan.534a71dd.png": "/static/media/famOyan.534a71dd.png",
-    "static/media/modmail.c565b781.png": "/static/media/modmail.c565b781.png",
+    "static/media/modmail.507d46a1.png": "/static/media/modmail.507d46a1.png",
     "static/media/utils.86c0c794.png": "/static/media/utils.86c0c794.png"
   },
   "entrypoints": [
@@ -23,6 +23,6 @@
     "static/css/2.ffda3d49.chunk.css",
     "static/js/2.7d3212cc.chunk.js",
     "static/css/main.33ebf56b.chunk.css",
-    "static/js/main.bf4bcc6c.chunk.js"
+    "static/js/main.d6563aea.chunk.js"
   ]
 }
