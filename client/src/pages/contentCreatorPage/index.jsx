@@ -134,7 +134,7 @@ export function ContentCreatorPage(props) {
                         <p>- Must be 13 years old</p> <br />
                         <p>- Has been in the server for 2 weeks or more</p> <br />
                         <p>- Has consistent view counts</p> <br />
-                        <p>- Their content is about porgramming</p> <br />
+                        <p>- Their content is about programming</p> <br />
                     </div>
                     <div className="recs-check">
                         <input type="checkbox" onClick={

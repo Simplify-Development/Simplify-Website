@@ -17,15 +17,18 @@ body {
   overflow-x: hidden;
 }
 
-.login-btn, .discord_btn:hover {
+.login-btn,
+.discord_btn:hover {
   cursor: pointer;
   background: #4965c9;
 }
-.login-btn, .discord_btn:focus {
+.login-btn,
+.discord_btn:focus {
   outline: none;
 }
 
-.login-btn, .discord_btn {
+.login-btn,
+.discord_btn {
   color: var(--text-color);
   background: #7289da;
   border-radius: 4px;
@@ -56,9 +59,8 @@ body {
   align-items: center;
 }
 
-
 .login-btn:hover {
-    background: #4965c9;
+  background: #4965c9;
 }
 
 .nav {
@@ -113,7 +115,6 @@ body {
 .nav ul li:nth-last-child(4) {
   animation-delay: 1.5s;
 }
-
 
 .nav ul li a {
   padding: 1rem 0;
@@ -260,9 +261,9 @@ body {
 
   .nav-active {
     transition: all ease-in-out 1s;
-      transform: translateY(95%);
-      display: flex;
-    }
+    transform: translateY(95%);
+    display: flex;
+  }
 }
 
 /* About section */
@@ -328,7 +329,7 @@ body {
   padding-left: 50px;
 }
 
-.card{
+.card {
   color: var(--text-color);
   background: #191a1f;
   padding-top: 20px;
@@ -381,106 +382,144 @@ body {
 }
 
 @media screen and (max-width: 1670px) {
-    .space {
-        padding-left: 0px;
-    }
+  .space {
+    padding-left: 0px;
+  }
 
-    .discord-container {
-        max-width: 100%;
-        position: relative;
-        display: flex;
-        padding-left: 0px;
-        padding-right: 0px;
-        align-items: center;
-        justify-content: center;
-        padding-top: 70px;
-    }
+  .discord-container {
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    padding-left: 0px;
+    padding-right: 0px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+  }
 
-    .discord {
-        max-width: 600px;
-    }
+  .discord {
+    max-width: 600px;
+  }
 
-    .discord p {
-        max-width: 100%;
-    }
+  .discord p {
+    max-width: 100%;
+  }
 
-    .discord-container1 {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 30px;
-        padding-left: 0px;
-        padding-right: 0px;
-    }
+  .discord-container1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 @media screen and (max-width: 997px) {
-    body {
-        overflow: auto;
-    }
+  body {
+    overflow: auto;
+  }
 
-    .discord-container {
-        position: relative;
-        padding-left: 0px;
-        padding-right: 0px;
-        justify-content: center;
-        padding-top: 20px;
-        padding-bottom: 25px;
-        display: flex;
-        align-items: center;
-    }
+  .discord-container {
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    display: flex;
+    align-items: center;
+  }
 
-    .discord {
-        max-width: 80%;
-    }
+  .discord {
+    max-width: 80%;
+  }
 
-    .discord p {
-        max-width: 2000px;
-    }
+  .discord p {
+    max-width: 2000px;
+  }
 
-    .discord-container1 {
-        display: flex;
-        flex-direction: column;
-        padding-left: 20%;
-        padding-right: 0;
-        justify-content: center;
-        align-items: center;
-        padding-top: 20px;
-        max-width: 100%;
-    }
+  .discord-container1 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+    padding-right: 0;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    max-width: 100%;
+  }
 
-    .space {
-        padding-left: 0;
-        padding-bottom: 25px;
-    }
+  .space {
+    padding-left: 0;
+    padding-bottom: 25px;
+  }
 
-    .card {
-        max-width: 80%;
-    }
+  .card {
+    max-width: 80%;
+  }
 
-    .card img {
-        max-width: 90%;
-        height: auto;
-    }
+  .card img {
+    max-width: 90%;
+    height: auto;
+  }
 }
 
 ::-webkit-scrollbar {
   width: 13px;
   height: 13px;
- }
- ::-webkit-scrollbar-thumb {
-  background: radial-gradient(circle, #222329 14%,#222329 100%);
+}
+::-webkit-scrollbar-thumb {
+  background: radial-gradient(circle, #222329 14%, #222329 100%);
   border-radius: 10px;
- }
- ::-webkit-scrollbar-thumb:hover{
-  background: linear-gradient(13deg, #222329 14%,#222329 64%);
- }
- ::-webkit-scrollbar-track{
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(13deg, #222329 14%, #222329 64%);
+}
+::-webkit-scrollbar-track {
   background: #1d1e22;
   border-radius: 10px;
   /*box-shadow: inset 7px 10px 12px #1d1e22;*/
- }
- 
- 
+}
 
+.youtube-container {
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 200px;
+}
+
+.youtube-container h1 {
+  font-size: 40px;
+  font-weight: inherit;
+}
+
+.youtube-container p {
+  margin-top: 15px;
+  color: #99aab5;
+  margin-bottom: 30px;
+}
+
+.youtube_btn {
+  color: var(--text-color);
+  background: #dc3545;
+  border-radius: 4px;
+  border: none;
+  font-size: 25px;
+  font-weight: 200;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transform: scale(0.8);
+  transition: ease-out 0.2s;
+}
+
+.youtube_btn:hover {
+  cursor: pointer;
+  background: #c02938;
+}
+
+.youtube_btn:focus {
+  outline: none;
+}

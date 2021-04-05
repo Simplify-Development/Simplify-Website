@@ -109,6 +109,18 @@ export function MainPage(props) {
                 </div>
             </div>
 
+            {/*<div className="youtube-container">
+                <div className="youtube-card">
+                    <h1>Check us out on YouTube</h1>
+                    <p>
+                        Tons of videos showing you how to program your next project
+                    </p>
+                    <button className="youtube_btn" onClick={() => {
+                        window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")
+                    }}>View Channel</button>
+                </div>
+            </div>*/}
+
             <div className="footer-container-main">
                 <footer>
                     <div className="container">
