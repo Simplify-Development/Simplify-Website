@@ -115,7 +115,7 @@ export function TeamPage(props) {
                                 Hello, my name is famOyan, and I'm 15 years old. <br/>
                                 🔥Front-end <span>(Html, CSS, React.js)</span> <br/>
                                 💧Learning Back-end <span>(Express.js)</span> <br/>
-                                💾Learning Databases <span>(Firebase)</span><br/>
+                                💾Learning Databases <span>(MongoDB)</span><br/>
                                 <br/>
                             </p>
                             <p className="role-team">
