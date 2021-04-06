@@ -94,7 +94,7 @@ client.on("message", async message => {
     const command = args.shift().toLowerCase();
 
     if (command === 'accept') {
-        if (!message.member.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
+        if (!message.member.roles.cache.has("825434877133848636")) return message.reply('Sorry but you can\'t use this command')
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }
@@ -117,7 +117,7 @@ client.on("message", async message => {
             }
         })
     } else if (command === 'deny') {
-        if (!message.member.hasPermission('MANAGE_GUILD')) return message.reply('Sorry but you can\'t use this command')
+        if (!message.member.roles.cache.has("825434877133848636")) return message.reply('Sorry but you can\'t use this command')
         if (!args[0]) {
             return message.reply("Please include the application ID")
         }

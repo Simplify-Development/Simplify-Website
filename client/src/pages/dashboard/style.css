@@ -71,6 +71,38 @@
   justify-content: space-around;
 }
 
+.dashboard-bar span:nth-child(1) {
+  width: 250px;
+  text-align: left;
+}
+
+.dashboard-bar span:nth-child(2) {
+  position: relative;
+  left: -86px;
+}
+
+.dashboard-bar span:nth-child(3) {
+  position: relative;
+  left: -30px;
+}
+
+@media screen and (max-width: 656px) {
+  .dashboard-bar span:nth-child(1) {
+    width: 100px;
+    text-align: left;
+  }
+
+  .dashboard-bar span:nth-child(2) {
+    position: relative;
+    left: -10px;
+  }
+
+  .dashboard-bar span:nth-child(3) {
+    position: relative;
+    left: -5px;
+  }
+}
+
 .dummy {
   margin-bottom: 200px;
 }
@@ -146,11 +178,6 @@
   transform: scale(0.8);
   transition: ease-out 0.5s;
   font-weight: inherit;
-}
-
-.status {
-  position: relative;
-  left: 20px;
 }
 
 .Pending {
