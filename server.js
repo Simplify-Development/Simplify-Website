@@ -195,6 +195,10 @@ app.post("/api/newapp", async (req, res) => {
 
 client.login(process.env.token);
 
+app.get('/server', (req, res) => {
+    res.redirect('https://discord.com/invite/XveJX7Z')
+})
+
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
