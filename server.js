@@ -195,7 +195,7 @@ app.post("/api/newapp", async (req, res) => {
 
 client.login(process.env.token);
 
-app.get('/server', (req, res) => {
+app.get('/discord', (req, res) => {
     res.redirect('https://discord.com/invite/XveJX7Z')
 })
 
