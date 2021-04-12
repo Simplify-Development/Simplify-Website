@@ -102,7 +102,7 @@ export function rulesPage(props) {
                 <div className="rule">
                     <p>
                         3. All NSFW, NSFL, and unwholesome content has no place in our server and will result in a permenant ban if broken, this also goes for
-                        viruses and other walware, this could also result in a ban from discord as some of this counts as violation of the Discord ToS.
+                        viruses and other malware, this could also result in a ban from discord as some of this counts as violation of the Discord ToS.
                     </p>
                 </div>
                 <div className="rule">
@@ -157,8 +157,20 @@ export function rulesPage(props) {
                         it will result in a permenant ban, there is nothing you can say against this to get your ban revoked.
                     </p>
                 </div>
+                <div className="rule">
+                    <p>
+                       12. Your Username/Nickname should always be following our rules, it should also a a name that is possible to mention using a normal keyboard. If this 
+                       rule is to be broken your name will get changed
+                    </p>
+                </div>
+                <div className="rule">
+                    <p>
+                       13. You should not expect that we add your bot to our server, it could have hidden commands and functions that could destroy the server, for this
+                       reason are we not adding any unverified bots to our server. If the bot is verified we can consider adding it.
+                    </p>
+                </div>
                 <div className="bottom-rules">
-                    <p>If you have any questions about our rules or would like to report someone, then please contact us on discord.</p>
+                    <p>If you have any questions about our rules or would like to report someone, then please contact us on <a className="faq-bottom" onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}>discord</a>.</p>
                 </div>
             </div>
 
