@@ -103,7 +103,8 @@ client.on("message", async message => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been accepted by <@${message.author.id}>\n\n> You should expect instructions soon`)
+                
+                channel.send(`> <@${data.discordId}> congratulations! Your \`\`${data.appType}\`\` has been accepted by <@${message.author.id}>\n> \n> You should expect instructions soon`)
                 await applicationSchema.findOneAndUpdate({
                     applicationId: applicationId
                 }, {
@@ -131,7 +132,7 @@ client.on("message", async message => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                channel.send(`> <@${data.discordId}>'s \`\`${data.appType}\`\` has been denied by <@${message.author.id}>\n\n> Stated reason : ${reason}\n\n> If you want to talk to staff about this then contact our modmail`)
+                channel.send(`> <@${data.discordId}> Your \`\`${data.appType}\`\` has been denied by <@${message.author.id}>\n> \n> Reason: **${reason}**\n\n> *Have a issue with this? Contact our modmail*`)
                 await applicationSchema.findOneAndUpdate({
                     applicationId: applicationId
                 }, {
