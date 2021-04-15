@@ -20,6 +20,18 @@ body {
     border-radius: 7px;
 }
 
+@media screen and (max-width: 715px) {
+    .editor-container {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .app-background {
+        max-width: 90%;
+        margin-left: 5%;
+    }
+}
+
 .app-title {
     color: var(--text-color);
     font-size: 20px;

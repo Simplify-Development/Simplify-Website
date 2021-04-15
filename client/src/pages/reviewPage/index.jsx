@@ -45,10 +45,11 @@ export function ReviewPage({
             .then(({ data }) => {
                 getWhitelistStatus(data.discordId).then(({ data }) => {
                     if (data.message === "Yes") {
-                        setLoading(false)
 
                         getApplication().then(({ data }) => {
-                            setContent(data)
+                            setContent(data).then(() => {
+                                setLoading(false)
+                            })
                             if (data.reqs === false) setRequirements('No')
                             if (data.reqs === true) setRequirements('Yes')
                         }).catch(err => {
