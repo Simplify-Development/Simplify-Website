@@ -109,7 +109,9 @@ export function MainPage(props) {
                 </div>
             </div>
 
+            
             {/*<div className="youtube-container">
+            <h1 className="youtube-icon"><i class="fab fa-youtube"></i></h1>
                 <div className="youtube-card">
                     <h1>Check us out on YouTube</h1>
                     <p>
@@ -119,7 +121,10 @@ export function MainPage(props) {
                         window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")
                     }}>View Channel</button>
                 </div>
-            </div>*/}
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e7509e" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,74.7C384,64,480,32,576,53.3C672,75,768,149,864,160C960,171,1056,117,1152,101.3C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+            <div className="pinkbox"></div>*/}
 
             <div className="footer-container-main">
                 <footer>

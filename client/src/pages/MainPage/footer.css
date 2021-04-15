@@ -10,8 +10,15 @@ footer {
   height: 100%;
 }
 
+svg {
+  margin-top: 120px;
+  filter: brightness(80%);
+}
+
 .footer-container-main {
-   padding-top: 170px;
+  position: relative;
+  top: -20px;
+  padding-top: 200px;
 }
 
 a {
@@ -74,26 +81,27 @@ li {
   padding-left: 80px;
 }
 
-.icons .fa-discord{
+.icons .fa-discord {
   transition: all ease-in-out 1s;
 }
 
-.icons .fa-github{
+.icons .fa-github {
   transition: all ease-in-out 1s;
 }
 
-.icons .fa-discord:hover, .fa-github:hover{
+.icons .fa-discord:hover,
+.fa-github:hover {
   filter: brightness(70%);
   transition: all ease-in-out 1s;
 }
 
-footer a:hover{
+footer a:hover {
   filter: brightness(70%);
   transition: all ease-in-out 1s;
 }
 
 @media screen and (max-width: 1150px) {
-  .links{
+  .links {
     padding-right: 30px;
   }
 }
@@ -111,7 +119,7 @@ footer a:hover{
     max-width: 80%;
   }
 
-  .links{
+  .links {
     padding-right: 0px;
   }
 }
@@ -132,5 +140,5 @@ footer a:hover{
 }
 
 a:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
