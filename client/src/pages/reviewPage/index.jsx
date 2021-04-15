@@ -46,18 +46,17 @@ export function ReviewPage({
                 getWhitelistStatus(data.discordId).then(({ data }) => {
                     if (data.message === "Yes") {
 
-                        getApplication().then(({ data }) => {
-                            setContent(data).then(() => {
-                                setLoading(false)
-                            })
-                            if (data.reqs === false) setRequirements('No')
-                            if (data.reqs === true) setRequirements('Yes')
+                        getApplication().then(async ({ data }) => {
+                            await setContent(data)
+                            if (data.reqs === false) await setRequirements('No')
+                            else if (data.reqs === true) await setRequirements('Yes')
+                            await setLoading(false)
                         }).catch(err => {
                             console.log(err)
                             history.push("/404")
                         })
                     } else {
-                        window.location.href = "/"     
+                        window.location.href = "/"
                     }
                 }).catch(() => {
                     window.location.href = "/"
@@ -107,7 +106,7 @@ export function ReviewPage({
                         <p>Discord user info : {content.user}#{content.tag} ({content.discordId})</p> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
                         <p>
-                        To accpets this application use "-accept {content.applicationId}"<br /><br />
+                            To accpets this application use "-accept {content.applicationId}"<br /><br />
                         To decline this application use "-deny {content.applicationId}"
                     </p>
                     </div>
