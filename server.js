@@ -157,7 +157,7 @@ client.on("message", async message => {
             return;
         }
         const applications = require('./src/database/schemas/App-Schema');
-        applications.findOne({ applicationId: args[0] }, (err, res) => {
+        applications.findOne({ applicationId: args[0] }, async (err, res) => {
             if (err) return;
             if (!res) {
                 let embed = new Discord.MessageEmbed()
