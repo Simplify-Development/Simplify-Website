@@ -176,7 +176,7 @@ client.on("message", async message => {
 
                 let embed = new Discord.MessageEmbed()
                     .setDescription(`This is one of <@${res.discordId}>'s applications`)
-                    .addField("Type", res.type)
+                    .addField("Type", res.appType)
                     .addField("Status", res.status)
                     .addField("Applied on", res.date)
                     .setColor(color)
@@ -217,7 +217,7 @@ app.post("/api/newapp", async (req, res) => {
     })
     newData.save().then(() => {
         client.users.cache.get(discordId).send(`
-        Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` has been submitted.\nYou are now awaiting a response from our management team.`
+        Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` with the id \`${applicationId}\` has been submitted.\nYou are now awaiting a response from our management team.`
         )
     })
 
