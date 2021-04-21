@@ -171,7 +171,7 @@ client.on("message", async message => {
             } else if (res) {
                 let color;
                 if (res.status === "Pending") color = "#fcdb03";
-                if (res.status === "Declined") color = "#e60526";
+                if (res.status === "Declined") color = "#f03211";
                 if (res.status === "Accepted") color = "#05e666";
 
                 let embed = new Discord.MessageEmbed()
