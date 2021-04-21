@@ -1,16 +1,11 @@
 import React from "react";
-import Typist from 'react-typist';
-import "./style.css"
-import modmail from "./img/modmail.png";
-import utils from "./img/utils.png";
-//import Accordion from "../../components/Accordion";
-import './footer.css'
-
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
+import "./style.css";
+import { getStaffList } from '../../utils/api'
 
 
-export function MainPage(props) {
-    //const login = () => window.location.href = 'http://localhost:5000/api/auth/discord'
+export function StaffList(props) {
+    const [list, setList] = React.useState([])
 
     const navSlide = () => {
         const burger = document.querySelector('.burger');
@@ -34,6 +29,19 @@ export function MainPage(props) {
         burger.classList.toggle('toggle')
     }
 
+    React.useEffect(() => {
+        getStaffList().then(({ data }) => {
+            setList(data)
+        })
+    })
+
+    function logData() {
+        console.log(list.length)
+        for (let i = 0; i < list.length; i++) {
+            console.log(list[i])
+        }
+    }
+
     return (
         <body>
             <div className="nav">
@@ -45,7 +53,7 @@ export function MainPage(props) {
                         }}>Discord</a></li></Link>
                         <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
                         <Link to="/rules"><li><a className="ac" >Rules</a></li></Link>
-                        <Link to="/team"><li><a className="ad" >Team</a></li></Link>
+                        <Link to="/"><li><a className="ad" >Home</a></li></Link>
                     </ul>
 
                     <div className="burger" onClick={navSlide}>
@@ -58,64 +66,15 @@ export function MainPage(props) {
                 <Link to="/dashboard">
                     <button className="login-btn">
                         Dashboard
-                    </button>
+                </button>
                 </Link>
             </div>
 
-
-            <div className="discord-container">
-                <div className="discord" id="discord-page">
-                    <Typist avgTypingDelay={55} cursor={{
-                        show: false,
-                    }}>
-                        <h1>
-                            <span className="s1">Simp</span><span className="s2">lify</span> <span className="s3">Co</span><span className="s4">de</span>
-                        </h1>
-                        <h3>Learn code, Chat with friends, Have fun.</h3>
-                        <Typist.Delay ms={200} />
-                        <p>
-                            Simplify code is a great coding community for everyone, from a beginner to a software
-                            developer, we have everything you would need to get started. So join now!
-                        </p>
-                    </Typist>
-                    <button className="discord_btn" onClick={() => {
-                        window.open("https://discord.gg/XveJX7Z", "_blank")
-                    }}>Join Now</button>
-
-                </div>
-            </div>
-
-            <div className="discord-container1">
-                <div className="space">
-                    <div className="card">
-                        <h2>ModMail</h2>
-                        <p>
-                            Our Modmail is <span className="bold">custom</span> made and has many advantages over other systems.
-                            One of these advantages are that you get faster and easier support.
-                        </p>
-                        <img src={modmail} height="324.75px" width="auto" className="card-img" />
-                    </div>
-                </div>
-
-                <div className="space">
-                    <div className="card">
-                        <h2>Custom Bot</h2>
-                        <p>
-                            We dont use bots like Dyno and MEE6 to manage our server, instead we use Simplify Utilities.
-                            Simplify Utilities manages Wordfilters, Logs, anti spam, verification and other critical aspects.
-                        </p>
-                        <img src={utils} height="324.75px" width="auto" className="card-img" />
-                    </div>
-                </div>
-            </div>
-
             
-           
+            <p onClick={logData}>Test</p>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#e7509e" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,74.7C384,64,480,32,576,53.3C672,75,768,149,864,160C960,171,1056,117,1152,101.3C1248,85,1344,107,1392,117.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-            <div className="pinkbox"></div>
 
-            <div className="footer-container-main">
+            <div className="footer-container">
                 <footer>
                     <div className="container">
                         <div className="about">
@@ -150,5 +109,5 @@ export function MainPage(props) {
                 </footer>
             </div>
         </body>
-    );
+    )
 }

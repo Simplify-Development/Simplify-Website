@@ -103,7 +103,7 @@ client.on("message", async message => {
             if (err) throw err
             if (data) {
                 const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
-                
+
                 channel.send(`> <@${data.discordId}> congratulations! Your \`\`${data.appType}\`\` has been accepted by <@${message.author.id}>\n> \n> You should expect instructions soon`)
                 await applicationSchema.findOneAndUpdate({
                     applicationId: applicationId
@@ -145,7 +145,46 @@ client.on("message", async message => {
                 return message.reply("That is not a application")
             }
         })
-     }
+    } else if (command === 'status') {
+        if (!args[0]) {
+            let embed = new Discord.MessageEmbed()
+                .setAuthor(`${message.author.username}`, message.author.displayAvatarURL())
+                .setDescription(`<:cross:767340003935256596> You are missing some arguments, expected usage:\n\`\`-status <application id>\`\`\n\nArguments:\n\`\`application id\`\`: The id of the application`)
+                .setColor('#f03211');
+            let msg = await message.channel.send(embed);
+            message.delete()
+            msg.delete({ timeout: 8000 })
+            return;
+        }
+        const applications = require('./src/database/schemas/App-Schema');
+        applications.findOne({ applicationId: args[0] }, (err, res) => {
+            if (err) return;
+            if (!res) {
+                let embed = new Discord.MessageEmbed()
+                    .setAuthor(`${message.author.username}`, message.author.displayAvatarURL())
+                    .setDescription(`<:cross:767340003935256596> Could not find a application with that id`)
+                    .setColor('#f03211');
+                let msg = await message.channel.send(embed);
+                message.delete()
+                msg.delete({ timeout: 8000 })
+                return;
+            } else if (res) {
+                let color;
+                if (res.status === "Pending") color = "#fcdb03";
+                if (res.status === "Declined") color = "#e60526";
+                if (res.status === "Accepted") color = "#05e666";
+
+                let embed = new Discord.MessageEmbed()
+                    .setDescription(`This is one of <@${res.discordId}>'s applications`)
+                    .addField("Type", res.type)
+                    .addField("Status", res.status)
+                    .addField("Applied on", res.date)
+                    .setColor(color)
+                    .setTimestamp()
+                message.channel.send(embed);
+            }
+        })
+    }
 })
 
 const schema = require('./src/database/schemas/App-Schema')
@@ -200,13 +239,25 @@ app.get('/discord', (req, res) => {
     res.redirect('https://discord.com/invite/XveJX7Z')
 })
 
+app.get("/api/staff", (req, res) => {
+    const guild = client.guilds.cache.get("756195742741430352");
+    const role = guild.roles.cache.get("756606234706051072")
+    const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position).map(member => [
+        {
+            username: member.user.username,
+            avatar: member.user.avatarURL(),
+        }
+    ])
+    res.send(result)
+})
+
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
-  }
+}
 
 
 // Starting Express

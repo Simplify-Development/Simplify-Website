@@ -12,3 +12,9 @@ export function getWhitelistStatus(userId) {
         withCredentials: true
     })
 }
+
+export function getStaffList() {
+    return axios.get('http://localhost:5001/api/staff', {
+        withCredentials: true
+    })
+}
