@@ -74,7 +74,7 @@ export function AppListPage({
                 }>
                     <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
                     <ul className="navLinks">
-                        <li><Link to="/rule" className="aa">Rules</Link></li>
+                        <li><Link to="/rules" className="aa">Rules</Link></li>
                         <li><Link to="/faq" className="ab">FAQ</Link></li>
                         <li><Link to="/team" className="ab">Team</Link></li>
                         <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
