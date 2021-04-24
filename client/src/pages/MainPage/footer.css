@@ -142,7 +142,7 @@ nav a {
   transition: all 0.3s ease;
 }
 
-a:hover {
+.nav a:hover, .footer a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
   filter: brightness(70%);
