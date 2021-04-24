@@ -116,6 +116,7 @@ export function SupportPage(props) {
                     </div>
                 </div>
             </nav>
+            <div className="top"></div>
 
             <div className="app-background">
                 <div className="editor-container">

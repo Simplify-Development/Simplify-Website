@@ -42,6 +42,7 @@ export function PrivacyPage(props) {
                     </div>
                 </div>
             </nav>
+            <div className="top"></div>
 
             <div className="privacy-box-container">
                 <div className="privacy-box">

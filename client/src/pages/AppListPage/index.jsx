@@ -87,6 +87,7 @@ export function AppListPage({
                     </div>
                 </div>
             </nav>
+            <div className="top"></div>
 
             <div className="application-list">
                 <li key="app-list" className="app-tags">

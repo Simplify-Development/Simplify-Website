@@ -163,6 +163,7 @@ export function DashboardPage({
                             <li><a onClick={() => window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")}><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
+                    <div className="top"></div>
 
                     <div className="links">
                         <div className="product">
