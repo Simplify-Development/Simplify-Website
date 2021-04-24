@@ -3,7 +3,7 @@ export { ApplicationPage } from './ApplicationPage';
 export { DashboardPage } from './dashboard';
 export { PageNotFound } from './404Page';
 export { TeamPage } from './Team';
-export { rulesPage } from './rulesPage';
+export { RulesPage } from './rulesPage';
 export { FaqPage } from './faqPage';
 export { PrivacyPage } from './privacyPage';
 export { StaffPage } from './StaffPage'

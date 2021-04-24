@@ -18,7 +18,7 @@ body {
 
 .rules-box {
     color: var(--text-color);
-    background: #222329;
+    background: #383a49cc;
     padding: 10px;
     max-width: 50%;
     border-radius: 5px;

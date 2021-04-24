@@ -3,6 +3,7 @@ import { getUserDetails } from "../../utils/api";
 import './style.css';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify'
+import logo from "../img/utils.png";
 
 export function ApplicationPage({
     history,
@@ -22,26 +23,21 @@ export function ApplicationPage({
             })
     }, [])
 
+    const [open, setOpen] = React.useState(false)
+
     const navSlide = () => {
         const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links')
-        const navLinks = document.querySelectorAll('.nav-links a')
-
-        // Toggle Links
-        nav.classList.toggle('nav-active')
-
-
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`
-            }
-        })
-
-        //Burger Animation
         burger.classList.toggle('toggle')
+    
+        if (open) {
+            setOpen(false)
+        } else if (!open) {
+            setOpen(true)
+        }
+    }
+
+    function openWindowDiscord() {
+        window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
     const closed = () => {
@@ -51,31 +47,27 @@ export function ApplicationPage({
     return !loading && (
         <body>
 
-            <div className="nav">
+            <nav>
+                <div className={
+                    "nav-bar " + (open ? 'open' : '')
+                }>
+                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                    <ul className="navLinks">
+                        <li><Link to="/rule" className="aa">Rules</Link></li>
+                        <li><Link to="/faq" className="ab">FAQ</Link></li>
+                        <li><Link to="/team" className="ab">Team</Link></li>
+                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
 
-                <div className="page-cont">
-                    <ul className="nav-links">
-                        <Link><li><a className="aa" onClick={() => {
-                            window.open("https://discord.gg/XveJX7Z", "_blank")
-                        }}>Discord</a></li></Link>
-                        <Link to="/rules"><li><a className="ab" >Rules</a></li></Link>
-                        <Link to="/faq"><li><a className="ac" >FAQ</a></li></Link>
-                        <Link to="/team"><li><a className="ad" >Team</a></li></Link>
                     </ul>
-
                     <div className="burger" onClick={navSlide}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
+            </nav>
 
-                <Link to="/">
-                    <button className="login-btn">
-                        Home
-                </button>
-                </Link>
-            </div>
+            <div className="top"></div>
 
 
             <div className="applications-container">
@@ -137,8 +129,9 @@ export function ApplicationPage({
                             <p>© Simplify Development 2020-2021</p>
                         </div>
                         <ul className="icons">
-                            <li><a onClick={() => window.open("https://discord.com/invite/XveJX7Z", "_blank")}><i class="fab fa-discord"></i></a></li>
+                            <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}><i class="fab fa-discord"></i></a></li>
                             <li><a onClick={() => window.open("https://github.com/Simplify-Development", "_blank")}><i class="fab fa-github"></i></a></li>
+                            <li><a onClick={() => window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")}><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
 

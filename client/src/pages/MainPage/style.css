@@ -94,7 +94,7 @@ body {
   display: flex;
 }
 
-.nav ul li {
+/*.nav ul li {
   list-style: none;
   transform: translateX(-100rem);
   animation: slideIn 0.5s forwards;
@@ -116,19 +116,20 @@ body {
   animation-delay: 1.5s;
 }
 
-.nav ul li a {
+.nav-bar ul li a {
   padding: 1rem 0;
   margin: 0 3rem;
   position: relative;
   letter-spacing: 2px;
+  top: -15px;
 }
 
-.nav ul li a:last-child() {
+.nav-bar li a:last-child() {
   margin-right: 0;
 }
 
-.nav ul li a::before,
-.nav ul li a::after {
+.nav-bar li a::before,
+.nav-bar li a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -138,46 +139,46 @@ body {
   transition: all 0.5s;
 }
 
-.nav ul li .aa::before,
-.nav ul li .aa::after {
+.nav-bar  li .aa::before,
+.nav-bar  li .aa::after {
   background-color: #00c1d5;
 }
 
-.nav ul li .ab::before,
-.nav ul li .ab::after {
+.nav-bar  li .ab::before,
+.nav-bar  li .ab::after {
   background-color: #ffbb1c;
 }
 
-.nav ul li .ac::before,
-.nav ul li .ac::after {
+.nav-bar  li .ac::before,
+.nav-bar  li .ac::after {
   background-color: #e7509e;
 }
 
-.nav ul li .ad::before,
-.nav ul li .ad::after {
+.nav-bar li .ad::before,
+.nav-bar li .ad::after {
   background-color: #ffffff;
 }
 
-.nav ul li a::before {
+.nav-bar  li a::before {
   top: 0;
   transform-origin: left;
 }
 
-.nav ul li a::after {
+.nav-bar  li a::after {
   bottom: 0;
   transform-origin: right;
 }
 
-.nav ul li a:hover::before,
-.nav ul li a:hover::after {
+.nav-bar  li a:hover::before,
+.nav-bar  li a:hover::after {
   transform: scaleX(1);
 }
 
-.nav ul li a:hover {
+.nav-bar  li a:hover {
   cursor: pointer;
-}
+}*/
 
-@keyframes slideIn {
+/*@keyframes slideIn {
   from {
   }
   to {
@@ -241,16 +242,6 @@ body {
     z-index: 3;
   }
 
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  .toggle .line2 {
-    opacity: 0;
-  }
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
   @keyframes navLinkFade {
     from {
       opacity: 0;
@@ -267,7 +258,7 @@ body {
     transform: translateY(95%);
     display: flex;
   }
-}
+}*/
 
 /* About section */
 
@@ -384,7 +375,6 @@ body {
   transition: all ease-in-out 0.5s;
 }
 
-
 @media screen and (max-width: 1670px) {
   .space {
     padding-left: 0px;
@@ -487,65 +477,86 @@ body {
   /*box-shadow: inset 7px 10px 12px #1d1e22;*/
 }
 
-.youtube-container {
-  color: var(--text-color);
-  text-align: center;
-  margin-top: 450px;
-  position: absolute;
-  display: flex;
-  flex-direction: unset;
-  left: 37%;
-  z-index: 2;
-}
-
-.youtube-container h1 {
-  font-size: 40px;
-  font-weight: inherit;
-}
-
-.youtube-icon {
-  position: relative;
-  right: 100px;
-  top: 150px;
-  transform: scale(3);
-}
-
-.youtube-container p {
-  margin-top: 15px;
-  margin-bottom: 30px;
-}
-
-.youtube_btn {
-  color: var(--text-color);
-  background: #c22837;
-  border-radius: 4px;
-  border: none;
-  font-size: 25px;
-  font-weight: 200;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  transform: scale(0.8);
-  transition: ease-out 0.2s;
-}
-
-.youtube_btn:hover {
-  cursor: pointer;
-  background: #a72330;
-}
-
-.youtube_btn:focus {
-  outline: none;
-}
-
 .pinkbox {
   min-width: 100%;
   height: auto;
   filter: brightness(80%);
-  background: #e7509e;
-  padding-top: 250px;
+  background: var(--text-color);
+  padding-top: 100px;
   position: relative;
   top: -20px;
-  padding-bottom: 0;
+  padding-bottom: 200px;
+  display: flex;
+}
+
+.youtube {
+  position: relative;
+  bottom: -20px;
+  color: rgb(255, 255, 255);
+}
+
+.youtube-text-container {
+  margin-left: 10%;
+  display: flex;
+  flex-direction: row;
+}
+
+.youtube-text-container p {
+  font-size: 20px;
+  font-weight: 650;
+  max-width: 600px;
+}
+
+.youtube-text-container h1 {
+  font-size: 35px;
+  font-weight: 650;
+  max-width: 600px;
+}
+
+.youtube-icons {
+  justify-content: right;
+  position: relative;
+  top: 75px;
+  float: right;
+}
+
+.youtube-icons .fab {
+  color: var(--backgroud-color);
+  font-size: 150px;
+}
+
+.youtube-icons-discord {
+  margin-left: 300px;
+  position: relative;
+  bottom: 140px;
+}
+
+.youtube-button {
+  color: var(--text-color);
+  background: hsl(0, 95%, 63%);
+  border-radius: 4px;
+  border: none;
+  font-size: 30px;
+  font-weight: 600;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  transform: scale(0.8);
+  transition: ease-out 0.5s;
+}
+
+.text-youtube-container {
+  color: var(--text-color);
+  background: var(--backgroud-color);
+  margin-left: 10%;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .youtube-icons-discord {
+    margin-right: 20%;
+  }
 }

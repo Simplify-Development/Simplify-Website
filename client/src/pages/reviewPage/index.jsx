@@ -5,6 +5,7 @@ import axios from 'axios'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { getUserDetails, getWhitelistStatus } from '../../utils/api'
+import logo from "../img/utils.png";
 
 export function ReviewPage({
     history,
@@ -16,28 +17,6 @@ export function ReviewPage({
 
     function getApplication() {
         return axios.get(`https://simplify-code.com/api/apps/${match.params.id}`)
-    }
-
-    const navSlide = () => {
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links')
-        const navLinks = document.querySelectorAll('.nav-links a')
-
-        // Toggle Links
-        nav.classList.toggle('nav-active')
-
-
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`
-            }
-        })
-
-        //Burger Animation
-        burger.classList.toggle('toggle')
     }
 
     React.useEffect(() => {
@@ -66,33 +45,45 @@ export function ReviewPage({
             })
     }, [])
 
+    const [open, setOpen] = React.useState(false)
+
+    const navSlide = () => {
+        const burger = document.querySelector('.burger');
+        burger.classList.toggle('toggle')
+
+        if (open) {
+            setOpen(false)
+        } else if (!open) {
+            setOpen(true)
+        }
+    }
+
+    function openWindowDiscord() {
+        window.open("https://discord.gg/PaGJGzbzw6", "_blank")
+    }
+
     return !loading && (
         <body>
-            <div className="nav">
 
-                <div className="page-cont">
-                    <ul className="nav-links">
-                        <Link><li><a className="aa" onClick={() => {
-                            window.open("https://discord.gg/XveJX7Z", "_blank")
-                        }}>Discord</a></li></Link>
-                        <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
-                        <Link to="/rules"><li><a className="ac" >Rules</a></li></Link>
-                        <Link to="/"><li><a className="ad" >Home</a></li></Link>
+            <nav>
+                <div className={
+                    "nav-bar " + (open ? 'open' : '')
+                }>
+                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                    <ul className="navLinks">
+                        <li><Link to="/rule" className="aa">Rules</Link></li>
+                        <li><Link to="/faq" className="ab">FAQ</Link></li>
+                        <li><Link to="/team" className="ab">Team</Link></li>
+                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+
                     </ul>
-
                     <div className="burger" onClick={navSlide}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
-
-                <Link to="/dashboard">
-                    <button className="login-btn">
-                        Dashboard
-                    </button>
-                </Link>
-            </div>
+            </nav>
 
             <div className="app-background">
                 <div className="editor-container">
@@ -125,6 +116,7 @@ export function ReviewPage({
                         <ul className="icons">
                             <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}><i class="fab fa-discord"></i></a></li>
                             <li><a onClick={() => window.open("https://github.com/Simplify-Development", "_blank")}><i class="fab fa-github"></i></a></li>
+                            <li><a onClick={() => window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")}><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
 

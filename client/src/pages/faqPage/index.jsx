@@ -2,29 +2,25 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import FAQ from './FAQ';
 import './style.css'
+import logo from "../img/utils.png";
 
 export function FaqPage(props) {
 
+    const [open, setOpen] = React.useState(false)
+
     const navSlide = () => {
         const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links')
-        const navLinks = document.querySelectorAll('.nav-links a')
-
-        // Toggle Links
-        nav.classList.toggle('nav-active')
-
-
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`
-            }
-        })
-
-        //Burger Animation
         burger.classList.toggle('toggle')
+    
+        if (open) {
+            setOpen(false)
+        } else if (!open) {
+            setOpen(true)
+        }
+    }
+
+    function openWindowDiscord() {
+        window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
     const [faqs, setfaqs] = useState([
@@ -80,7 +76,7 @@ export function FaqPage(props) {
         },
         {
             question: 'Why do I need to log into discord to apply for stuff ?',
-            answer: 'The reason for this is because we need to be able to send you a message when we accept/decline your application, therefore we need to save your user ID to our database',
+            answer: 'The reason you need to log into our website is simple, we need your discord info for you to apply so we can later review that application and know for sure who submitted it.',
             open: false
         }
     ]);
@@ -101,7 +97,7 @@ export function FaqPage(props) {
     return (
         <body>
 
-            <div className="nav">
+            {/*<div className="nav">
 
                 <div className="page-cont">
                     <ul className="nav-links">
@@ -125,7 +121,29 @@ export function FaqPage(props) {
                         Dashboard
                     </button>
                 </Link>
-            </div>
+            </div>*/}
+
+            <nav>
+                <div className={
+                    "nav-bar " + (open ? 'open' : '')
+                }>
+                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                    <ul className="navLinks">
+                        <li><Link to="/" className="aa">Home</Link></li>
+                        <li><Link to="/rules" className="ab">Rules</Link></li>
+                        <li><Link to="/team" className="ab">Team</Link></li>
+                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+
+                    </ul>
+                    <div className="burger" onClick={navSlide}>
+                        <div className="line1"></div>
+                        <div className="line2"></div>
+                        <div className="line3"></div>
+                    </div>
+                </div>
+            </nav>
+
+            <div className="top"></div>
 
             <div className="faqs">
                 {faqs.map((faq, i) => (
@@ -148,6 +166,7 @@ export function FaqPage(props) {
                         <ul className="icons">
                             <li><a onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}><i class="fab fa-discord"></i></a></li>
                             <li><a onClick={() => window.open("https://github.com/Simplify-Development", "_blank")}><i class="fab fa-github"></i></a></li>
+                            <li><a onClick={() => window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")}><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
 
