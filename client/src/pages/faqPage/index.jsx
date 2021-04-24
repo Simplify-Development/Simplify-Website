@@ -25,13 +25,8 @@ export function FaqPage(props) {
 
     const [faqs, setfaqs] = useState([
         {
-            question: 'How do I become staff ?',
+            question: 'How do I become a moderator ?',
             answer: 'If you would like to become a part of our staff team then feel free to submit an application over on the dashboard page, we also announce when staff applications open.',
-            open: false
-        },
-        {
-            question: 'How do I become a part of the Development Team',
-            answer: 'Well, becoming a part of our development team is a bit more complicated than becoming staff, If you feel you should be a part of our development team then feel free to submit an application which can be found on the dashboard page.',
             open: false
         },
         {

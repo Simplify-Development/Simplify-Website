@@ -18,10 +18,11 @@ body {
 
 .rules-box {
     color: var(--text-color);
-    background: #383a49cc;
+    background-color: rgba(40, 44, 53, 0.678);
     padding: 10px;
     max-width: 50%;
     border-radius: 5px;
+    border: 1px solid rgba(224, 224, 224, 0.767);
 }
 
 .rules-box p {

@@ -277,6 +277,7 @@ body {
   padding-right: 40px;
   color: var(--text-color);
   background: #222329;
+  border: 1px solid rgba(224, 224, 224, 0.767);
   align-items: center;
   justify-content: center;
   border-radius: 5px;

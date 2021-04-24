@@ -158,6 +158,12 @@ export function RulesPage(props) {
                        reason are we not adding any unverified bots to our server. If the bot is verified we can consider adding it.
                     </p>
                 </div>
+                <div className="rule">
+                    <p>
+                    <span className="bold">14.</span> You should never accuse anyone for something you cannot prove, this does not only go for reports. Because we like to go by the saying 
+                    "you are innocent until proven guilty".
+                    </p>
+                </div>
                 <div className="bottom-rules">
                     <p>If you have any questions about our rules or would like to report someone, then please contact us on <a className="faq-bottom" onClick={() => window.open("https://discord.gg/XveJX7Z", "_blank")}>discord</a>.</p>
                 </div>
