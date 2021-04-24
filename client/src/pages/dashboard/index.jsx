@@ -89,7 +89,7 @@ export function DashboardPage({
                         <li><Link to="/rule" className="aa">Rules</Link></li>
                         <li><Link to="/faq" className="ab">FAQ</Link></li>
                         <li><Link to="/team" className="ab">Team</Link></li>
-                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+                        <li><Link to="/" className="ad">Home</Link></li>
 
                     </ul>
                     <div className="burger" onClick={navSlide}>
