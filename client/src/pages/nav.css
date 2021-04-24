@@ -6,7 +6,7 @@ nav {
   }
   
   .nav-bar {
-    background-color: rgba(47, 53, 65, 0.911);
+    background-color: rgba(47, 53, 65, 0.562);
     min-width: 60%;
     max-height: 70px;
     min-height: 70px;
@@ -16,6 +16,7 @@ nav {
     z-index: 20;
     transition: all 0.3s ease-in-out;
     overflow-y: hidden;
+    backdrop-filter: blur(2rem);
   }
   
   .nav-bar ul {
