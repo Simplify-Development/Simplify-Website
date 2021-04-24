@@ -84,8 +84,8 @@ export function RulesPage(props) {
                 <div className="rule">
                     <p>
                     <span className="bold">2.</span> All advertising is not allowed on the server and will cause a harsh punishment, this also goes for the dm's of our users.
-                        If you are found breaking this rule in dm's or in the server we will take quick action, we do have filters for this so there is no reason you should
-                        attempt to break it.
+                        If you are found breaking this rule in dm's or in the server we will take quick action. If you are dm advertising we will report you to discord as 
+                        it is against Discord ToS. We do also have filters for this so there is no reason you should attempt to break it.
                     </p>
                 </div>
                 <div className="rule">
