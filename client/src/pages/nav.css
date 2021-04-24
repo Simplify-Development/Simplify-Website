@@ -140,3 +140,8 @@ nav {
       transform: scale(1.07);
       cursor: pointer;
   }
+
+  .nav-bar ul li a:hover {
+    filter: brightness(60%);
+    text-decoration: underline;
+  }
