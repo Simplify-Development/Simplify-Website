@@ -123,7 +123,7 @@ export function StaffPage(props) {
                     <h1 className="app-type">Staff Application</h1>
                     <h2 className="app-title" >Requirements</h2>
                     <div className="app-recs-list">
-                        <p>- Must be 14 years old</p> <br />
+                        <p>- Must be 16 years old</p> <br />
                         <p>- Has been in the server for 2 weeks or more</p> <br />
                         <p>- Wants to help others</p> <br />
                         <p>- Knows how to operate discord like a pro</p> <br />
@@ -144,7 +144,7 @@ export function StaffPage(props) {
                         <p>Discord Name and Identifier :</p><br/>
                         <p>What is your region? (NA, EU, AU) :</p><br/>
                         <p>What Time Zone are you in? :</p><br/>
-                        <p>How old are you? (minimum 14) :</p><br/>
+                        <p>How old are you? (minimum 16) :</p><br/>
                         <p>Why do you want to be a part of our staff team? (60-word minimum):</p><br/>
                         <p>What do you believe the goal of a staff team is? (60-word minimum):</p><br/>
                         <p>What are the three strengths and weaknesses you have? (80-word minimum):</p><br/>

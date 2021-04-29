@@ -67,12 +67,6 @@ export function PrivacyPage(props) {
                         we store this so we can check if you are logged in when you enter pages you need to be logged in for.
                     </p>
                 </div>
-                <div className="privacy">
-                    <p>
-                        3. We store all active applications so we can accept/decline them, the reason we store them is so our system can remember the applications when it is time
-                        to decline/accept a application.
-                    </p>
-                </div>
             </div>
             
             <div className="footer-container-main">
