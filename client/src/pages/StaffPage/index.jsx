@@ -126,10 +126,11 @@ export function StaffPage(props) {
                         <p>- Must be 16 years old</p> <br />
                         <p>- Has been in the server for 2 weeks or more</p> <br />
                         <p>- Wants to help others</p> <br />
-                        <p>- Knows how to operate discord like a pro</p> <br />
+                        <p>- Knows how to operate discord well</p> <br />
                         <p>- Knows how to use bots and other tools</p> <br />
                         <p>- Knows our rules well</p> <br />
                         <p>- Has a great english vocabulary</p> <br />
+                        <p>- Has 2 step auth activated on discord</p> <br />
                     </div>
                     <div className="recs-check">
                         <input type="checkbox" onClick={
