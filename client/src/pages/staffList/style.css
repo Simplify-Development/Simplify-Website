@@ -5,7 +5,7 @@
 
 .staff-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 15px;
   column-gap: 25px;
 }
@@ -24,6 +24,7 @@
 .staff-box:hover {
   transform: scale(1.07);
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .staff-img {
@@ -38,6 +39,13 @@
   color: #e4e1e183;
   font-size: 12px;
   padding-top: 5px;
+}
+
+@media screen and (max-width: 1058px) {
+  .staff-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 514px) {
