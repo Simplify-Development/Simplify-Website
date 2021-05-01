@@ -252,7 +252,7 @@ app.get("/api/staff", (req, res) => {
         })
     })
 
-    res.send(staff)
+    res.send(staff.reverse())
 })
 
 // Serve Static assests if in production
