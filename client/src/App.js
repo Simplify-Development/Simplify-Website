@@ -14,10 +14,10 @@ function App() {
   return (
     <Switch>
       <Route path="/" exact={ true }  component={MainPage} />
-      <Route path="/team" exact={ true }  component={TeamPage} />
+      {/*<Route path="/team" exact={ true }  component={TeamPage} />*/}
       <Route path="/rules" exact={ true }  component={RulesPage} />
       <Route path="/faq" exact={ true }  component={FaqPage} />
-      {/*<Route path="/staff" exact={ true }  component={StaffList} />*/}
+      <Route path="/team" exact={ true }  component={StaffList} />
       <Route path="/privacy" exact={ true }  component={PrivacyPage} />
       <Route path="/dashboard" exact={ true }  component={DashboardPage} />
       <Route path="/applications" exact={ true }  component={ApplicationPage} />

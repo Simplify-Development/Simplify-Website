@@ -14,7 +14,7 @@ export function getWhitelistStatus(userId) {
 }
 
 export function getStaffList() {
-    return axios.get('http://localhost:5001/api/staff', {
+    return axios.get('httsp://simplify-code.com/api/staff', {
         withCredentials: true
     })
 }

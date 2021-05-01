@@ -2,77 +2,77 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "./style.css";
 import { getStaffList } from '../../utils/api'
+import logo from "../img/utils.png";
 
 
 export function StaffList(props) {
     const [list, setList] = React.useState([])
+    const [loading, setLoading] = React.useState(true)
+    const [open, setOpen] = React.useState(false)
 
     const navSlide = () => {
         const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links')
-        const navLinks = document.querySelectorAll('.nav-links a')
-
-        // Toggle Links
-        nav.classList.toggle('nav-active')
-
-
-        //Animate Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = ''
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5}s`
-            }
-        })
-
-        //Burger Animation
         burger.classList.toggle('toggle')
+
+        if (open) {
+            setOpen(false)
+        } else if (!open) {
+            setOpen(true)
+        }
+    }
+
+    function openWindowDiscord() {
+        window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
     React.useEffect(() => {
         getStaffList().then(({ data }) => {
             setList(data)
+            setLoading(false)
         })
     })
 
-    function logData() {
-        console.log(list.length)
-        for (let i = 0; i < list.length; i++) {
-            console.log(list[i])
-        }
-    }
-
-    return (
+    return !loading && (
         <body>
-            <div className="nav">
+            <nav>
+                <div className={
+                    "nav-bar " + (open ? 'open' : '')
+                }>
+                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                    <ul className="navLinks">
+                        <li><Link to="/rules" className="aa">Rules</Link></li>
+                        <li><Link to="/faq" className="ab">FAQ</Link></li>
+                        <li><Link to="/" className="ab">Home</Link></li>
+                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
 
-                <div className="page-cont">
-                    <ul className="nav-links">
-                        <Link><li><a className="aa" onClick={() => {
-                            window.open("https://discord.gg/XveJX7Z", "_blank")
-                        }}>Discord</a></li></Link>
-                        <Link to="/faq"><li><a className="ab" >Faq</a></li></Link>
-                        <Link to="/rules"><li><a className="ac" >Rules</a></li></Link>
-                        <Link to="/"><li><a className="ad" >Home</a></li></Link>
                     </ul>
-
                     <div className="burger" onClick={navSlide}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
+            </nav>
 
-                <Link to="/dashboard">
-                    <button className="login-btn">
-                        Dashboard
-                </button>
-                </Link>
+            <div className="top"></div>
+
+            <div className="staff-center">
+                <ul className="staff-container">
+                    {
+                        list.map(user => {
+                            return (
+                                <li key={user.username} className="staff-box">
+                                    <img className="staff-img" src={user.avatar} />
+                                    <span className="staff-username" >{user.username}</span>
+                                    <span className="staff-role" >{user.role}</span>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
 
-            
-            <p onClick={logData}>Test</p>
-
+            <div className="top"></div>
 
             <div className="footer-container">
                 <footer>

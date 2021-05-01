@@ -242,13 +242,17 @@ app.get('/discord', (req, res) => {
 app.get("/api/staff", (req, res) => {
     const guild = client.guilds.cache.get("756195742741430352");
     const role = guild.roles.cache.get("756606234706051072")
-    const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position).map(member => [
-        {
+    const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position)
+    let staff = []
+    result.forEach(member => {
+        staff.push({
             username: member.user.username,
             avatar: member.user.avatarURL(),
-        }
-    ])
-    res.send(result)
+            role: guild.members.cache.get(member.user.id).roles.highest.name
+        })
+    })
+
+    res.send(staff)
 })
 
 // Serve Static assests if in production

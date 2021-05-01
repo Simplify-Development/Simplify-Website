@@ -1,0 +1,41 @@
+.staff-center {
+    display: flex;
+    justify-content: center;
+}
+
+.staff-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 25px;
+}
+
+.staff-box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(47, 53, 65, 0.479);
+    max-width: 145px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    transition: all 0.3s ease;
+}
+
+.staff-box:hover {
+    transform: scale(1.07);
+    transition: all 0.3s ease;
+}
+
+.staff-img {
+    border-radius: 4px;
+}
+
+.staff-username {
+    padding-top: 10px;
+}
+
+.staff-role {
+    color: #e4e1e183;
+    font-size: 12px;
+    padding-top: 5px;
+} 
