@@ -25,10 +25,13 @@ export function StaffList(props) {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
-    getStaffList().then(({ data }) => {
-        setList(data)
-        setLoading(false)
-    })
+    function start() {
+        getStaffList().then(({ data }) => {
+            setList(data)
+            setLoading(false)
+        })   
+    }
+    start()
 
     return !loading && (
         <body>
