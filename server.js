@@ -247,7 +247,7 @@ app.get("/api/staff", (req, res) => {
     result.forEach(member => {
         staff.push({
             username: member.user.username,
-            avatar: member.user.avatarURL(),
+            avatar: member.user.displayAvatarURL({ format: 'png' }),
             role: guild.members.cache.get(member.user.id).roles.highest.name
         })
     })
