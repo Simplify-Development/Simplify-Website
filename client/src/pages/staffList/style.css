@@ -41,6 +41,11 @@
   padding-top: 5px;
 }
 
+.staff-quote {
+  padding-top: 10px;
+  text-align: left;
+}
+
 @media screen and (max-width: 1058px) {
   .staff-container {
     display: grid;

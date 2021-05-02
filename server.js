@@ -240,15 +240,18 @@ app.get('/discord', (req, res) => {
 })
 
 app.get("/api/staff", (req, res) => {
+    const quotes = require('./src/database/schemas/quote-schema')
     const guild = client.guilds.cache.get("756195742741430352");
     const role = guild.roles.cache.get("756606234706051072")
     const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position)
     let staff = []
     result.forEach(member => {
+        const result = quotes.findOne({ discordId: member.user.id })
         staff.push({
             username: member.user.username,
             avatar: member.user.displayAvatarURL({ format: 'png' }),
-            role: guild.members.cache.get(member.user.id).roles.highest.name
+            role: guild.members.cache.get(member.user.id).roles.highest.name,
+            quote: (result ? result.quote : 'No quote set')
         })
     })
 

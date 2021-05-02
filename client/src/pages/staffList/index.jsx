@@ -67,6 +67,7 @@ export function StaffList(props) {
                                     <img className="staff-img" src={user.avatar} />
                                     <span className="staff-username" >{user.username}</span>
                                     <span className="staff-role" >{user.role}</span>
+                                    <span className="staff-quote">{user.quote}</span>
                                 </li>
                             )
                         })
