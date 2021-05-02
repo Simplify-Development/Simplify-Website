@@ -247,11 +247,15 @@ app.get("/api/staff", (req, res) => {
     let staff = []
     result.forEach(member => {
         const result = quotes.findOne({ discordId: member.user.id })
+        let quote;
+        if (!result) quote = "No quote set";
+        else if (result) quote = result.quote;
+
         staff.push({
             username: member.user.username,
             avatar: member.user.displayAvatarURL({ format: 'png' }),
             role: guild.members.cache.get(member.user.id).roles.highest.name,
-            quote: (result ? result.quote : 'No quote set')
+            quote: quote
         })
     })
 
