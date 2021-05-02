@@ -56,6 +56,12 @@
 @media screen and (max-width: 514px) {
   .staff-container {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 350px) {
+  .staff-container {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }

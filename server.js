@@ -184,6 +184,33 @@ client.on("message", async message => {
                 message.channel.send(embed);
             }
         })
+    } else if (command === 'quote') {
+        const quotes = require('./src/database/schemas/quote-schema')
+        const role = message.guild.roles.cache.get("756606234706051072")
+
+        if (message.member.roles.highest.position < role.position) return message.reply("You cannot use this command");
+        if (!args[0]) return message.reply("Please state a quote");
+        if (args.join(" ").length > 30) return message.reply("That quote is to big");
+
+        quotes.findOne({ discordId: message.author.id }, async (err, res) => {
+            if (err) return message.reply("Could not proside due to a error");
+            if (res) {
+                await quotes.findOneAndDelete({ discordId: message.author.id });
+                new quotes({
+                    discordId: message.author.id,
+                    quote: args.join(" ")
+                }).save().then(() => {
+                    return message.reply("You have **updated** your quote")
+                })
+            } else if (!res) {
+                new quotes({
+                    discordId: message.author.id,
+                    quote: args.join(" ")
+                }).save().then(() => {
+                    return message.reply("You have **set** your quote")
+                })
+            }
+        })
     }
 })
 
@@ -245,12 +272,11 @@ app.get("/api/staff", (req, res) => {
     const role = guild.roles.cache.get("756606234706051072")
     const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position)
     let staff = []
-    result.forEach(member => {
-        const result = quotes.findOne({ discordId: member.user.id })
+    result.forEach(async member => {
         let quote;
-        if (!result) quote = "No quote set";
-        else if (result) quote = result.quote;
-
+        const data = quotes.findOne({ discordId: member.user.id })
+        if (data) console.log(data.quote)
+        
         staff.push({
             username: member.user.username,
             avatar: member.user.displayAvatarURL({ format: 'png' }),
