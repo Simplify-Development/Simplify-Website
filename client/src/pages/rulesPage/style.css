@@ -61,6 +61,10 @@ body {
     font-weight: bold;
 }
 
+.bold-a:hover {
+    cursor: pointer;
+}
+
 .spoiler-span {
     background: rgba(0, 0, 0, 0.678);
 }
