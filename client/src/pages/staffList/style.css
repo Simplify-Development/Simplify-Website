@@ -19,6 +19,7 @@
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.041);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .staff-box:hover {
