@@ -273,9 +273,11 @@ app.get("/api/staff", (req, res) => {
     const result = guild.members.cache.filter(member => member.user.bot == false && member.roles.highest.position >= role.position)
     let staff = []
     result.forEach(async member => {
-        let quote;
-        const data = quotes.findOne({ discordId: member.user.id })
-        if (data) console.log(data.quote)
+        let quote = "No qoute has been set";
+        if (member.user.presence) {
+            if (member.user.presence.activities[0].name === "Custom Status")
+            quote = member.user.presence.activities[0].state
+        }
         
         staff.push({
             username: member.user.username,
