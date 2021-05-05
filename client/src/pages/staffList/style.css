@@ -43,7 +43,8 @@
 
 .staff-quote {
   padding-top: 10px;
-  text-align: left;
+  font-size: 12px;
+  color: #e4e1e183;
 }
 
 @media screen and (max-width: 1058px) {
