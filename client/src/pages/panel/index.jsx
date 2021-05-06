@@ -7,23 +7,17 @@ import { getPanelUsers } from '../../utils/api'
 import { getPanelPerms } from '../../utils/api'
 
 export function PanelPage(props) {
-    const [user, setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true)
     const [users, setUsers] = React.useState([])
     const [searchTerm, setSearchTerm] = useState('')
 
     React.useEffect(() => {
-        console.log("Path was ran")
-        getUserDetails(({ data }) => {
-            console.log("Got user " + data.discordId)
-            getPanelPerms(data.discordId).then(({ perms }) => {
-                console.log("Got perms " + perms.response)
-                if (perms.response == "Yes") {
-                    console.log("Perms are correct")
-                    getPanelUsers().then(({ response }) => {
-                        console.log("Getting users")
-                        setUsers(response)
-                        console.log(response)
+        getUserDetails().then(({ data }) => {
+            getPanelPerms(data.discordId).then(({ data }) => {
+                if (data.response == "Yes") {
+                    getPanelUsers().then(({ data }) => {
+                        setUsers(data)
+                        console.log(data)
                         setLoading(false)
                     })
                 } else {

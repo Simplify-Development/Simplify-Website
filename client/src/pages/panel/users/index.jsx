@@ -21,14 +21,14 @@ export function PanelUserPage({
 
     React.useEffect(() => {
         getUserDetails().then(({ data }) => {
-            getPanelPerms(data.discordId).then(({ perms }) => {
-                if (perms.response == "Yes") {
+            getPanelPerms(data.discordId).then(({ data }) => {
+                if (data.response == "Yes") {
 
-                    getPanelUser(match).then(({ result }) => {
+                    getPanelUser(match).then(({ data }) => {
                         setLoading(false)
-                        setUserWarns(result.warnsData)
-                        setUserAutoWarns(result.autoWarnsData)
-                        setMember(result.userData)
+                        setUserWarns(data.warnsData)
+                        setUserAutoWarns(data.autoWarnsData)
+                        setMember(data.userData)
                         
                     })
 
