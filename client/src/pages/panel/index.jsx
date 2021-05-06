@@ -13,10 +13,15 @@ export function PanelPage(props) {
     const [searchTerm, setSearchTerm] = useState('')
 
     React.useEffect(() => {
+        console.log("Path was ran")
         getUserDetails(({ data }) => {
+            console.log("Got user " + data.discordId)
             getPanelPerms(data.discordId).then(({ perms }) => {
+                console.log("Got perms " + perms.response)
                 if (perms.response == "Yes") {
+                    console.log("Perms are correct")
                     getPanelUsers().then(({ response }) => {
+                        console.log("Getting users")
                         setUsers(response)
                         console.log(response)
                         setLoading(false)

@@ -25,11 +25,11 @@ export function PanelUserPage({
                 if (perms.response == "Yes") {
 
                     getPanelUser(match).then(({ result }) => {
-
+                        setLoading(false)
                         setUserWarns(result.warnsData)
                         setUserAutoWarns(result.autoWarnsData)
                         setMember(result.userData)
-                        setLoading(false)
+                        
                     })
 
                 } else {
