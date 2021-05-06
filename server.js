@@ -260,8 +260,6 @@ app.post("/api/newapp", async (req, res) => {
     })
 })
 
-client.login(process.env.token);
-
 app.get('/discord', (req, res) => {
     res.redirect('https://discord.com/invite/XveJX7Z')
 })
@@ -290,6 +288,16 @@ app.get("/api/staff", (req, res) => {
     res.send(staff)
 })
 
+app.get("/api/panel/users", (req, res) => {
+    return require('./src/routes/panel/users')(client, req, res);
+})
+app.get("/api/panel/users/:id", (req, res) => {
+    return require('./src/routes/panel/user')(client, req, res);
+})
+app.get("/api/panel/perms/:id", (req, res) => {
+    return require('./src/routes/panel/perms')(client, req, res);
+})
+
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -303,3 +311,5 @@ if (process.env.NODE_ENV === "production") {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
+
+client.login(process.env.token);

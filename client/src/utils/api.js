@@ -18,3 +18,21 @@ export function getStaffList() {
         withCredentials: true
     })
 }
+
+export function getPanelUsers() {
+    return axios.get('https://simplify-code.com/api/panel/users', {
+        withCredentials: true
+    })
+}
+
+export function getPanelUser(match) {
+    return axios.get(`https://simplify-code.com/api/panel/users/${match.params.id}`, {
+        withCredentials: true
+    })
+}
+
+export function getPanelPerms(id) {
+    return axios.get(`https://simplify-code.com/api/panel/perms/${id}`, {
+        withCredentials: true
+    })
+}
