@@ -13,7 +13,6 @@ export function PanelUserPage({
     history,
     match,
 }) {
-    const [user, setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true)
 
     const [userWarns, setUserWarns] = React.useState([])
@@ -22,7 +21,6 @@ export function PanelUserPage({
 
     React.useEffect(() => {
         getUserDetails().then(({ data }) => {
-            setUser(data)
             getPanelPerms(data.discordId).then(({ perms }) => {
                 if (perms.response == "Yes") {
 

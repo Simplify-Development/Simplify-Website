@@ -14,12 +14,11 @@ export function PanelPage(props) {
 
     React.useEffect(() => {
         getUserDetails(({ data }) => {
-            setUser(data)
             getPanelPerms(data.discordId).then(({ perms }) => {
                 if (perms.response == "Yes") {
-                    getPanelUsers().then(({ data }) => {
-                        setUsers(data)
-                        console.log(data)
+                    getPanelUsers().then(({ response }) => {
+                        setUsers(response)
+                        console.log(response)
                         setLoading(false)
                     })
                 } else {
