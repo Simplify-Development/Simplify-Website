@@ -24,7 +24,7 @@ export function PanelUserPage({
             getPanelPerms(data.discordId).then(({ perms }) => {
                 if (perms.response == "Yes") {
 
-                    getPanelUser(match, data.discord).then(({ result }) => {
+                    getPanelUser(match).then(({ result }) => {
 
                         setUserWarns(result.warnsData)
                         setUserAutoWarns(result.autoWarnsData)
