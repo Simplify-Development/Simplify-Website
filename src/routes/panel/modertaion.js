@@ -52,7 +52,7 @@ module.exports = async (client, req, res) => {
                 }).save();
 
                 let infoEmbed = new Discord.MessageEmbed()
-                    .setAuthor(`[Banned] ${target.user.username}#${target.user.discriminator}`, banUser.user.displayAvatarURL())
+                    .setAuthor(`[Banned] ${target.user.username}#${target.user.discriminator}`, target.user.displayAvatarURL())
                     .setDescription(`Hey, it would seem you have been banned from **Simplify Code**, feel free to send use a [ban appeal](https://simplify-code.com/applications) and we will look into it.`)
                     .addField('» Reason', reason)
                     .setFooter(`ID: ${warnId}`)
