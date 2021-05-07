@@ -23,12 +23,11 @@ export function PanelUserPage({
     const [punishment, setPunishment] = React.useState('')
     const [reason, setReason] = React.useState('')
     const [time, setTime] = React.useState('')
-    const [content, setContent] = React.useState({})
+    const [moderator, setModerator] = React.useState('')
 
     React.useEffect(() => {
         getUserDetails().then(({ data }) => {
-            let moderator = data.discordId
-
+            setModerator(data.discordId)
 
             getPanelPerms(data.discordId).then(({ data }) => {
                 if (data.response == "Yes") {
@@ -39,14 +38,7 @@ export function PanelUserPage({
                         setUserAutoWarns(data.autoWarnsData)
                         setMember(data.userData)
 
-                        let info = {
-                            reason: reason,
-                            time: time,
-                            type: punishment,
-                            moderator: moderator,
-                            user: match.params.id
-                        }
-                        setContent(info);
+
                     })
 
                 } else {
@@ -87,7 +79,14 @@ export function PanelUserPage({
     }
 
     async function submit() {
-        await axios.post("https://simplify-code.com/api/panel/moderation", content)
+        let info = {
+            reason: reason,
+            time: time,
+            type: punishment,
+            moderator: moderator,
+            user: match.params.id
+        }
+        await axios.post("https://simplify-code.com/api/panel/moderation", info)
     }
 
     return !loading && (
