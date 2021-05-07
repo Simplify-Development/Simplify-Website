@@ -12,7 +12,7 @@ export function PageNotFound(props) {
                 }
                 }>
                     <p>
-                        <span className="color-comment">// I find your lack of</span><br />
+                        <span className="color-comment">// (404) I find your lack of</span><br />
                         <span className="color-comment">// navigation disturbing</span> <br />
                         <span className="color-pink">if</span> (<span className="color-blue">lost</span> === <span className="color-dark-blue">true</span>) {"{"}<br />
                         <div className="tab-in-code">
