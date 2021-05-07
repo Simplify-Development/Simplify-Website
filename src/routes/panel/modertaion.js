@@ -26,7 +26,7 @@ module.exports = async (client, req, res) => {
             const reason = req.body.reason;
             const user = req.body.user;
             const target = guild.members.cache.get(user);
-            const logChannel = message.guild.channels.cache.get('756212353263206572')
+            const logChannel = guild.channels.cache.get('756212353263206572')
 
             if (!target) return modMember.send("I can't seem to find that user in the server")
             if (modMember.roles.highest.comparePositionTo(target.roles.highest) <= 0) return modMember.send(`You cannot moderate <@${target.id}>`)
