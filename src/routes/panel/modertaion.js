@@ -193,7 +193,7 @@ module.exports = async (client, req, res) => {
                 }).save()
 
                 let logEmbed = new Discord.MessageEmbed()
-                    .setAuthor(`${person.user.username}`, person.user.displayAvatarURL())
+                    .setAuthor(`${target.user.username}`, target.user.displayAvatarURL())
                     .setDescription(`<:mutemic:798565116886253589> <@${target.user.id}> has been muted\n\n**Moderator**\n<@${modMember.user.id}>`)
                     .addField('Will be unmuted', `${moment(expires).fromNow()}`)
                     .setColor('#e7509e');
