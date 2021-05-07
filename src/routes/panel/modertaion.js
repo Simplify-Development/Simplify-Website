@@ -157,7 +157,7 @@ module.exports = async (client, req, res) => {
                     return modMember.send("We require that you fill out a reason")
                 }
                 const time = req.body.time;
-                if (time.req.body < 1) {
+                if (time < 1) {
                     return modMember.send("Please state how long the mute should last")
                 }
                 const ms = require('ms');
