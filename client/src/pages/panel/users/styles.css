@@ -49,7 +49,7 @@
 .panel-info-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 300px;
+    padding-bottom: 70px;
     color: #eef1f5;
     gap: 15px;
 }
@@ -63,7 +63,7 @@
 .panel-info-box{
     background-color: rgba(47, 53, 65, 0.479);
     border: 1px solid rgba(255, 255, 255, 0.041);
-    min-width: 70%;
+    min-width: 350px;
     padding: 10px;
     border-radius: 5px;
 }
@@ -90,17 +90,6 @@
     margin-bottom: 15px;
 }
 
-@media screen and (max-width: 600px) {
-    .panel-info-container {
-        grid-template-columns: 1fr;
-    }
-
-    .panel-info-box {
-        min-width: 100%;
-        max-width: 90%;
-    }
-}
-
 @media screen and (max-width: 590px) {
     .panel-flex {
         margin-top: 0px;
@@ -111,5 +100,142 @@
     .colum {
         display: flex;
         flex-direction: column;
+    }
+}
+
+.punishment-container {
+    padding-bottom: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.punish-reason {
+    min-width: 20%;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgba(47, 53, 65, 0.479);
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    color: var(--text-color);
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    outline: none;
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.punish-time {
+    min-width: 7%;
+    height: 45px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgba(47, 53, 65, 0.479);
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    color: var(--text-color);
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    outline: none;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+
+.punish-button {
+    height: 45px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: rgb(40, 45, 56);
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    color: var(--text-color);
+    padding: 10px;
+    transition: all ease 0.3s;
+}
+.punish-button:hover {
+    transition: all ease 0.3s;
+    transform: scale(1.07);
+    cursor: pointer;
+}
+
+.punish-select {
+    height: 45px;
+    min-width: 140px;
+    border-radius: 5px;
+    background-color: rgb(40, 45, 56);
+    border: 1px solid rgba(255, 255, 255, 0.041);
+    color: var(--text-color);
+    padding: 10px;
+    transition: all ease 0.3s;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    outline: none;
+    font-size: 16px;
+}
+
+.select-container {
+    position: relative;
+}
+
+.punish-arrow{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    background: #3b3c47bd;
+    height: 100%;
+    width: 3rem;
+    pointer-events: none;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.punish-arrow::after,
+.punish-arrow::before {
+    --size: 0.5em;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.punish-arrow::before {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-bottom: var(--size) solid rgba(255, 255, 255, 0.5);
+    top: 30%;
+}
+.punish-arrow::after {
+    border-left: var(--size) solid transparent;
+    border-right: var(--size) solid transparent;
+    border-top: var(--size) solid rgba(255, 255, 255, 0.5);
+    top: 60%;
+}
+
+@media screen and (max-width: 730px) {
+    .panel-info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-info-box {
+        width: 100%;
+    }
+
+    .punishment-container {
+        flex-direction: column;
+    }
+
+    .punish-button, .punish-time, .punish-reason, .select-container {
+        min-width: 80%;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .punish-time {
+        margin-left: 0px;
+    }
+    .punish-select {
+        min-width: 100%;
     }
 }

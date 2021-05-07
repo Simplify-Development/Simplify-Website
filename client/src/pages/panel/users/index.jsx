@@ -8,6 +8,7 @@ import { getPanelPerms } from '../../../utils/api'
 
 import { loadWarns } from './loadWarns'
 import { loadAutoWarns } from './loadAutoWarns'
+import axios from 'axios';
 
 export function PanelUserPage({
     history,
@@ -19,8 +20,16 @@ export function PanelUserPage({
     const [userAutoWarns, setUserAutoWarns] = React.useState([])
     const [member, setMember] = React.useState([])
 
+    const [punishment, setPunishment] = React.useState('')
+    const [reason, setReason] = React.useState('')
+    const [time, setTime] = React.useState('')
+    const [content, setContent] = React.useState({})
+
     React.useEffect(() => {
         getUserDetails().then(({ data }) => {
+            let moderator = data.discordId
+
+
             getPanelPerms(data.discordId).then(({ data }) => {
                 if (data.response == "Yes") {
 
@@ -29,7 +38,15 @@ export function PanelUserPage({
                         setUserWarns(data.warnsData)
                         setUserAutoWarns(data.autoWarnsData)
                         setMember(data.userData)
-                        
+
+                        let info = {
+                            reason: reason,
+                            time: time,
+                            type: punishment,
+                            moderator: moderator,
+                            user: match.params.id
+                        }
+                        setContent(info);
                     })
 
                 } else {
@@ -38,7 +55,7 @@ export function PanelUserPage({
             }).catch(() => {
                 window.location.href = `https://simplify-code.com/api/auth/discord`;
             })
-        
+
         }).catch(() => {
             window.location.href = `https://simplify-code.com/api/auth/discord`;
         })
@@ -59,6 +76,18 @@ export function PanelUserPage({
 
     function openWindowDiscord() {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
+    }
+
+    function loadTime() {
+        return punishment == "mute" && (
+            <input type="text" placeholder="Time" className="punish-time" onChange={val => {
+                setTime(val.target.value)
+            }} />
+        )
+    }
+
+    async function submit() {
+        await axios.post("https://simplify-code.com/panel/moderation", content)
     }
 
     return !loading && (
@@ -127,6 +156,31 @@ export function PanelUserPage({
                 </div>
 
             </div>
+
+            <div className="punishment-container">
+                <div className="select-container">
+                    <select className="punish-select" onChange={e => {
+                        setPunishment(e.target.value);
+                    }}>
+                        <option selected disabled hidden>Type</option>
+                        <option value="kick">Kick</option>
+                        <option value="warn">Warn</option>
+                        <option value="mute">Mute</option>
+                        <option value="ban">Ban</option>
+
+                    </select>
+                    <span className="punish-arrow"></span>
+                </div>
+
+                {
+                    loadTime()
+                }
+                <input type="text" placeholder="Reason..." className="punish-reason" onChange={val => {
+                    setReason(val.target.value)
+                }} />
+                <button className="punish-button" onClick={submit}>Submit</button>
+            </div>
+
 
             <div className="footer-container">
                 <footer>
