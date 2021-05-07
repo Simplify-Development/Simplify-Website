@@ -186,7 +186,7 @@ module.exports = async (client, req, res) => {
                 target.roles.add(mutedRole);
                 target.roles.remove(mainRole);
 
-                await new muteSchema({
+                await new mutes({
                     userId: user,
                     expires,
                     current: true
