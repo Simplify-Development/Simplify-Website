@@ -297,7 +297,7 @@ app.get("/api/panel/users/:id", (req, res) => {
 app.get("/api/panel/perms/:id", (req, res) => {
     return require('./src/routes/panel/perms')(client, req, res);
 })
-app.get("/api/panel/moderation", (req, res) => {
+app.post("/api/panel/moderation", (req, res) => {
     return require('./src/routes/panel/modertaion')(client, req, res);
 })
 
