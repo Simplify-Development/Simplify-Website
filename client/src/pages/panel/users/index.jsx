@@ -87,7 +87,7 @@ export function PanelUserPage({
     }
 
     async function submit() {
-        await axios.post("https://simplify-code.com/panel/moderation", content)
+        await axios.post("https://simplify-code.com/api/panel/moderation", content)
     }
 
     return !loading && (
