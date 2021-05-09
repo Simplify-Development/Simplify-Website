@@ -55,6 +55,11 @@ li {
   max-width: 40%;
 }
 
+.about h2 {
+  color: #7289da;
+  padding-bottom: 5px;
+}
+
 .links {
   display: flex;
   max-width: 120%;
@@ -69,6 +74,7 @@ li {
 }
 
 .links h2 {
+  color: #7289da;
   padding-bottom: 20px;
 }
 
@@ -78,6 +84,10 @@ li {
 
 .resources {
   padding-left: 80px;
+}
+
+.icons {
+  transform: scale(0.9);
 }
 
 .icons .fa-discord {
@@ -147,4 +157,11 @@ nav a {
   transition: all 0.3s ease;
   filter: brightness(70%);
   text-decoration: underline;
+}
+
+footer ul a:hover {
+  transition: all ease 0.3s;
+  filter: brightness(70%);
+  text-decoration: underline;
+  cursor: pointer;
 }
