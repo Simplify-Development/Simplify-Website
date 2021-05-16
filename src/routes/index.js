@@ -8,7 +8,7 @@ const checkPerms = require('./checkPerms')
 const userApps = require('./userApps')
 
 router.use("/auth", auth)
-router.use("/users", users)
+//router.use("/users", users)
 router.use("/apps", apps)
 router.use("/applist", appList)
 router.use("/userapps", userApps)

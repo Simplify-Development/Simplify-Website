@@ -281,6 +281,12 @@ app.get("/api/staff", (req, res) => {
     res.send(staff)
 })
 
+app.get("/api/users", (req, res) => {
+    const guild = client.guilds.cache.get("756195742741430352")
+    let count = guild.memberCount
+    res.send(`${count}`)
+})
+
 app.get("/api/panel/users", (req, res) => {
     return require('./src/routes/panel/users')(client, req, res);
 })
