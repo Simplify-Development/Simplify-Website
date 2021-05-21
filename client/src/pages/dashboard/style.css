@@ -103,7 +103,7 @@
 }
 
 .dummy {
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 }
 
 .app-box {
@@ -180,7 +180,7 @@
 }
 
 .Pending {
-  color: rgb(214, 195, 18);
+  color: rgb(255, 230, 0);
 }
 
 .Accepted {
