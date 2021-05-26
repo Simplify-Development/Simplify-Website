@@ -19,7 +19,8 @@ export function ApplicationPage({
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                //window.location.href = `https://simplify-code.com/api/auth/discord`
+                setLoading(false)
             })
     }, [])
 
@@ -119,7 +120,7 @@ export function ApplicationPage({
             </div>
 
 
-            <div className="footer-container">
+            <div className="footer-container-applications">
             <svg className="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#191a1f" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,96C672,107,768,149,864,165.3C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>

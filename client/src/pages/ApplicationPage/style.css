@@ -20,8 +20,8 @@
   box-sizing: border-box;
   padding: 10px;
   margin: 100px auto 0;
-  margin-bottom: 230px;
   max-width: 85%;
+  top: -145px;
 }
 
 .app-top {
@@ -29,7 +29,7 @@
   flex-direction: column;
   position: relative;
   width: 1500px;
-  bottom: -120px;
+  bottom: 30px;
   box-sizing: border-box;
   padding: 10px;
   margin: 100px auto 0;
@@ -50,7 +50,8 @@
 
 .applications li {
   display: flex;
-  background: rgba(55, 65, 83, 0.171);
+  background: rgba(74, 87, 110, 0.171);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.349);
   padding: 10px 20px;
   margin: 5px 0;
   transition: all 0.3s ease;
