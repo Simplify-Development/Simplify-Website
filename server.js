@@ -223,6 +223,9 @@ app.post("/api/newapp", async (req, res) => {
         client.users.cache.get(discordId).send(`
         Hello <@${discordId}>, Your \`\`${req.body.appType}\`\` with the id \`${applicationId}\` has been submitted.\nYou are now awaiting a response from our management team.`
         )
+
+        const logChannel = client.channels.cache.get("862792270032928778")
+        logChannel.send(`> <@${discordId}> just submitted a \`${req.body.appType}\` with id \`(${applicationId})\``)
     })
 
     await totalSchema.findOneAndUpdate({
