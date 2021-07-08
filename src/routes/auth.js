@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
+const { getServerUsers } = require('../utils/utils')
 
 router.get('/discord', passport.authenticate('discord'));
 

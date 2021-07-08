@@ -79,7 +79,11 @@ creatTotal()*/
 
 // Starting the discord bot
 const Discord = require('discord.js');
-const client = new Discord.Client();
+const client = new Discord.Client({
+    intents: [Discord.Intents.ALL],
+    displayEveryone: true,
+    partials: ["MESSAGE", "CHANNEL", "REACTION"]
+});
 const prefix = '-';
 const applicationSchema = require('./src/database/schemas/App-Schema')
 
@@ -184,33 +188,6 @@ client.on("message", async message => {
                 message.channel.send(embed);
             }
         })
-    } else if (command === 'quote') {
-        const quotes = require('./src/database/schemas/quote-schema')
-        const role = message.guild.roles.cache.get("756606234706051072")
-
-        if (message.member.roles.highest.position < role.position) return message.reply("You cannot use this command");
-        if (!args[0]) return message.reply("Please state a quote");
-        if (args.join(" ").length > 30) return message.reply("That quote is to big");
-
-        quotes.findOne({ discordId: message.author.id }, async (err, res) => {
-            if (err) return message.reply("Could not proside due to a error");
-            if (res) {
-                await quotes.findOneAndDelete({ discordId: message.author.id });
-                new quotes({
-                    discordId: message.author.id,
-                    quote: args.join(" ")
-                }).save().then(() => {
-                    return message.reply("You have **updated** your quote")
-                })
-            } else if (!res) {
-                new quotes({
-                    discordId: message.author.id,
-                    quote: args.join(" ")
-                }).save().then(() => {
-                    return message.reply("You have **set** your quote")
-                })
-            }
-        })
     }
 })
 
@@ -307,7 +284,6 @@ if (process.env.NODE_ENV === "production") {
         res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
     });
 }
-
 
 // Starting Express
 app.listen(port, () => {

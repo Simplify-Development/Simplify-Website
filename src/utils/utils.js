@@ -12,7 +12,7 @@ async function getApplicationRole(discordId) {
 }
 
 async function getServerUsers() {
-    const response = await fetch(`https://discordapp.com/api/guilds/756195742741430352`, {
+    const response = await fetch(`https://discordapp.com/api/guilds/756195742741430352/members`, {
         method: 'GET',
         headers: {
             Authorization: `Bot ${process.env.token}`
