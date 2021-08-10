@@ -7,3 +7,16 @@
     color: var(--text-color);
     padding-bottom: 20px;
 }
+
+.review-box {
+    max-width: 80%;
+    min-width: 100%;
+    min-height: 25px;
+    background: #24272d;
+    outline: none;
+    border: 1px solid rgb(59, 59, 59);
+    padding: 5px;
+    padding-bottom: 5px;
+    color: var(--text-color);
+    font-size: 15px;
+}
