@@ -46,13 +46,8 @@
   color: #ff3366;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  padding: 10px;
   max-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
-  font-size: 2rem;
   margin-top: 15%;
 }
 
