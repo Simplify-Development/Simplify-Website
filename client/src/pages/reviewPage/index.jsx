@@ -94,7 +94,7 @@ export function ReviewPage({
                         return (
                             <div className="input-container">
                                 <h3 className="app-input-header">{current.question}</h3>
-                                    <div disabled={true} className="review-box"><p>{current.answer}</p></div>
+                                <div disabled={true} className="review-box"><p>{current.answer}</p></div>
                             </div>
                         )
 
@@ -102,7 +102,9 @@ export function ReviewPage({
 
                     <div className="review-info-container">
                         <h1 className="review-info-title">Info</h1>
-                        <p>Discord user info : {content.user}#{content.tag} ({content.discordId})</p> <br />
+                        <div className="review-info-box">
+                            <p><span className="red">{content.user}</span>#<span className="red">{content.tag}</span> (<span className="red">{content.discordId}</span>)</p>
+                        </div> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
                         <p>
                             To accpets this application use "-accept {content.applicationId}"<br /><br />
