@@ -19,8 +19,9 @@
     padding-bottom: 5px;
     color: var(--text-color);
     font-size: 15px;
+    word-wrap: break-word;
 }
 
 .review-box p {
-    max-width: 90%;
+    word-wrap: break-word;
 }
