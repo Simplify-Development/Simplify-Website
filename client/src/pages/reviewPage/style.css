@@ -55,3 +55,7 @@
   font-size: 2rem;
   margin-top: 15%;
 }
+
+.dark {
+    filter: brightness(80%);
+}
