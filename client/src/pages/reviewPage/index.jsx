@@ -89,26 +89,34 @@ export function ReviewPage({
             <div className="app-background">
                 <div className="editor-container">
                     <h1 className="review-title">{content.user}'s {content.appType}</h1>
-                    <CKEditor
-                        data={`${content.content}`}
-                        editor={ClassicEditor}
-                    />
+
+                    {content.content.map(current => {
+                        current.answer.split("\n").map(function (item, idx) {
+                            return (
+                                <div className="input-container">
+                                    <h3 className="app-input-header">{current.answer}</h3>
+                                    <div className="app-input">{item}</div>
+                                </div>
+                            )
+                        })
+                    })}
+
                     <div className="review-info-container">
                         <h1 className="review-info-title">Info</h1>
                         <p>Discord user info : {content.user}#{content.tag} ({content.discordId})</p> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
                         <p>
                             To accpets this application use "-accept {content.applicationId}"<br /><br />
-                        To decline this application use "-deny {content.applicationId}"
-                    </p>
+                            To decline this application use "-deny {content.applicationId}"
+                        </p>
                     </div>
                 </div>
             </div>
 
             <div className="footer-container">
-            <svg className="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#191a1f" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,96C672,107,768,149,864,165.3C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+                <svg className="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#191a1f" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,96C672,107,768,149,864,165.3C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
                 <footer>
                     <div className="container">
                         <div className="about">
@@ -123,7 +131,7 @@ export function ReviewPage({
                             <li><a onClick={() => window.open("https://www.youtube.com/channel/UCkCQKpugToFwY_EWkI0GlWw", "_blank")}><i class="fab fa-youtube"></i></a></li>
                         </ul>
                     </div>
-                    
+
 
                     <div className="links">
                         <div className="product">

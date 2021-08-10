@@ -6,7 +6,7 @@ const newAppSchema = new mongoose.Schema({
         required: true
     },
     content: {
-        type: String,
+        type: Array,
         required: true
     },
     discordId: {
