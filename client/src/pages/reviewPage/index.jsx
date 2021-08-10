@@ -94,7 +94,12 @@ export function ReviewPage({
                         return (
                             <div className="input-container">
                                 <h3 className="app-input-header">{current.question}</h3>
-                                <div className="review-box"><p>{current.answer.split("\n").join(<br />)}</p></div>
+                                <div className="review-box">{() => {
+                                    const answer = current.answer;
+                                    const newAnswer = answer.split('\n').map(str => <p>{str}</p>)
+
+                                    return newAnswer
+                                }}</div>
                             </div>
                         )
 
