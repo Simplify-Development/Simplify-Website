@@ -94,7 +94,10 @@ export function ReviewPage({
                         return (
                             <div className="input-container">
                                 <h3 className="app-input-header">{current.question}</h3>
-                                <textarea className="review-box" disabled={true}>{current.answer}</textarea>
+                                <div className="grow-wrap">
+                                    <textarea disabled={true} className="review-box">{current.answer}</textarea>
+                                </div>
+
                             </div>
                         )
 
