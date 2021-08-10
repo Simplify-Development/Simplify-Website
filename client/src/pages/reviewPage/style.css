@@ -20,3 +20,7 @@
     color: var(--text-color);
     font-size: 15px;
 }
+
+.review-box p {
+    max-width: 90%;
+}
