@@ -103,7 +103,7 @@ export function ReviewPage({
                     <div className="review-info-container">
                         <h1 className="review-info-title">Info</h1>
                         <div className="review-info-box">
-                            <p><span className="red">{content.user}</span>#<span className="red">{content.tag}</span> (<span className="red">{content.discordId}</span>)</p>
+                            <p><span className="red">{content.user}</span><span className="dark"># </span><span className="red">{content.tag}</span><span className="dark">(</span><span className="red">{content.discordId}</span><span className="dark">)</span></p>
                         </div> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
                         <p>

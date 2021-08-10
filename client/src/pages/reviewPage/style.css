@@ -1,46 +1,57 @@
 .review-info-container {
-    padding-top: 20px;
-    color: var(--text-color);
+  padding-top: 20px;
+  color: var(--text-color);
 }
 
 .review-title {
-    color: var(--text-color);
-    padding-bottom: 20px;
+  color: var(--text-color);
+  padding-bottom: 20px;
 }
 
 .review-box {
-    max-width: 80%;
-    min-width: 100%;
-    min-height: 25px;
-    height: auto;
-    background: #24272d;
-    outline: none;
-    border: 1px solid rgb(59, 59, 59);
-    padding: 5px;
-    padding-bottom: 5px;
-    color: var(--text-color);
-    font-size: 15px;
-    word-wrap: break-word;
-    overflow: hidden;
-    white-space: pre-wrap;
+  max-width: 80%;
+  min-width: 100%;
+  min-height: 25px;
+  height: auto;
+  background: #24272d;
+  outline: none;
+  border: 1px solid rgb(59, 59, 59);
+  padding: 5px;
+  padding-bottom: 5px;
+  color: var(--text-color);
+  font-size: 15px;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: pre-wrap;
 }
 
 .review-box p {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .review-info-box {
-    max-width: 80%;
-    min-width: 100%;
-    min-height: 25px;
+  max-width: 80%;
+  min-width: 100%;
+  min-height: 25px;
 
-    background: #24272d;
-    outline: none;
-    border: 1px solid rgb(59, 59, 59);
-    padding: 5px;
-    padding-bottom: 5px;
+  background: #24272d;
+  outline: none;
+  border: 1px solid rgb(59, 59, 59);
+  padding: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
 }
 
 .red {
-    color: #ff3366;
+  color: #ff3366;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  padding: 10px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 2rem;
+  margin-top: 15%;
 }
