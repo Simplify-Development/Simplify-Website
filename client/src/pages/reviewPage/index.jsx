@@ -91,10 +91,13 @@ export function ReviewPage({
                     <h1 className="review-title">{content.user}'s {content.appType}</h1>
 
                     {content.content.map(current => {
-                        <div className="input-container">
-                            <h3 className="app-input-header">{current.question}</h3>
-                            <div className="app-input">{current.answer.split("\n").join(<br />)}</div>
-                        </div>
+                        return (
+                            <div className="input-container">
+                                <h3 className="app-input-header">{current.question}</h3>
+                                <div className="app-input">{current.answer.split("\n").join(<br />)}</div>
+                            </div>
+                        )
+
                     })}
 
                     <div className="review-info-container">
