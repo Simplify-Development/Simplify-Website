@@ -146,20 +146,28 @@ export function BanAppealPage(props) {
 
                     <div className="input-container">
                         <h3 className="app-input-header">Why did you get banned</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion2({ question: "Why did you get banned", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion2({ question: "Why did you get banned", answer: e.target.value })}></textarea>
+                        </div>
                     </div>
 
                     <div className="input-container">
                         <h3 className="app-input-header">Do you believe you should have been banned, go into detail</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion3({ question: "Do you believe you should have been banned", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion3({ question: "Do you believe you should have been banned", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                     <div className="input-container">
                         <h3 className="app-input-header">Why should we unban you</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion4({ question: "Why should we unban you", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion4({ question: "Why should we unban you", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                 </div>
