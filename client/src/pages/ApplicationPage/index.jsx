@@ -96,10 +96,12 @@ export function ApplicationPage({
                         <button className="closed-btn">Unavailable</button>
                     </li>
 
-                    <li onClick={closed} >
-                        <span className="app-name" >Ban Appeal</span>
-                        <button className="closed-btn">Unavailable</button>
-                    </li>
+                    <Link to="/applications/appeal">
+                        <li>
+                            <span className="app-name" >Ban Appeal</span>
+                            <button className="open-btn">Available</button>
+                        </li>
+                    </Link>
 
                     <li onClick={closed} >
                         <span className="app-name" >Art Poster</span>
@@ -117,12 +119,6 @@ export function ApplicationPage({
                         </li>
                     </Link>
 
-                    <Link to="/applications/appeal">
-                        <li>
-                            <span className="app-name" >Ban Appeal</span>
-                            <button className="open-btn">Available</button>
-                        </li>
-                    </Link>
                     <Link to="/applications/art">
                         <li>
                             <span className="app-name" >Art poster</span>
