@@ -6,6 +6,7 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 import logo from "../img/utils.png";
+import { toast } from "react-toastify";
 
 export function ReviewPage({
     history,
@@ -14,6 +15,7 @@ export function ReviewPage({
     const [content, setContent] = React.useState([])
     const [requirements, setRequirements] = React.useState('')
     const [loading, setLoading] = React.useState(true)
+    const [moderator, setModerator] = React.useState('')
 
     function getApplication() {
         return axios.get(`https://simplify-code.com/api/apps/${match.params.id}`)
@@ -22,6 +24,7 @@ export function ReviewPage({
     React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
+                setModerator(data.discordId)
                 getWhitelistStatus(data.discordId).then(({ data }) => {
                     if (data.message === "Yes") {
 
@@ -44,6 +47,29 @@ export function ReviewPage({
                 window.location.href = "/"
             })
     }, [])
+
+    const accept = async () => {
+        const answer = {
+            moderator: moderator,
+            id: match.params.id
+        }
+        await axios.post("https://simplify-code.com/api/applications/accept", answer).then(() => {
+            window.location.href = "/applications/review"
+        }).catch(() => {
+            return toast.error("Could not accept the application due to an error")
+        })
+    }
+    const decline = async () => {
+        const answer = {
+            moderator: moderator,
+            id: match.params.id
+        }
+        await axios.post("https://simplify-code.com/api/applications/decline", answer).then(() => {
+            window.location.href = "/applications/review"
+        }).catch(() => {
+            return toast.error("Could not decline the application due to an error")
+        })
+    }
 
     const [open, setOpen] = React.useState(false)
 
@@ -106,11 +132,12 @@ export function ReviewPage({
                             <p><span className="red">{content.user}</span><span className="dark"> #</span><span className="red">{content.tag}</span><span className="dark"> (</span><span className="red">{content.discordId}</span><span className="dark">)</span></p>
                         </div> <br />
                         <p>Meets the requirements : {requirements}</p> <br />
-                        <p>
-                            To accpets this application use "-accept {content.applicationId}"<br /><br />
-                            To decline this application use "-deny {content.applicationId}"
-                        </p>
-                    </div>
+                    
+                </div>
+                <div className="review-buttons">
+                    <button className="decline-button" onClick={decline}>Decline</button>
+                    <button className="accept-button" onClick={accept}>Accept</button>
+                </div>
                 </div>
             </div>
 

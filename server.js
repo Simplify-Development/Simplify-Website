@@ -261,6 +261,49 @@ app.get("/api/staff", (req, res) => {
     res.send(staff)
 })
 
+app.post("/api/applications/decline", async (req, res) => {
+    const id = req.body.id;
+    const moderator = req.body.moderator;
+
+    const applications = require('./src/database/schemas/App-Schema');
+
+    applications.findOne({ applicationId: id }, (err, data) => {
+        if (err || !data) return;
+        else if (data) {
+            const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
+            channel.send(`> <@${data.discordId}> Your \`\`${data.appType}\`\` has been denied by <@${moderator}>\n\n> *Have a issue with this? Contact our modmail*`)
+            await applicationSchema.findOneAndUpdate({
+                applicationId: applicationId
+            }, {
+                status: 'Declined'
+            }, {
+                upsert: true
+            })
+        }
+    })
+})
+app.post("/api/applications/accept", async (req, res) => {
+    const id = req.body.id;
+    const moderator = req.body.moderator;
+
+    const applications = require('./src/database/schemas/App-Schema');
+
+    applications.findOne({ applicationId: id, status: 'Pending' }, (err, data) => {
+        if (err || !data) return;
+        else if (data) {
+            const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
+            channel.send(`> <@${data.discordId}> congratulations! Your \`\`${data.appType}\`\` has been accepted by <@${moderator}>\n> \n> You should expect instructions soon`)
+            await applicationSchema.findOneAndUpdate({
+                applicationId: applicationId
+            }, {
+                status: 'Accepted'
+            }, {
+                upsert: true
+            })
+        }
+    })
+})
+
 app.get("/api/users", (req, res) => {
     const guild = client.guilds.cache.get("756195742741430352")
     let count = guild.memberCount

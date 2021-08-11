@@ -52,5 +52,27 @@
 }
 
 .dark {
-    filter: brightness(80%);
+  filter: brightness(80%);
+}
+
+.review-buttons button {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+  outline: none;
+  border: none;
+  font-size: 20.7px;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.accept-button {
+  background: #202c44;
+  color: var(--text-color);
+}
+
+.decline-button {
+  background: #f5365c;
+  color: var(--text-color);
 }
