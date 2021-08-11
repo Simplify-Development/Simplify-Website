@@ -32,10 +32,19 @@ export function StaffPage(props) {
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                //window.location.href = `https://simplify-code.com/api/auth/discord`
                 setLoading(false)
             })
     }, [])
+
+    const growers = document.querySelectorAll(".grow-wrap");
+
+    growers.forEach((grower) => {
+        const textarea = grower.querySelector("textarea");
+        textarea.addEventListener("input", () => {
+            grower.dataset.replicatedValue = textarea.value;
+        });
+    });
 
     async function checkHandler() {
         if (checked === true) {
@@ -176,26 +185,38 @@ export function StaffPage(props) {
 
                     <div className="input-container">
                         <h3 className="app-input-header">Why do you want to be a part of our staff team</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion4({ question: "Why do you want to be a part of our staff team", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion4({ question: "Why do you want to be a part of our staff team", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                     <div className="input-container">
                         <h3 className="app-input-header">What do you believe the goal of a staff team is</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion5({ question: "What do you believe the goal of a staff team is", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion5({ question: "What do you believe the goal of a staff team is", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                     <div className="input-container">
                         <h3 className="app-input-header">What are the three strengths and weaknesses you have</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion6({ question: "What are the three strengths and weaknesses you have", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion6({ question: "What are the three strengths and weaknesses you have", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                     <div className="input-container">
                         <h3 className="app-input-header">Why should we choose you over other applications</h3>
-                        <textarea className="app-textarea" name="app-textarea"
-                            onChange={e => setQuestion7({ question: "Why should we choose you over other applications", answer: e.target.value })}></textarea>
+                        <div className="grow-wrap">
+                            <textarea className="app-textarea" name="app-textarea"
+                                onChange={e => setQuestion7({ question: "Why should we choose you over other applications", answer: e.target.value })}></textarea>
+                        </div>
+
                     </div>
 
                     {/*<CKEditor
