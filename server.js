@@ -267,7 +267,7 @@ app.post("/api/applications/decline", async (req, res) => {
 
     const applications = require('./src/database/schemas/App-Schema');
 
-    applications.findOne({ applicationId: id }, (err, data) => {
+    applications.findOne({ applicationId: id }, async (err, data) => {
         if (err || !data) return;
         else if (data) {
             const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
@@ -288,7 +288,7 @@ app.post("/api/applications/accept", async (req, res) => {
 
     const applications = require('./src/database/schemas/App-Schema');
 
-    applications.findOne({ applicationId: id, status: 'Pending' }, (err, data) => {
+    applications.findOne({ applicationId: id, status: 'Pending' }, async (err, data) => {
         if (err || !data) return;
         else if (data) {
             const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
