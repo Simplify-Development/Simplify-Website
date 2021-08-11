@@ -278,6 +278,8 @@ app.post("/api/applications/decline", async (req, res) => {
                 status: 'Declined'
             }, {
                 upsert: true
+            }).then(() => {
+                res.send("done")
             })
         }
     })
@@ -299,6 +301,8 @@ app.post("/api/applications/accept", async (req, res) => {
                 status: 'Accepted'
             }, {
                 upsert: true
+            }).then(() => {
+                res.send("done")
             })
         }
     })
