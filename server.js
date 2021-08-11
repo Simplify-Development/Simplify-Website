@@ -273,7 +273,7 @@ app.post("/api/applications/decline", async (req, res) => {
             const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
             channel.send(`> <@${data.discordId}> Your \`\`${data.appType}\`\` has been denied by <@${moderator}>\n\n> *Have a issue with this? Contact our modmail*`)
             await applicationSchema.findOneAndUpdate({
-                applicationId: applicationId
+                applicationId: id
             }, {
                 status: 'Declined'
             }, {
@@ -294,7 +294,7 @@ app.post("/api/applications/accept", async (req, res) => {
             const channel = client.channels.cache.find(ch => ch.id === '818890518922002462')
             channel.send(`> <@${data.discordId}> congratulations! Your \`\`${data.appType}\`\` has been accepted by <@${moderator}>\n> \n> You should expect instructions soon`)
             await applicationSchema.findOneAndUpdate({
-                applicationId: applicationId
+                applicationId: id
             }, {
                 status: 'Accepted'
             }, {
