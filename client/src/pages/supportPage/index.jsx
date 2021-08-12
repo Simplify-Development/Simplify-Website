@@ -112,6 +112,15 @@ export function SupportPage(props) {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
+    const growers = document.querySelectorAll(".grow-wrap");
+
+    growers.forEach((grower) => {
+        const textarea = grower.querySelector("textarea");
+        textarea.addEventListener("input", () => {
+            grower.dataset.replicatedValue = textarea.value;
+        });
+    });
+
     return !loading && (
         <body>
 
