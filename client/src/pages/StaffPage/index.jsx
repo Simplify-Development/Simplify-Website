@@ -82,7 +82,7 @@ export function StaffPage(props) {
                 return toast.error(`Question 6 requires a answer of 80 characters, you are currently at ${question6.answer.split(" ").join("").length}`)
             }
 
-            if (question7.answer.split(" ").join("").length < 80) {
+            if (question7.answer.split(" ").join("").length < 100) {
                 return toast.error(`Question 7 requires a answer of 100 characters, you are currently at ${question7.answer.split(" ").join("").length}`)
             }
 

@@ -91,10 +91,12 @@ export function ApplicationPage({
                         <button className="closed-btn">Unavailable</button>
                     </li>
 
-                    <li onClick={closed} >
-                        <span className="app-name" >Support Team</span>
-                        <button className="closed-btn">Unavailable</button>
-                    </li>
+                    <Link to="/applications/support">
+                        <li>
+                            <span className="app-name" >Support Team</span>
+                            <button className="open-btn">Available</button>
+                        </li>
+                    </Link>
 
                     <Link to="/applications/appeal">
                         <li>
@@ -112,12 +114,7 @@ export function ApplicationPage({
                         <span className="app-name" >Content Creator</span>
                         <button className="closed-btn">Unavailable</button>
                     </li>
-                    {/*<Link to="/applications/support">
-                        <li>
-                            <span className="app-name" >Support Team</span>
-                            <button className="open-btn">Available</button>
-                        </li>
-                    </Link>
+                    {/*
 
                     <Link to="/applications/art">
                         <li>
