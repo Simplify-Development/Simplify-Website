@@ -97,6 +97,14 @@ export function MainPage(props) {
                 </div>
             </nav>
 
+            {/*<div className="top-image">
+                <br />
+                <br />
+                <h2>Simplify Code is the greatest Place to learn code while meeting new friends</h2>
+                <br />
+                <br />
+            </div>*/}
+
             <div className="top"></div>
 
             <div className="discord-container">

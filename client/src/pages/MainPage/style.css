@@ -561,3 +561,34 @@ body {
     margin-right: 20%;
   }
 }
+
+.top-image {
+  background: url("../img/code.jpg") repeat fixed;
+  position: relative;
+  top: 200px;
+  height: 400px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(40%);
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 403px) {
+  .discord-container {
+    text-align: center;
+  }
+
+  .discord-container p {
+    padding-top: 10px;
+  }
+
+  .discord-container h1 {
+    font-size: 25px;
+  }
+
+  .discord-container button {
+    font-size: 25px;
+  }
+}
