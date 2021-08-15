@@ -6,6 +6,7 @@ import axios from 'axios';
 import CountUp from 'react-countup';
 import { toast } from 'react-toastify'
 import logo from "../img/utils.png";
+import { Loading } from 'react-loading-dot'
 
 export function DashboardPage({
     history,
@@ -77,6 +78,12 @@ export function DashboardPage({
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
+    if (loading) {
+        <div className="center">
+            <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
+        </div>
+    }
+
     return !loading && (
         <body>
 
@@ -136,7 +143,7 @@ export function DashboardPage({
                 </li>
 
                 {
-                    
+
                     applications.map(app => {
                         if (applications.length > 0) {
                             return (
@@ -153,7 +160,7 @@ export function DashboardPage({
                                 </li>
                             )
                         }
-                        
+
                     })
                 }
             </div>
