@@ -79,10 +79,36 @@ export function DashboardPage({
     }
 
     if (loading) {
-        <div className="center">
-            <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
-        </div>
+        return (
+            <div>
+                <nav>
+                    <div className={
+                        "nav-bar " + (open ? 'open' : '')
+                    }>
+                        <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                        <ul className="navLinks">
+                            <li><Link to="/rules" className="aa">Rules</Link></li>
+                            <li><Link to="/faq" className="ab">FAQ</Link></li>
+                            <li><Link to="/team" className="ab">Team</Link></li>
+                            <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+
+                        </ul>
+                        <div className="burger" onClick={navSlide}>
+                            <div className="line1"></div>
+                            <div className="line2"></div>
+                            <div className="line3"></div>
+                        </div>
+                    </div>
+                </nav>
+                <div className="center">
+                    <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
+                </div>
+            </div>
+
+        )
+
     }
+
 
     return !loading && (
         <body>

@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { getUserDetails } from '../../utils/api';
 import { toast } from 'react-toastify';
 import logo from "../img/utils.png";
+import { Loading } from 'react-loading-dot'
 
 toast.configure()
 export function StaffPage(props) {
@@ -120,6 +121,37 @@ export function StaffPage(props) {
 
     function openWindowDiscord() {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
+    }
+
+    if (loading) {
+        return (
+            <div>
+                <nav>
+                    <div className={
+                        "nav-bar " + (open ? 'open' : '')
+                    }>
+                        <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                        <ul className="navLinks">
+                            <li><Link to="/rules" className="aa">Rules</Link></li>
+                            <li><Link to="/faq" className="ab">FAQ</Link></li>
+                            <li><Link to="/team" className="ab">Team</Link></li>
+                            <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+
+                        </ul>
+                        <div className="burger" onClick={navSlide}>
+                            <div className="line1"></div>
+                            <div className="line2"></div>
+                            <div className="line3"></div>
+                        </div>
+                    </div>
+                </nav>
+                <div className="center">
+                    <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
+                </div>
+            </div>
+
+        )
+
     }
 
     return !loading && (

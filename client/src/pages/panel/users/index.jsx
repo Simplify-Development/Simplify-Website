@@ -9,6 +9,7 @@ import { getPanelPerms } from '../../../utils/api'
 import { loadWarns } from './loadWarns'
 import { loadAutoWarns } from './loadAutoWarns'
 import axios from 'axios';
+import { Loading } from 'react-loading-dot'
 
 export function PanelUserPage({
     history,
@@ -87,6 +88,37 @@ export function PanelUserPage({
             user: match.params.id
         }
         await axios.post("https://simplify-code.com/api/panel/moderation", info)
+    }
+
+    if (loading) {
+        return (
+            <div>
+                <nav>
+                    <div className={
+                        "nav-bar " + (open ? 'open' : '')
+                    }>
+                        <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
+                        <ul className="navLinks">
+                            <li><Link to="/rules" className="aa">Rules</Link></li>
+                            <li><Link to="/faq" className="ab">FAQ</Link></li>
+                            <li><Link to="/team" className="ab">Team</Link></li>
+                            <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+
+                        </ul>
+                        <div className="burger" onClick={navSlide}>
+                            <div className="line1"></div>
+                            <div className="line2"></div>
+                            <div className="line3"></div>
+                        </div>
+                    </div>
+                </nav>
+                <div className="center">
+                    <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
+                </div>
+            </div>
+
+        )
+
     }
 
     return !loading && (
@@ -182,9 +214,9 @@ export function PanelUserPage({
 
 
             <div className="footer-container">
-            <svg className="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                <path fill="#191a1f" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,96C672,107,768,149,864,165.3C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
+                <svg className="footer-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill="#191a1f" fill-opacity="1" d="M0,32L48,48C96,64,192,96,288,101.3C384,107,480,85,576,96C672,107,768,149,864,165.3C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
 
                 <footer>
                     <div className="container">
