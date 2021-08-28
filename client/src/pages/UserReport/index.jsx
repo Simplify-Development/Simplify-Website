@@ -88,8 +88,6 @@ export function ReportPage() {
 
         await axios.post('https://simplify-code.com/api/newreport', content).then(res => {
             window.location.href = "/dashboard"
-        }).catch(async () => {
-            return toast.error('Could not send the application to the database.')
         })
 
     }

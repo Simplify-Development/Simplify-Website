@@ -331,12 +331,14 @@ app.post("/api/newreport", (req, res) => {
     const userId = req.body.userId;
     const reported = req.body.reportedId;
     const checked = req.body.checked;
-    const reason = req.body.checked;
+    const reason = req.body.reason;
 
     const user = client.users.cache.get(userId)
     const reportedUser = client.users.cache.get(reported)
     if (!user) return;
-    if (!reportedUser) return user.send(`I can't find a user in the server with the id \`$${reported}\`, make sure to provide a valid id next time`)
+    if (!reportedUser) {
+        return user.send(`I can't find a user in the server with the id \`${reported}\`, make sure to provide a valid id next time`)
+    }
 
     const logChannel = client.channels.cache.get("756212353263206572")
     
