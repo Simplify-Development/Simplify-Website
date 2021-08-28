@@ -13,18 +13,6 @@ export function ReportPage(props) {
     const [loading, setLoading] = React.useEffect([])
     const [user, setUser] = React.useEffect([])
 
-    React.useEffect(() => {
-        getUserDetails()
-            .then(({ data }) => {
-                setUser(data);
-                console.log(data)
-                setLoading(false);
-            }).catch((err) => {
-                console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
-            })
-    }, [])
-
     const [open, setOpen] = React.useState(false)
 
     const [checked1, setChecked1] = React.useState(false)
@@ -104,6 +92,18 @@ export function ReportPage(props) {
         })
 
     }
+
+    React.useEffect(() => {
+        getUserDetails()
+            .then(({ data }) => {
+                setUser(data);
+                console.log(data)
+                setLoading(false);
+            }).catch((err) => {
+                console.error(err)
+                window.location.href = `https://simplify-code.com/api/auth/discord`
+            })
+    }, [])
 
     if (loading) {
         return (
