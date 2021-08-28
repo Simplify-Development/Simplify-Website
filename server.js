@@ -327,6 +327,36 @@ app.post("/api/panel/moderation", (req, res) => {
     return require('./src/routes/panel/modertaion')(client, req, res);
 })
 
+app.post("/api/newreport", (req, res) => {
+    const userId = req.body.userId;
+    const reported = req.body.reportedId;
+    const checked = req.body.checked;
+    const reason = req.body.checked;
+
+    const user = client.users.cache.get(userId)
+    const reportedUser = client.users.cache.get(reported)
+    if (!user) return;
+    if (!reportedUser) return user.send(`I can't find a user in the server with the id \`$${reported}\`, make sure to provide a valid id next time`)
+
+    const logChannel = client.channels.cache.get("756212353263206572")
+    
+    const embed = new Discord.MessageEmbed()
+    .setTitle('User Report')
+    .setDescription('A new user reported has been created')
+    .addFields([
+        {name: 'By', value: `<@${user.id}>`},
+        {name: 'Reported', value: `<@${reportedUser.id}>`},
+        {name: 'Broken Rules', value: checked.join(", ")},
+        {name: 'Reason', value: reason}
+    ])
+    .setTimestamp()
+    .setFooter(user.id)
+    logChannel.send(embed).then(() => {
+        user.send("You have created a report, there is a chanse we will contact you about this to get more information.")
+        res.send("Completed")
+    })
+})
+
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));

@@ -5,7 +5,7 @@ import React from "react";
 import { Switch, Route } from 'react-router-dom'
 import { 
   MainPage, ApplicationPage, DashboardPage, PageNotFound, TeamPage, RulesPage, FaqPage, PrivacyPage, StaffPage, ReviewPage, AppListPage, SupportPage, ContentCreatorPage,
-  BanAppealPage, ArtPosterPage, StaffList, PanelPage, PanelUserPage
+  BanAppealPage, ArtPosterPage, StaffList, PanelPage, PanelUserPage, ReportPage
 } from './pages'
 
 
@@ -20,6 +20,7 @@ function App() {
       <Route path="/team" exact={ true }  component={StaffList} />
       <Route path="/privacy" exact={ true }  component={PrivacyPage} />
       <Route path="/dashboard" exact={ true }  component={DashboardPage} />
+      <Route path="/dashboard/report" exact={ true }  component={ReportPage} />
       <Route path="/panel" exact={ true }  component={PanelPage} />
       <Route path="/panel/users/:id" exact={ true }  component={PanelUserPage} />
       <Route path="/applications" exact={ true }  component={ApplicationPage} />
