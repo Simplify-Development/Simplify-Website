@@ -9,9 +9,10 @@ import { Loading } from 'react-loading-dot'
 import { Link } from "react-router-dom"
 
 
-export function ReportPage(props) {
-    const [loading, setLoading] = React.useEffect([])
-    const [user, setUser] = React.useEffect([])
+export function ReportPage() {
+
+    const [loading, setLoading] = React.useState(true)
+    const [user, setUser] = React.useState([])
 
     const [open, setOpen] = React.useState(false)
 
