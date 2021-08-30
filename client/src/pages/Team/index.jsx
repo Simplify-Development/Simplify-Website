@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import famOyan from './img/famOyan.png'
 import Zofux from './img/Zofux.png'
 import logo from "../img/utils.png";
+import { NavLogin } from "../components/navLogin";
 
 import "./style.css";
 
@@ -13,7 +14,7 @@ export function TeamPage(props) {
     const navSlide = () => {
         const burger = document.querySelector('.burger');
         burger.classList.toggle('toggle')
-    
+
         if (open) {
             setOpen(false)
         } else if (!open) {
@@ -25,36 +26,48 @@ export function TeamPage(props) {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
+    const openNav = () => {
+        setOpen(!open)
+    }
+
     return (
         <body>
-              <nav>
-                <div className={
-                    "nav-bar " + (open ? 'open' : '')
-                }>
-                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
-                    <ul className="navLinks">
-                        <li><Link to="/" className="aa">Home</Link></li>
-                        <li><Link to="/faq" className="ab">FAQ</Link></li>
-                        <li><Link to="/rules" className="ab">Rules</Link></li>
-                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+            <div className="nav">
+                <div className="logo-container">
+                    <img src={logo} alt="" className="logo" />
+                    <h1 className="logo-title">Simplify Code</h1>
+                </div>
 
-                    </ul>
-                    <div className="burger" onClick={navSlide}>
+                <div className="links-container">
+                    <div className="nav-links">
+                        <li><Link to="/rules">Rules</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/team">Team</Link></li>
+                    </div>
+                    <div className={"nav-menu " + (open ? "open" : "")}>
+                        <Link to="/rules">Rules</Link>
+                        <Link to="/faq">FAQ</Link>
+                        <Link to="/team">Team</Link>
+                    </div>
+
+                    <NavLogin />
+                    <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
-            </nav>
+
+            </div>
             <div className="top"></div>
 
             <div className="discord-container-team">
                 <div className="discord-team" id="discord-page">
                     <h1><span className="s1">Simp</span><span className="s2">lify</span> <span className="s3">Develo</span><span className="s4">pment</span></h1>
                     <p>
-                    The developers of Simplify wants to make things easy.
-                    We put in the little extra touch, to make our users satisfied.
-                    
+                        The developers of Simplify wants to make things easy.
+                        We put in the little extra touch, to make our users satisfied.
+
                     </p>
                 </div>
             </div>
@@ -64,20 +77,20 @@ export function TeamPage(props) {
                 <div className="card-container">
                     <div className="card-team">
                         <div className="top-half">
-                            <img className="logo-team" src={Zofux} alt="zofux" height="auto" width="128px"/> 
+                            <img className="logo-team" src={Zofux} alt="zofux" height="auto" width="128px" />
                             <div className="top-half1">
-                            <h1 className="name-team">Zofux</h1>
-                            <p className="desc-team">
-                                Hey, my name is Zofux, I am a fullstack developer focusing for the most part in 
-                                JavaScript and Java for my projects. I am the head developer here at simplify development, 
-                                I hope to see you around!
-                            </p>
-                            <p className="role-team">
-                            <br/>
-                                <span className="owner-team">Owner</span>
-                                <span className="management-team">Management</span>
-                                <span className="dev-team">Developer</span>
-                            </p>
+                                <h1 className="name-team">Zofux</h1>
+                                <p className="desc-team">
+                                    Hey, my name is Zofux, I am a fullstack developer focusing for the most part in
+                                    JavaScript and Java for my projects. I am the head developer here at simplify development,
+                                    I hope to see you around!
+                                </p>
+                                <p className="role-team">
+                                    <br />
+                                    <span className="owner-team">Owner</span>
+                                    <span className="management-team">Management</span>
+                                    <span className="dev-team">Developer</span>
+                                </p>
                             </div>
                         </div>
 
@@ -85,35 +98,35 @@ export function TeamPage(props) {
                             <h2 className="social-team">Socials</h2>
                             <p className="social-p-team">
                                 <a className="social-a-team" onClick={() => window.open("https://www.youtube.com/channel/UC8kYYf-rv1hEw-Rph257AQg", "_blank")}><i class="fab fa-youtube"></i> Zofux</a>
-                                </p>
-                                <p className="social-p-team">
+                            </p>
+                            <p className="social-p-team">
                                 <a className="social-a-team" onClick={() => window.open("https://github.com/Zofux", "_blank")}><i class="fab fa-github"></i> Zofux</a>
                             </p>
                         </div>
                     </div>
-                    </div>
-                
+                </div>
+
 
                 {/* Card #2 || famOyan*/}
                 <div className="card-container">
                     <div className="card-team">
-                        
+
                         <div className="top-half">
-                            <img className="logo-team" src={famOyan} alt="famoyan" height="auto" width="128px"/>
+                            <img className="logo-team" src={famOyan} alt="famoyan" height="auto" width="128px" />
                             <div className="top-half1">
-                            <h1 className="name-team">famOyan</h1>
-                            <p className="desc-team">
-                                Hello, my name is famOyan, and I'm 15 years old. <br/>
-                                🔥Front-end <span>(Html, CSS, React.js)</span> <br/>
-                                💧Learning Back-end <span>(Express.js)</span> <br/>
-                                💾Learning Databases <span>(MongoDB)</span><br/>
-                                <br/>
-                            </p>
-                            <p className="role-team">
-                                <span className="owner-team">Owner</span>
-                                <span className="management-team">Management</span>
-                                <span className="dev-team">Developer</span>
-                            </p>
+                                <h1 className="name-team">famOyan</h1>
+                                <p className="desc-team">
+                                    Hello, my name is famOyan, and I'm 15 years old. <br />
+                                    🔥Front-end <span>(Html, CSS, React.js)</span> <br />
+                                    💧Learning Back-end <span>(Express.js)</span> <br />
+                                    💾Learning Databases <span>(MongoDB)</span><br />
+                                    <br />
+                                </p>
+                                <p className="role-team">
+                                    <span className="owner-team">Owner</span>
+                                    <span className="management-team">Management</span>
+                                    <span className="dev-team">Developer</span>
+                                </p>
                             </div>
                         </div>
 
@@ -127,7 +140,7 @@ export function TeamPage(props) {
                             </p>
                         </div>
                     </div>
-               </div>
+                </div>
             </div>
 
 
@@ -152,7 +165,7 @@ export function TeamPage(props) {
                         <div className="product">
                             <h2>Product</h2>
                             <ul>
-                            <Link to="/rules"><li><a >Rules</a></li></Link>
+                                <Link to="/rules"><li><a >Rules</a></li></Link>
                                 <Link to="/faq"><li><a >FAQ</a></li></Link>
                                 <Link to="/privacy"><li><a >Privacy</a></li></Link>
                             </ul>

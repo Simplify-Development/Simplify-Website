@@ -63,16 +63,6 @@ body {
   background: #4965c9;
 }
 
-.nav {
-  background: #1d1e22;
-  min-width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .page-cont a {
   text-transform: uppercase;
   color: var(--text-color);
@@ -82,17 +72,6 @@ body {
   font-weight: bold;
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  min-width: 60vh;
-}
-
-/* Effect for the li antag */
-
-.nav ul {
-  display: flex;
-}
 
 /*.nav ul li {
   list-style: none;
@@ -600,4 +579,9 @@ body {
   margin-left: -50px;
   top: 50%;
   margin-top: -50px;
+}
+
+.navLinks li {
+  position: relative;
+  bottom: 10px;  
 }

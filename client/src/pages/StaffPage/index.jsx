@@ -9,6 +9,7 @@ import { getUserDetails } from '../../utils/api';
 import { toast } from 'react-toastify';
 import logo from "../img/utils.png";
 import { Loading } from 'react-loading-dot'
+import { NavLogin } from '../components/navLogin';
 
 toast.configure()
 export function StaffPage(props) {
@@ -123,28 +124,40 @@ export function StaffPage(props) {
         window.open("https://discord.gg/PaGJGzbzw6", "_blank")
     }
 
+    const openNav = () => {
+        setOpen(!open)
+    }
+
     if (loading) {
         return (
             <div>
-                <nav>
-                    <div className={
-                        "nav-bar " + (open ? 'open' : '')
-                    }>
-                        <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
-                        <ul className="navLinks">
-                            <li><Link to="/rules" className="aa">Rules</Link></li>
-                            <li><Link to="/faq" className="ab">FAQ</Link></li>
-                            <li><Link to="/team" className="ab">Team</Link></li>
-                            <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+                <div className="nav">
+                    <div className="logo-container">
+                        <img src={logo} alt="" className="logo" />
+                        <h1 className="logo-title">Simplify Code</h1>
+                    </div>
 
-                        </ul>
-                        <div className="burger" onClick={navSlide}>
+                    <div className="links-container">
+                        <div className="nav-links">
+                            <li><Link to="/rules">Rules</Link></li>
+                            <li><Link to="/faq">FAQ</Link></li>
+                            <li><Link to="/team">Team</Link></li>
+                        </div>
+                        <div className={"nav-menu " + (open ? "open" : "")}>
+                            <Link to="/rules">Rules</Link>
+                            <Link to="/faq">FAQ</Link>
+                            <Link to="/team">Team</Link>
+                        </div>
+
+                        <NavLogin />
+                        <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
                             <div className="line3"></div>
                         </div>
                     </div>
-                </nav>
+
+                </div>
                 <div className="center">
                     <Loading background="rgb(66,69,73)" duration="0.6s" size="2rem" />
                 </div>
@@ -157,25 +170,33 @@ export function StaffPage(props) {
     return !loading && (
         <body>
 
-            <nav>
-                <div className={
-                    "nav-bar " + (open ? 'open' : '')
-                }>
-                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
-                    <ul className="navLinks">
-                        <li><Link to="/rules" className="aa">Rules</Link></li>
-                        <li><Link to="/faq" className="ab">FAQ</Link></li>
-                        <li><Link to="/team" className="ab">Team</Link></li>
-                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+            <div className="nav">
+                <div className="logo-container">
+                    <img src={logo} alt="" className="logo" />
+                    <h1 className="logo-title">Simplify Code</h1>
+                </div>
 
-                    </ul>
-                    <div className="burger" onClick={navSlide}>
+                <div className="links-container">
+                    <div className="nav-links">
+                        <li><Link to="/rules">Rules</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/team">Team</Link></li>
+                    </div>
+                    <div className={"nav-menu " + (open ? "open" : "")}>
+                        <Link to="/rules">Rules</Link>
+                        <Link to="/faq">FAQ</Link>
+                        <Link to="/team">Team</Link>
+                    </div>
+
+                    <NavLogin />
+                    <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
-            </nav>
+
+            </div>
             <div className="top"></div>
 
             <div className="app-background">

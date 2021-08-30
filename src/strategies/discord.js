@@ -35,7 +35,9 @@ passport.use(new DiscordStrategy({
     // Error Handling
     try {
         const findUser = await userSchema.findOneAndUpdate({ discordId: profile.id}, {
-            discordTag: `${profile.username}#${profile.discriminator}`
+            tag: `${profile.discriminator}`,
+            username: profile.username,
+            avatar: profile.avatar,
         }, { new: true } 
         );
         
@@ -58,6 +60,7 @@ passport.use(new DiscordStrategy({
                 discordId: profile.id,
                 username: `${profile.username}`,
                 tag: `${profile.discriminator}`,
+                avatar: `${profile.avatar}`
             });
             const newCredentials = await OAuth2Credentials.create({
                 accessToken: encryptedAccessToken,

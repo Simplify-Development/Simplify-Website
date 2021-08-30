@@ -1,0 +1,107 @@
+.login {
+    color: #e7509e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    position: relative;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    padding-right: 15px;
+}
+
+.login:hover {
+    cursor: pointer;
+}
+
+.navLogin {
+    color: var(--text-color);
+    font-weight: bold;
+    font-weight: 1rem;
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+    right: 30px
+}
+.navLogin:hover {
+    cursor: pointer;
+}
+
+.navLogin-avatar {
+    height: 35px;
+    width: auto;
+    border-radius: 50%;
+    position: relative;
+}
+
+.navLogin-username {
+    position: relative;
+    bottom: 13px;
+    left: 10px;
+}
+
+.fas.fa-caret-down {
+    position: relative;
+    left: 18px;
+    bottom: 13px;
+    transition: all 0.2s ease;
+}
+
+.navLogin.open > .fas.fa-caret-down {
+    transform: rotate(180deg);
+    transition: all 0.2s ease;
+}
+
+.menu {
+    display: none;
+}
+
+.menu.open {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: absolute;
+    top: 53px;
+    right: 5px;
+    text-transform: none;
+    background: #17181b;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 200px;
+    min-width: 160px;
+    z-index: 2;
+  
+}
+.menu p {
+    margin-bottom: 15px;
+    height: 30px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.logout {
+    color: #a72739;
+}
+.menu p:hover {
+    cursor: pointer;
+    background: rgba(40, 50, 58, 0.541);
+    border-radius: 3px;
+    filter: none;
+}
+
+@media screen and (max-width: 528px) {
+    .navLogin {
+        position: relative;
+        left: -17px;
+    }
+}
+
+.menu a:hover {
+    text-decoration: none;
+}
+.menu a {
+    color: #a6aab5;
+}
+.menu-link {
+    color: #a6aab5;
+}

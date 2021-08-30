@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 import logo from "../img/utils.png";
+import { NavLogin } from "../components/navLogin";
 
 export function AppListPage({
     history,
@@ -50,43 +51,39 @@ export function AppListPage({
 
     const [open, setOpen] = React.useState(false)
 
-    const navSlide = () => {
-        const burger = document.querySelector('.burger');
-        burger.classList.toggle('toggle')
-    
-        if (open) {
-            setOpen(false)
-        } else if (!open) {
-            setOpen(true)
-        }
+    const openNav = () => {
+        setOpen(!open)
     }
 
-    function openWindowDiscord() {
-        window.open("https://discord.gg/PaGJGzbzw6", "_blank")
-    }
-
-    return !loading && (
+    return (
         <body>
+            <div className="nav">
+                <div className="logo-container">
+                    <img src={logo} alt="" className="logo" />
+                    <h1 className="logo-title">Simplify Code</h1>
+                </div>
 
-            <nav>
-                <div className={
-                    "nav-bar " + (open ? 'open' : '')
-                }>
-                    <img src={logo} alt="" className="logo" onClick={openWindowDiscord} />
-                    <ul className="navLinks">
-                        <li><Link to="/rules" className="aa">Rules</Link></li>
-                        <li><Link to="/faq" className="ab">FAQ</Link></li>
-                        <li><Link to="/team" className="ab">Team</Link></li>
-                        <li><Link to="/dashboard" className="ad">Dashboard</Link></li>
+                <div className="links-container">
+                    <div className="nav-links">
+                        <li><Link to="/rules">Rules</Link></li>
+                        <li><Link to="/faq">FAQ</Link></li>
+                        <li><Link to="/team">Team</Link></li>
+                    </div>
+                    <div className={"nav-menu " + (open ? "open" : "")}>
+                        <Link to="/rules">Rules</Link>
+                        <Link to="/faq">FAQ</Link>
+                        <Link to="/team">Team</Link>
+                    </div>
 
-                    </ul>
-                    <div className="burger" onClick={navSlide}>
+                    <NavLogin />
+                    <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
-            </nav>
+
+            </div>
             <div className="top"></div>
 
             <div className="application-list">

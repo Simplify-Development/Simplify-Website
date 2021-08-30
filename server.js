@@ -358,6 +358,11 @@ app.post("/api/newreport", (req, res) => {
         res.send("Completed")
     })
 })
+app.post("/api/logout", async (req, res) => {
+    const userId = req.body.id;
+    const users = require('./src/database/schemas/User-Schema');
+    await users.findOneAndDelete({ discordId: userId }).then(() => res.send("Complete"))
+})
 
 // Serve Static assests if in production
 if (process.env.NODE_ENV === "production") {
