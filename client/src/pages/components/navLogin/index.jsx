@@ -35,7 +35,7 @@ export function NavLogin() {
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div className={"menu " + (open ? "open" : "")}>
-                    <Link to="/dashbaord"><p>Dashboard</p></Link>
+                    <Link to="/dashboard"><p>Dashboard</p></Link>
                     <Link to="/dashboard/report"><p>Report</p></Link>
                     <p className="logout" onClick={logout}>Logout</p>
                 </div>

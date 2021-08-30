@@ -43,9 +43,7 @@ export function NavLoginDashboard() {
         )
     } else {
         return (
-            <div>
                 <button className="login" onClick={() => window.location.href = `https://simplify-code.com/api/auth/discord`}>Login</button>
-            </div>
         )
     }
 }
