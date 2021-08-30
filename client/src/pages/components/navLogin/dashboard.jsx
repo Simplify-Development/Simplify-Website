@@ -30,8 +30,8 @@ export function NavLoginDashboard() {
         return (
             <div>
                 <div className={"navLogin " + (open ? "open" : "")} onClick={() => setOpen(!open)}>
-                    <img className="navLogin-avatar" src="https://cdn.discordapp.com/avatars/359681648322805761/b5865a8fcbdfd01dc3017d7a137944a3.webp?size=128" alt="" />
-                    <span className="navLogin-username">Zofux</span>
+                    <img className="navLogin-avatar" src={user.avatar} alt="" />
+                    <span className="navLogin-username">{user.username}</span>
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div className={"menu " + (open ? "open" : "")}>
