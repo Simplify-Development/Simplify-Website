@@ -17,14 +17,6 @@ export function NavLogin() {
     }
 
     React.useEffect(() => {
-        const userDate = window.localStorage.getItem("Simplify-Code")
-        setUser(JSON.parse(userDate))
-    }, [])
-    React.useEffect(() => {
-        window.localStorage.setItem('Simplify-Code', JSON.stringify(user))
-    })
-
-    React.useEffect(() => {
         getUserDetails()
             .then(({ data }) => {
                setLoggedIn(true)
