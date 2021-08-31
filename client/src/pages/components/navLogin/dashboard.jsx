@@ -7,7 +7,7 @@ import axios from 'axios'
 export function NavLoginDashboard() {
 
     const [loggedIn, setLoggedIn] = React.useState(false)
-    const [user, setUser] = React.useState({})
+    const [user, setUser] = React.useState(null)
     const [open, setOpen] = React.useState(false)
 
     async function logout() {
@@ -17,6 +17,15 @@ export function NavLoginDashboard() {
     }
 
     React.useEffect(() => {
+        const userDate = window.localStorage.getItem("Simplify-Code")
+        setUser(JSON.parse(userDate))
+    }, [])
+    React.useEffect(() => {
+        window.localStorage.setItem('Simplify-Code', JSON.stringify(user))
+    })
+
+    React.useEffect(() => {
+        if (user) return setLoggedIn(true)
         getUserDetails()
             .then(({ data }) => {
                setLoggedIn(true)
