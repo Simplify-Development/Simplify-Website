@@ -17,7 +17,6 @@ export function NavLoginDashboard() {
     }
 
     React.useEffect(() => {
-        if (user) setLoggedIn(true)
         getUserDetails()
             .then(({ data }) => {
                setLoggedIn(true)
