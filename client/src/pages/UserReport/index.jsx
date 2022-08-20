@@ -7,7 +7,6 @@ import { getUserDetails } from '../../utils/api';
 import { Loading } from 'react-loading-dot'
 
 import { Link } from "react-router-dom"
-import { NavLogin } from "../components/navLogin";
 
 
 export function ReportPage() {
@@ -87,7 +86,7 @@ export function ReportPage() {
             reason: reason,
         }
 
-        await axios.post('https://simplify-code.com/api/newreport', content).then(res => {
+        await axios.post('http://localhost:5001/api/newreport', content).then(res => {
             window.location.href = "/dashboard"
         })
 
@@ -101,7 +100,7 @@ export function ReportPage() {
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                window.location.href = `http://localhost:5001/api/auth/discord`
             })
     }, [])
 
@@ -130,7 +129,7 @@ export function ReportPage() {
                             <Link to="/team">Team</Link>
                         </div>
 
-                        <NavLogin />
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -161,14 +160,15 @@ export function ReportPage() {
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
@@ -187,7 +187,7 @@ export function ReportPage() {
 
                     <div className="report-content">
                         <div className="report-id-box">
-                            <input type="text" className="report-id-field" onChange={e => setUserId(e.target.value)} />
+                            <input type="text" className="report-id-field" onChange={e => setUserId(e.target.value)} placeholder="Discord user id"/>
                             <p>ID of the user you are reporting.</p>
                         </div>
 

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "./style.css";
 import logo from "../img/utils.png";
-import { NavLogin } from "../components/navLogin";
 
 
 export function RulesPage(props) {
@@ -38,17 +37,18 @@ export function RulesPage(props) {
 
                 <div className="links-container">
                     <div className="nav-links">
-                        <li><Link to="/rules">Rules</Link></li>
+                        <li><Link to="/">Home</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/">Home</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

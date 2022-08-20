@@ -3,7 +3,7 @@ const totalSchema = require('../database/schemas/total-schema');
 const appDB = require('../database/schemas/App-Schema')
 
 router.get('/', (req, res) => {
-    totalSchema.findOne({ id: 756195742741430352 }, (err, data) => {
+    totalSchema.findOne({ id: "756195742741430352" }, (err, data) => {
         if (err) console.log("error")
 
         if (data) {

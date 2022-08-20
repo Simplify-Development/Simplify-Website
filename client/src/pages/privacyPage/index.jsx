@@ -2,7 +2,6 @@ import React from "react";
 import './style.css'
 import { Link } from 'react-router-dom'
 import logo from "../img/utils.png";
-import { NavLogin } from "../components/navLogin";
 
 export function PrivacyPage(props) {
     const [open, setOpen] = React.useState(false)
@@ -39,14 +38,16 @@ export function PrivacyPage(props) {
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
+                   
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

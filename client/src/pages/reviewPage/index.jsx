@@ -8,7 +8,6 @@ import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 import logo from "../img/utils.png";
 import { toast } from "react-toastify";
 import { Loading } from 'react-loading-dot'
-import { NavLogin } from "../components/navLogin";
 
 export function ReviewPage({
     history,
@@ -20,7 +19,7 @@ export function ReviewPage({
     const [moderator, setModerator] = React.useState('')
 
     function getApplication() {
-        return axios.get(`https://simplify-code.com/api/apps/${match.params.id}`)
+        return axios.get(`http://localhost:5001/api/apps/${match.params.id}`)
     }
 
     React.useEffect(() => {
@@ -55,7 +54,7 @@ export function ReviewPage({
             moderator: moderator,
             id: match.params.id
         }
-        await axios.post("https://simplify-code.com/api/applications/accept", answer).then(() => {
+        await axios.post("http://localhost:5001/api/applications/accept", answer).then(() => {
             window.location.href = "/applications/review"
         }).catch(() => {
             return toast.error("Could not accept the application due to an error")
@@ -66,7 +65,7 @@ export function ReviewPage({
             moderator: moderator,
             id: match.params.id
         }
-        await axios.post("https://simplify-code.com/api/applications/decline", answer).then(() => {
+        await axios.post("http://localhost:5001/api/applications/decline", answer).then(() => {
             window.location.href = "/applications/review"
         }).catch(() => {
             return toast.error("Could not decline the application due to an error")
@@ -115,7 +114,7 @@ export function ReviewPage({
                             <Link to="/team">Team</Link>
                         </div>
 
-                        <NavLogin />
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -154,7 +153,7 @@ export function ReviewPage({
                         <Link to="/team">Team</Link>
                     </div>
 
-                    <NavLogin />
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
@@ -184,7 +183,7 @@ export function ReviewPage({
                         <div className="review-info-box">
                             <p><span className="red">{content.user}</span><span className="dark"> #</span><span className="red">{content.tag}</span><span className="dark"> (</span><span className="red">{content.discordId}</span><span className="dark">)</span></p>
                         </div> <br />
-                        <p>Meets the requirements : {requirements}</p> <br />
+                        <p className="review-recs">Meets the requirements : <span className={`review-recs-span-${requirements}`}>{requirements}</span></p> <br />
 
                     </div>
                     <div className="review-buttons">

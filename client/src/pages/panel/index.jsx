@@ -22,13 +22,13 @@ export function PanelPage(props) {
                         setLoading(false)
                     })
                 } else {
-                    window.location.href = `https://simplify-code.com`;    
+                    window.location.href = `http://localhost:5001`;    
                 }
             }).catch(() => {
-                window.location.href = `https://simplify-code.com/api/auth/discord`;
+                window.location.href = `http://localhost:5001/api/auth/discord`;
             })
         }).catch(() => {
-            window.location.href = `https://simplify-code.com/api/auth/discord`;
+            window.location.href = `http://localhost:5001/api/auth/discord`;
         })
 
     }, [])

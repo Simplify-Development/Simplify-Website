@@ -9,7 +9,6 @@ import { getUserDetails } from '../../utils/api';
 import { toast } from 'react-toastify';
 import logo from "../img/utils.png";
 import { Loading } from 'react-loading-dot'
-import { NavLogin } from '../components/navLogin';
 
 toast.configure()
 export function ArtPosterPage(props) {
@@ -26,7 +25,7 @@ export function ArtPosterPage(props) {
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                window.location.href = `http://localhost:5001/api/auth/discord`
             })
     }, [])
 
@@ -53,7 +52,7 @@ export function ArtPosterPage(props) {
                 }
 
                 function getApplications() {
-                    return axios.get(`https://simplify-code.com/api/apps/check/${result.data.discordId}`)
+                    return axios.get(`http://localhost:5001/api/apps/check/${result.data.discordId}`)
 
                 }
 
@@ -62,7 +61,7 @@ export function ArtPosterPage(props) {
                         return toast.error('Sorry, but you currently have a pending application, talk to our management team to get it removed.')
                     } if (data.data.msg) {
 
-                        await axios.post('https://simplify-code.com/api/newapp', content).then(res => {
+                        await axios.post('http://localhost:5001/api/newapp', content).then(res => {
                             setText('')
                             window.location.href = "/dashboard"
                         }).catch(async () => {
@@ -113,14 +112,16 @@ export function ArtPosterPage(props) {
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
+                   
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
@@ -151,14 +152,16 @@ export function ArtPosterPage(props) {
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
+                   
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

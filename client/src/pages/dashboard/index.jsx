@@ -7,7 +7,6 @@ import CountUp from 'react-countup';
 import { toast } from 'react-toastify'
 import logo from "../img/utils.png";
 import { Loading } from 'react-loading-dot'
-import { NavLoginDashboard } from '../components/navLogin/dashboard'
 
 export function DashboardPage({
     history,
@@ -20,7 +19,7 @@ export function DashboardPage({
     const [applications, setApplications] = React.useState([])
 
     const getNumberOfUsers = () => {
-        axios.get('https://simplify-code.com/api/users')
+        axios.get('http://localhost:5001/api/users')
             .then((res) => {
                 const data = res.data;
                 setCount(data)
@@ -31,7 +30,7 @@ export function DashboardPage({
     }
 
     const getNumberOfApps = () => {
-        axios.get('https://simplify-code.com/api/apps')
+        axios.get('http://localhost:5001/api/apps')
             .then((res) => {
                 const data = res.data;
                 setApps(data)
@@ -42,7 +41,7 @@ export function DashboardPage({
     }
 
     function getUsersApplications(discordId) {
-        return axios.get(`https://simplify-code.com/api/userapps/${discordId}`)
+        return axios.get(`http://localhost:5001/api/userapps/${discordId}`)
     }
 
     React.useEffect(() => {
@@ -58,7 +57,7 @@ export function DashboardPage({
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                window.location.href = `http://localhost:5001/api/auth/discord`
             })
     }, [])
 
@@ -97,14 +96,17 @@ export function DashboardPage({
                             <li><Link to="/rules">Rules</Link></li>
                             <li><Link to="/faq">FAQ</Link></li>
                             <li><Link to="/team">Team</Link></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
                         </div>
                         <div className={"nav-menu " + (open ? "open" : "")}>
                             <Link to="/rules">Rules</Link>
                             <Link to="/faq">FAQ</Link>
                             <Link to="/team">Team</Link>
+                            <li><Link to="/">Home</Link></li>
+                            <Link to="/dashboard">Dashboard</Link>
                         </div>
 
-                        <NavLoginDashboard />
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -137,14 +139,15 @@ export function DashboardPage({
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/">Home</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/">Home</Link>
                     </div>
 
-                    <NavLoginDashboard />
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

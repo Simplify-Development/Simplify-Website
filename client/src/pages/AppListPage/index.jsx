@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import { getUserDetails, getWhitelistStatus } from '../../utils/api'
 import logo from "../img/utils.png";
-import { NavLogin } from "../components/navLogin";
 
 export function AppListPage({
     history,
@@ -30,7 +29,7 @@ export function AppListPage({
     }, [])
 
     function getApplications() {
-        return axios.get('https://simplify-code.com/api/applist')/*.then(data => {
+        return axios.get('http://localhost:5001/api/applist')/*.then(data => {
            for (let i in data.data) {
             console.log(data.data[i].appType)
            }
@@ -68,14 +67,16 @@ export function AppListPage({
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
                         <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
                         <Link to="/team">Team</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <NavLogin />
+                    
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

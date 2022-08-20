@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import famOyan from './img/famOyan.png'
 import Zofux from './img/Zofux.png'
 import logo from "../img/utils.png";
-import { NavLogin } from "../components/navLogin";
 
 import "./style.css";
 
@@ -50,7 +49,7 @@ export function TeamPage(props) {
                         <Link to="/team">Team</Link>
                     </div>
 
-                    <NavLogin />
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

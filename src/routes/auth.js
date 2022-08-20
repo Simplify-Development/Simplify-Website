@@ -5,7 +5,7 @@ const { getServerUsers } = require('../utils/utils')
 router.get('/discord', passport.authenticate('discord'));
 
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
-    res.redirect('https://simplify-code.com/dashboard')
+    res.redirect('http://localhost:3000/dashboard')
 });
 
 router.get('/', (req, res) => {

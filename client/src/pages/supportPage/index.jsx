@@ -9,7 +9,6 @@ import { getUserDetails } from '../../utils/api';
 import { toast } from 'react-toastify';
 import logo from "../img/utils.png";
 import { Loading } from 'react-loading-dot'
-import { NavLogin } from '../components/navLogin';
 
 toast.configure()
 export function SupportPage(props) {
@@ -34,7 +33,7 @@ export function SupportPage(props) {
                 setLoading(false);
             }).catch((err) => {
                 console.error(err)
-                window.location.href = `https://simplify-code.com/api/auth/discord`
+                window.location.href = `http://localhost:5001/api/auth/discord`
             })
     }, [])
 
@@ -79,7 +78,7 @@ export function SupportPage(props) {
             }
 
             function getApplications() {
-                return axios.get(`https://simplify-code.com/api/apps/check/${result.data.discordId}`)
+                return axios.get(`http://localhost:5001/api/apps/check/${result.data.discordId}`)
             }
 
             getApplications().then(async data => {
@@ -87,7 +86,7 @@ export function SupportPage(props) {
                     return toast.error('Sorry, but you currently have a pending application, talk to our management team to get it removed.')
                 } if (data.data.msg) {
 
-                    await axios.post('https://simplify-code.com/api/newapp', content).then(res => {
+                    await axios.post('http://localhost:5001/api/newapp', content).then(res => {
                         window.location.href = "/dashboard"
                     }).catch(async () => {
                         return toast.error('Could not send the application to the database.')
@@ -148,7 +147,7 @@ export function SupportPage(props) {
                             <Link to="/team">Team</Link>
                         </div>
 
-                        <NavLogin />
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -188,7 +187,7 @@ export function SupportPage(props) {
                         <Link to="/team">Team</Link>
                     </div>
 
-                    <NavLogin />
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

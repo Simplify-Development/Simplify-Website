@@ -43,14 +43,14 @@ export function PanelUserPage({
                     })
 
                 } else {
-                    window.location.href = "https://simplify-code.com"
+                    window.location.href = "http://localhost:5001"
                 }
             }).catch(() => {
-                window.location.href = `https://simplify-code.com/api/auth/discord`;
+                window.location.href = `http://localhost:5001/api/auth/discord`;
             })
 
         }).catch(() => {
-            window.location.href = `https://simplify-code.com/api/auth/discord`;
+            window.location.href = `http://localhost:5001/api/auth/discord`;
         })
     }, [])
 
@@ -87,7 +87,7 @@ export function PanelUserPage({
             moderator: moderator,
             user: match.params.id
         }
-        await axios.post("https://simplify-code.com/api/panel/moderation", info)
+        await axios.post("http://localhost:5001/api/panel/moderation", info)
     }
 
     if (loading) {

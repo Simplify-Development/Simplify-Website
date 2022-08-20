@@ -25,6 +25,17 @@
   white-space: pre-wrap;
 }
 
+.review-recs {
+  font-weight: bolder;
+}
+
+.review-recs-span-Yes {
+  color: rgb(16, 168, 16);
+}
+.review-recs-span-No {
+  color: #ff3366;
+}
+
 .review-box p {
   word-wrap: break-word;
 }

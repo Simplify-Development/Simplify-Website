@@ -4,7 +4,6 @@ import "./style.css";
 import { getStaffList } from '../../utils/api'
 import logo from "../img/utils.png";
 import { Loading } from 'react-loading-dot'
-import { NavLogin } from "../components/navLogin";
 
 
 
@@ -61,7 +60,7 @@ export function StaffList(props) {
                             <Link to="/team">Team</Link>
                         </div>
 
-                        <NavLogin />
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -99,7 +98,7 @@ export function StaffList(props) {
                         <Link to="/team">Team</Link>
                     </div>
 
-                    <NavLogin />
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>

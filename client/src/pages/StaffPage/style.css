@@ -83,6 +83,8 @@ body {
 
 .app-type {
   color: var(--text-color);
+  text-decoration: underline;
+  padding-bottom: 20px;
 }
 
 .recs-check {
@@ -96,6 +98,12 @@ body {
   position: relative;
   top: -5px;
   left: 10px;
+  font-weight: bolder;
+  
+}
+
+.recs-check input {
+  margin-bottom: 10px;
 }
 
 .input-container {
@@ -125,6 +133,8 @@ body {
   padding: 5px;
   color: var(--text-color);
   font-size: 15px;
+  resize: none;
+  word-wrap: break-word;
 }
 
 textarea {
