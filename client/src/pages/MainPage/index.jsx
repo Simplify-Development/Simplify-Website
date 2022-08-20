@@ -48,6 +48,7 @@ export function MainPage(props) {
                 </div>
 
             </div>
+            <div className="top"></div>
 
             {/*<div className="top-image">
                 <br />

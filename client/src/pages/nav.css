@@ -53,6 +53,9 @@
 }
 
 @media screen and (max-width: 1243px) {
+  .top {
+    margin-bottom: 100px;
+  }
   .nav {
     padding-bottom: 60px;
     position: fixed;

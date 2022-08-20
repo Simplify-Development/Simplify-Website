@@ -52,15 +52,17 @@ export function StaffList(props) {
                         <div className="nav-links">
                             <li><Link to="/rules">Rules</Link></li>
                             <li><Link to="/faq">FAQ</Link></li>
-                            <li><Link to="/team">Team</Link></li>
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
                         </div>
                         <div className={"nav-menu " + (open ? "open" : "")}>
                             <Link to="/rules">Rules</Link>
                             <Link to="/faq">FAQ</Link>
-                            <Link to="/team">Team</Link>
+                            <Link to="/">Home</Link>
+                            <Link to="/dashboard">Dashboard</Link>
                         </div>
 
-                        <li><Link to="/dashboard">Dashboard</Link></li>
+                        
                         <div className="burger" onClick={openNav}>
                             <div className="line1"></div>
                             <div className="line2"></div>
@@ -90,22 +92,22 @@ export function StaffList(props) {
                     <div className="nav-links">
                         <li><Link to="/rules">Rules</Link></li>
                         <li><Link to="/faq">FAQ</Link></li>
-                        <li><Link to="/team">Team</Link></li>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/dashboard">Dashboard</Link></li>
                     </div>
                     <div className={"nav-menu " + (open ? "open" : "")}>
                         <Link to="/rules">Rules</Link>
                         <Link to="/faq">FAQ</Link>
-                        <Link to="/team">Team</Link>
+                        <Link to="/">Home</Link>
+                        <Link to="/dashboard">Dashboard</Link>
                     </div>
 
-                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <div className="burger" onClick={openNav}>
                         <div className="line1"></div>
                         <div className="line2"></div>
                         <div className="line3"></div>
                     </div>
                 </div>
-
             </div>
 
             <div className="top"></div>
